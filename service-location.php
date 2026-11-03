@@ -71,8 +71,8 @@ require __DIR__ . '/includes/header.php';
       "@id": "https://www.weboptimizer.in/service/<?php echo $service_slug; ?>/<?php echo $city_slug; ?>#service",
       "name": "Web Optimizer - <?php echo htmlspecialchars($service['title']); ?> in <?php echo $city_name; ?>",
       "url": "https://www.weboptimizer.in/service/<?php echo $service_slug; ?>/<?php echo $city_slug; ?>",
-      "logo": "https://www.weboptimizer.in/wp-content/uploads/2022/01/weboptimizer-logo.png",
-      "image": "https://www.weboptimizer.in/wp-content/uploads/2022/01/weboptimizer-logo.png",
+      "logo": "https://www.weboptimizer.in/assets/images/weboptimizer-logo.svg",
+      "image": "https://www.weboptimizer.in/assets/images/weboptimizer-logo.svg",
       "telephone": "+91 7735973818",
       "email": "info@weboptimizer.in",
       "description": "Leading <?php echo htmlspecialchars($service['title']); ?> in <?php echo $city_name; ?>, Odisha. Engineered for speed, conversion, and verified ROI.",
@@ -214,7 +214,7 @@ require __DIR__ . '/includes/header.php';
               </div>
             </div>
             <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-cream); margin-bottom: 14px;">
-              In <strong><?php echo htmlspecialchars($city_name); ?></strong> â€” known as a prominent <strong><?php echo strtolower(htmlspecialchars($loc['tier'])); ?></strong> within <?php echo htmlspecialchars($loc['district']); ?> District â€” businesses face increasing digital competition. Relying on slow, template-driven websites results in lost market share and missed commercial opportunities.
+              In <strong><?php echo htmlspecialchars($city_name); ?></strong> Ã¢â‚¬â€ known as a prominent <strong><?php echo strtolower(htmlspecialchars($loc['tier'])); ?></strong> within <?php echo htmlspecialchars($loc['district']); ?> District Ã¢â‚¬â€ businesses face increasing digital competition. Relying on slow, template-driven websites results in lost market share and missed commercial opportunities.
             </p>
             <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-cream); margin: 0;">
               <?php echo htmlspecialchars($service['overview']); ?>

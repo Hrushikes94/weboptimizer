@@ -65,13 +65,13 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
   <meta property="og:url" content="<?php echo htmlspecialchars($canonical_url); ?>">
   <meta property="og:title" content="<?php echo htmlspecialchars($page_title); ?>">
   <meta property="og:description" content="<?php echo htmlspecialchars($meta_desc); ?>">
-  <meta property="og:image" content="https://www.weboptimizer.in/wp-content/uploads/2022/01/weboptimizer-logo.png">
+  <meta property="og:image" content="https://www.weboptimizer.in/assets/images/weboptimizer-logo.svg">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="<?php echo htmlspecialchars($page_title); ?>">
   <meta name="twitter:description" content="<?php echo htmlspecialchars($meta_desc); ?>">
-  <meta name="twitter:image" content="https://www.weboptimizer.in/wp-content/uploads/2022/01/weboptimizer-logo.png">
+  <meta name="twitter:image" content="https://www.weboptimizer.in/assets/images/weboptimizer-logo.svg">
 
   <!-- Schema.org JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -83,8 +83,8 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
         "@id": "https://www.weboptimizer.in/#organization",
         "name": "Web Optimizer",
         "url": "https://www.weboptimizer.in",
-        "logo": "https://www.weboptimizer.in/wp-content/uploads/2022/01/weboptimizer-logo.png",
-        "image": "https://www.weboptimizer.in/wp-content/uploads/2022/01/weboptimizer-logo.png",
+        "logo": "https://www.weboptimizer.in/assets/images/weboptimizer-logo.svg",
+        "image": "https://www.weboptimizer.in/assets/images/weboptimizer-logo.svg",
         "description": "Premier Website Design, Custom WordPress Engineering, Performance Marketing, and Technical SEO Agency in Bhubaneswar, Odisha.",
         "telephone": "+91 7735973818",
         "email": "info@weboptimizer.in",
@@ -3289,7 +3289,7 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
                 </div>
                 <ul class="mega-sub-list">
                   <li><a href="<?php echo $base_path; ?>paid-social-media.php" class="mega-sub-link">Paid Social Media Ads</a></li>
-                  <li><a href="<?php echo $base_path; ?>google-ads.php" class="mega-sub-link">Google Ads – PPC & PMax</a></li>
+                  <li><a href="<?php echo $base_path; ?>google-ads.php" class="mega-sub-link">Google Ads â€“ PPC & PMax</a></li>
                   <li><a href="<?php echo $base_path; ?>lead-generation.php" class="mega-sub-link">High-Intent Lead Gen</a></li>
                   <li><a href="<?php echo $base_path; ?>search-engine-marketing.php" class="mega-sub-link">Search Engine Marketing</a></li>
                   <li><a href="<?php echo $base_path; ?>content-marketing.php" class="mega-sub-link">Content Marketing</a></li>
