@@ -116,7 +116,7 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
   </script>
 
   <!-- Favicon -->
-  <link rel="icon" href="https://www.weboptimizer.in/wp-content/uploads/2022/01/cropped-weboptimizer-icon-32x32.png" sizes="32x32" />
+  <link rel="icon" href="<?php echo htmlspecialchars($base_path); ?>assets/images/favicon.svg" type="image/svg+xml" />
 
   <!-- Bootstrap 5.3.3 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -3218,7 +3218,7 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
   <header class="navbar" id="navbar">
     <div class="container-fluid px-xl-5 px-lg-4 px-3 nav-container position-relative">
       <a href="<?php echo $base_path; ?>index.php" class="brand-logo-wrap">
-        <img src="https://www.weboptimizer.in/wp-content/uploads/2022/01/weboptimizer-logo.png" 
+        <img src="<?php echo $base_path; ?>assets/images/weboptimizer-logo.svg" 
              alt="Web Optimizer" 
              class="brand-logo-img"
              onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='block';">

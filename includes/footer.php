@@ -11,7 +11,7 @@ $base_path = $base_path ?? './';
     <div class="container">
       <div class="footer-top">
         <div class="footer-col">
-          <img src="https://www.weboptimizer.in/wp-content/uploads/2022/01/weboptimizer-logo.png" 
+          <img src="<?php echo $base_path; ?>assets/images/weboptimizer-logo.svg" 
                alt="Web Optimizer" 
                style="height:44px; margin-bottom:14px; object-fit:contain;"
                onerror="this.style.display='none';">
@@ -74,7 +74,7 @@ $base_path = $base_path ?? './';
   <div class="offcanvas offcanvas-end luxury-offcanvas" tabindex="-1" id="luxuryMobileNav" aria-labelledby="luxuryMobileNavLabel">
     <div class="offcanvas-header">
       <div class="d-flex align-items-center gap-2">
-        <img src="https://www.weboptimizer.in/wp-content/uploads/2022/01/cropped-weboptimizer-icon-32x32.png" 
+        <img src="<?php echo $base_path; ?>assets/images/favicon.svg" 
              alt="Web Optimizer" 
              style="width:28px; height:28px; border-radius:6px; object-fit:contain;"
              onerror="this.style.display='none';">

@@ -95,19 +95,19 @@ require __DIR__ . '/includes/header.php';
         <span class="brands-tag">Trusted by High-Growth Businesses & Industry Leaders</span>
         <div class="brands-row">
           <div class="brand-logo-item" title="Diesel">
-            <img src="https://www.weboptimizer.in/wp-content/uploads/2024/05/diesel_logo.png" alt="Diesel Brand Logo" onerror="this.outerHTML='<span style=&quot;font-family:var(--font-display);font-weight:700;letter-spacing:2px;color:var(--text-muted);font-size:18px;&quot;>DIESEL</span>'">
+            <img src="<?php echo $base_path; ?>assets/images/brand/diesel.svg" alt="Diesel Brand Logo">
           </div>
           <div class="brand-logo-item" title="HempMyPET">
-            <img src="https://www.weboptimizer.in/wp-content/uploads/2024/05/HempMyPET-Logo-Purp-Gold-logo.png" alt="HempMyPET Logo" onerror="this.outerHTML='<span style=&quot;font-family:var(--font-display);font-weight:700;letter-spacing:1.5px;color:var(--text-muted);font-size:16px;&quot;>HEMP MY PET</span>'">
+            <img src="<?php echo $base_path; ?>assets/images/brand/hempmypet.svg" alt="HempMyPET Logo">
           </div>
           <div class="brand-logo-item" title="Cornerstone Media">
-            <img src="https://www.weboptimizer.in/wp-content/uploads/2024/05/cornerstone-logo.png" alt="Cornerstone Media Logo" onerror="this.outerHTML='<span style=&quot;font-family:var(--font-display);font-weight:700;letter-spacing:1.5px;color:var(--text-muted);font-size:16px;&quot;>CORNERSTONE</span>'">
+            <img src="<?php echo $base_path; ?>assets/images/brand/cornerstone.svg" alt="Cornerstone Media Logo">
           </div>
           <div class="brand-logo-item" title="NW Craft Remodel">
-            <img src="https://www.weboptimizer.in/wp-content/uploads/2024/05/nwcraftremodel-logo.png" alt="NW Craft Remodel Logo" onerror="this.outerHTML='<span style=&quot;font-family:var(--font-display);font-weight:700;letter-spacing:1.5px;color:var(--text-muted);font-size:16px;&quot;>NW CRAFT REMODEL</span>'">
+            <img src="<?php echo $base_path; ?>assets/images/brand/nwcraftremodel.svg" alt="NW Craft Remodel Logo">
           </div>
           <div class="brand-logo-item" title="Ratnasoft">
-            <img src="https://www.weboptimizer.in/wp-content/uploads/2024/05/ratnasoft-logo1.png" alt="Ratnasoft Logo" onerror="this.outerHTML='<span style=&quot;font-family:var(--font-display);font-weight:700;letter-spacing:1.5px;color:var(--text-muted);font-size:16px;&quot;>RATNASOFT</span>'">
+            <img src="<?php echo $base_path; ?>assets/images/brand/ratnasoft.svg" alt="Ratnasoft Logo">
           </div>
         </div>
       </div>
