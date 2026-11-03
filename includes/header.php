@@ -3359,6 +3359,7 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
                   <li><a href="<?php echo $base_path; ?>api-integrations.php" class="mega-sub-link">API & Webhook Integrations</a></li>
                   <li><a href="<?php echo $base_path; ?>website-maintenance.php" class="mega-sub-link">Website Maintenance AMC</a></li>
                   <li><a href="<?php echo $base_path; ?>custom-web-application.php" class="mega-sub-link">Custom Web Applications</a></li>
+                  <li><a href="<?php echo $base_path; ?>quotation-billing-invoice-software.php" class="mega-sub-link" style="color:var(--gold-light); font-weight:600;">Quotation, Billing &amp; Invoice App</a></li>
                 </ul>
               </div>
 
@@ -3393,6 +3394,7 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
             <a href="<?php echo $base_path; ?>ecommerce-development.php" class="standard-drop-item"><i class="fa-solid fa-bag-shopping"></i> WooCommerce E-Commerce</a>
             <a href="<?php echo $base_path; ?>shopify-development.php" class="standard-drop-item"><i class="fa-brands fa-shopify"></i> Shopify Development</a>
             <a href="<?php echo $base_path; ?>custom-web-application.php" class="standard-drop-item"><i class="fa-solid fa-server"></i> Custom Web Applications</a>
+            <a href="<?php echo $base_path; ?>quotation-billing-invoice-software.php" class="standard-drop-item"><i class="fa-solid fa-file-invoice-dollar"></i> Quotation, Billing &amp; Invoice App</a>
             <a href="<?php echo $base_path; ?>api-integrations.php" class="standard-drop-item"><i class="fa-solid fa-network-wired"></i> API Integrations</a>
             <a href="<?php echo $base_path; ?>website-maintenance.php" class="standard-drop-item"><i class="fa-solid fa-screwdriver-wrench"></i> Website Maintenance AMC</a>
             <a href="<?php echo $base_path; ?>plugin-development.php" class="standard-drop-item"><i class="fa-solid fa-puzzle-piece"></i> Plugin Development</a>

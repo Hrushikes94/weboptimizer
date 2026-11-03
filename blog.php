@@ -30,7 +30,7 @@ require __DIR__ . '/includes/header.php';
 
           <div class="banner-pill-badge mb-3">
             <span class="gold-dot"></span>
-            <span>TRANSPARENT CLIENT EDUCATION &bull; 25 PRACTICAL GUIDES</span>
+            <span>TRANSPARENT CLIENT EDUCATION &bull; <?php echo count($blogs_catalog); ?> PRACTICAL GUIDES</span>
           </div>
 
           <h1 class="banner-title">
@@ -39,12 +39,12 @@ require __DIR__ . '/includes/header.php';
           </h1>
 
           <p class="banner-lead mx-auto" style="max-width: 780px;">
-            No confusing technical buzzwords. No false promises. Just direct, honest explanations of how websites, Google Maps, search ranking, and digital advertising actually generate phone calls and revenue in Odisha.
+            No confusing technical buzzwords. No false promises. Just direct, honest explanations of how custom billing &amp; quotation software, web &amp; mobile applications, websites, Google Maps, SEO, and digital advertising actually generate revenue in Odisha.
           </p>
 
           <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
             <a href="blog#blogs-grid" onclick="const el=document.getElementById('blogs-grid'); if(el){el.scrollIntoView({behavior:'smooth'}); return false;}" class="btn-gold" style="padding: 12px 26px; font-size: 14px;">
-              <i class="fa-solid fa-book-open"></i> Read All 25 Verified Guides
+              <i class="fa-solid fa-book-open"></i> Read All <?php echo count($blogs_catalog); ?> Verified Guides
             </a>
             <a href="https://wa.me/917735973818?text=Hello%20Hrushikesh%2C%20I%20have%20a%20question%20about%20your%20digital%20guides." 
                target="_blank" 
@@ -74,7 +74,7 @@ require __DIR__ . '/includes/header.php';
              alt="Web Optimizer Business Intelligence Guides" 
              class="img-fluid">
         <div class="banner-floating-badge">
-          <span class="gold-dot"></span> 25 Verified Guides &bull; Written by Senior Dev
+          <span class="gold-dot"></span> <?php echo count($blogs_catalog); ?> Verified Guides &bull; Written by Senior Dev
         </div>
       </div>
     </div>
@@ -93,13 +93,16 @@ require __DIR__ . '/includes/header.php';
           </div>
         </div>
         <div class="col-lg-8">
-          <div class="portfolio-filter-nav justify-content-lg-end justify-content-center m-0">
-            <button class="port-filter-btn active blog-filter-btn" data-filter="all">All (25)</button>
+          <div class="portfolio-filter-nav justify-content-lg-end justify-content-center m-0 flex-wrap">
+            <button class="port-filter-btn active blog-filter-btn" data-filter="all">All (<?php echo count($blogs_catalog); ?>)</button>
+            <button class="port-filter-btn blog-filter-btn" data-filter="Billing & Quotation Apps">Billing &amp; Quotation Apps</button>
+            <button class="port-filter-btn blog-filter-btn" data-filter="Web & Mobile Apps">Web &amp; Mobile Apps</button>
             <button class="port-filter-btn blog-filter-btn" data-filter="Web Design">Web Design</button>
-            <button class="port-filter-btn blog-filter-btn" data-filter="SEO & Maps">SEO & Maps</button>
+            <button class="port-filter-btn blog-filter-btn" data-filter="E-Commerce">E-Commerce</button>
+            <button class="port-filter-btn blog-filter-btn" data-filter="SEO & Maps">SEO &amp; Maps</button>
             <button class="port-filter-btn blog-filter-btn" data-filter="Paid Advertising">Paid Ads</button>
-            <button class="port-filter-btn blog-filter-btn" data-filter="Social & Branding">Social & Brand</button>
-            <button class="port-filter-btn blog-filter-btn" data-filter="Automation & Growth">WhatsApp & Growth</button>
+            <button class="port-filter-btn blog-filter-btn" data-filter="Social & Branding">Social &amp; Brand</button>
+            <button class="port-filter-btn blog-filter-btn" data-filter="Automation & Growth">WhatsApp &amp; Growth</button>
           </div>
         </div>
       </div>

@@ -19,7 +19,7 @@ $service_parents = [
         'description' => 'Bespoke WordPress architectures, headless web applications, luxury UI/UX, and high-concurrency e-commerce storefronts engineered for sub-second speeds.',
         'sub_services' => [
             'website-development', 'wordpress-development', 'ecommerce-development', 'shopify-development',
-            'custom-web-application', 'api-integrations', 'website-maintenance', 'plugin-development', 'theme-development'
+            'custom-web-application', 'quotation-billing-invoice-software', 'api-integrations', 'website-maintenance', 'plugin-development', 'theme-development'
         ]
     ],
     'ai-seo' => [
@@ -3081,6 +3081,71 @@ $services_catalog = [
             [
                 'q' => 'Can you connect our online store with our offline billing or ERP system?',
                 'a' => 'Yes. We build custom API bridges to synchronize inventory levels, order data, and customer details automatically between WooCommerce and your ERP or billing software.'
+            ]
+        ]
+    ],
+
+    'quotation-billing-invoice-software' => [
+        'slug' => 'quotation-billing-invoice-software',
+        'parent_slug' => 'web-development',
+        'parent_name' => 'Website & UI/UX Engineering',
+        'title' => 'Custom Quotation, Billing & GST Invoice Software Application',
+        'short_title' => 'Quotation, Billing & Invoice App',
+        'badge' => 'BILLING & ERP APP',
+        'badge_color' => 'gold',
+        'category' => 'web',
+        'category_name' => 'Web & Business Apps',
+        'icon' => 'fa-file-invoice-dollar',
+        'meta_description' => 'Custom quotation, billing, and GST invoice software application development in Bhubaneswar, Odisha. 1-click quotation-to-invoice conversion, WhatsApp PDF sharing, inventory ledger, and payment tracking.',
+        'hero_headline' => 'Custom <span class="gold-gradient-text">Quotation, Billing &amp; GST Invoice</span> Service Applications.',
+        'hero_lead' => 'We engineer bespoke web and mobile quotation, billing, and GST invoicing applications tailored to your exact business workflow—with 1-click WhatsApp PDF sharing, automated tax calculation, and real-time payment tracking.',
+        'overview' => 'Generic off-the-shelf accounting software forces your staff to adapt to rigid templates, confusing menus, and recurring per-user license fees. At Web Optimizer, we build custom-engineered Quotation, Billing, and GST Invoicing applications designed specifically around how your Odisha business operates—whether you run a manufacturing unit, B2B wholesale distribution, construction/interior firm, hospital/clinic, or service agency. Generate branded quotations in 30 seconds, convert approved quotes into GST-compliant tax invoices with one click, dispatch PDF bills directly to your client\'s WhatsApp, and track every pending payment and stock item in real time.',
+        'deliverables' => [
+            [
+                'title' => 'Custom Branded Quotation & Proforma Invoice Builder',
+                'desc' => 'Generate professional, multi-item quotations with your company logo, custom terms, HSN/SAC codes, discounts, and dynamic scope tables in under 30 seconds.'
+            ],
+            [
+                'title' => '1-Click Quotation-to-GST Tax Invoice Conversion',
+                'desc' => 'Convert approved client estimates or proforma invoices into final CGST/SGST/IGST tax invoices and delivery challans with a single click—zero duplicate data entry.'
+            ],
+            [
+                'title' => 'Instant WhatsApp & Email PDF Invoice Dispatch',
+                'desc' => 'Send branded PDF quotations, GST bills, and payment reminders with embedded UPI QR codes and Razorpay payment links directly to your customer\'s WhatsApp.'
+            ],
+            [
+                'title' => 'Customer Ledger, Due Reminders & Payment Tracking',
+                'desc' => 'Track partial payments, credit limits, overdue receivables, client-wise account statements, and automated WhatsApp follow-ups for pending bills.'
+            ],
+            [
+                'title' => 'Inventory, Purchase Order & Multi-User Role Management',
+                'desc' => 'Real-time stock deduction on billing, low-stock alerts, vendor purchase tracking, CA-ready GSTR-1/GSTR-3B export sheets, and role-based staff permissions.'
+            ]
+        ],
+        'benefits' => [
+            ['icon' => 'fa-file-invoice', 'title' => '30-Second Quotations & Bills', 'text' => 'Eliminate manual Excel/Word formatting errors and generate accurate, branded quotes and GST invoices on desktop or mobile.'],
+            ['icon' => 'fa-brands fa-whatsapp', 'title' => '1-Click WhatsApp Delivery', 'text' => 'Share PDF quotations and invoices directly on WhatsApp with embedded UPI QR codes for faster payment collection.'],
+            ['icon' => 'fa-calculator', 'title' => '100% GST & CA Compliant', 'text' => 'Automated HSN/SAC tax calculations (CGST, SGST, IGST) with 1-click Excel/JSON exports ready for your Chartered Accountant.'],
+            ['icon' => 'fa-lock', 'title' => '100% Data Ownership & No Per-User Rent', 'text' => 'Hosted on your own secure cloud or local server with unlimited staff logins, custom permissions, and zero per-invoice charges.']
+        ],
+        'tech_stack' => ['PHP 8.x / Laravel', 'React / Progressive Web App (PWA)', 'MySQL Encrypted DB', 'Automated PDF Engine', 'WhatsApp Cloud API', 'UPI Dynamic QR & Razorpay', 'GST Excel/JSON Exporter'],
+        'metrics' => [
+            ['num' => '<30 Sec', 'label' => 'Quote & Invoice Generation'],
+            ['num' => '100%', 'label' => 'Custom Workflow Fit'],
+            ['num' => '0 Fee', 'label' => 'Per-User License Lock-in']
+        ],
+        'faqs' => [
+            [
+                'q' => 'How is your custom quotation and billing application better than ready-made billing apps?',
+                'a' => 'Ready-made billing apps force you into fixed formats, charge yearly per-user or per-device fees, and cannot handle custom pricing formulas (such as square-foot calculations for interiors/fabrication, multi-tier dealer discounts, or service AMC milestones). We customize every field, print template, and calculation rule to match your exact business.'
+            ],
+            [
+                'q' => 'Can my sales team create quotations and bills from their mobile phones?',
+                'a' => 'Yes. Our application works seamlessly on smartphones, tablets, laptops, and POS thermal/A4 printers. Your field sales staff can create a quotation on-site and send the PDF to the client on WhatsApp immediately.'
+            ],
+            [
+                'q' => 'Can we export data for GST filing and our Chartered Accountant?',
+                'a' => 'Absolutely. The system includes 1-click sales register, purchase register, HSN summary, and GSTR-1 / GSTR-3B ready Excel and CSV exports so your CA can file returns effortlessly.'
             ]
         ]
     ]

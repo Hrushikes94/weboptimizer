@@ -29,7 +29,7 @@ require __DIR__ . '/includes/header.php';
 
           <div class="banner-pill-badge mb-3">
             <span class="gold-dot"></span>
-            <span>END-TO-END DIGITAL ENGINEERING &bull; 46 CAPABILITIES</span>
+            <span>END-TO-END DIGITAL ENGINEERING &bull; 47 CAPABILITIES</span>
           </div>
 
           <h1 class="banner-title">
@@ -55,9 +55,9 @@ require __DIR__ . '/includes/header.php';
           </div>
 
           <div class="d-flex flex-wrap justify-content-center gap-2">
-            <span class="banner-stat-chip"><i class="fa-solid fa-laptop-code text-gold"></i> 46 Capabilities</span>
+            <span class="banner-stat-chip"><i class="fa-solid fa-laptop-code text-gold"></i> 47 Capabilities</span>
+            <span class="banner-stat-chip"><i class="fa-solid fa-file-invoice-dollar text-gold"></i> Custom Billing &amp; ERP</span>
             <span class="banner-stat-chip"><i class="fa-solid fa-bolt text-gold"></i> Sub-Second Speed</span>
-            <span class="banner-stat-chip"><i class="fa-solid fa-shield-halved text-gold"></i> Zero Code Bloat</span>
             <span class="banner-stat-chip"><i class="fa-solid fa-phone text-gold"></i> +91 7735973818</span>
           </div>
         </div>

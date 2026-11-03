@@ -31,13 +31,14 @@ $base_path = $base_path ?? './';
             <li><a href="<?php echo $base_path; ?>branding-design.php">Branding & Creative Identity</a></li>
             <li><a href="<?php echo $base_path; ?>allied-services.php">Allied Automation & ORM</a></li>
             <li><a href="<?php echo $base_path; ?>locations" style="color:var(--gold-primary); font-weight:600;"><i class="fa-solid fa-map-location-dot me-1"></i> Odisha 50 Locations Hub</a></li>
-            <li><a href="<?php echo $base_path; ?>blog" style="color:var(--gold-light); font-weight:600;"><i class="fa-solid fa-book-open me-1"></i> Business Guides (25 Articles)</a></li>
+            <li><a href="<?php echo $base_path; ?>blog" style="color:var(--gold-light); font-weight:600;"><i class="fa-solid fa-book-open me-1"></i> Business Guides (125 Articles)</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4>Popular Sub-Services</h4>
           <ul class="footer-links-list">
+            <li><a href="<?php echo $base_path; ?>quotation-billing-invoice-software.php" style="color:var(--gold-light); font-weight:600;"><i class="fa-solid fa-file-invoice-dollar me-1"></i> Quotation, Billing &amp; Invoice App</a></li>
             <li><a href="<?php echo $base_path; ?>wordpress-development.php">WordPress Development</a></li>
             <li><a href="<?php echo $base_path; ?>shopify-development.php">Shopify Storefronts</a></li>
             <li><a href="<?php echo $base_path; ?>seo-audit.php">SEO Audit Services</a></li>
@@ -95,7 +96,7 @@ $base_path = $base_path ?? './';
               <i class="fa-solid fa-house me-2" style="color:var(--gold-primary);"></i> Home
             </a>
             <a href="<?php echo $base_path; ?>blog" class="badge text-decoration-none" style="background:rgba(212,175,55,0.15); border:1px solid var(--border-gold); color:var(--gold-light); font-size:11px;">
-              <i class="fa-solid fa-book-open me-1"></i> Guides (25)
+              <i class="fa-solid fa-book-open me-1"></i> Guides (125)
             </a>
           </div>
 
@@ -133,6 +134,7 @@ $base_path = $base_path ?? './';
                 <a href="<?php echo $base_path; ?>ecommerce-development.php" class="offcanvas-sub-link">WooCommerce E-Commerce</a>
                 <a href="<?php echo $base_path; ?>shopify-development.php" class="offcanvas-sub-link">Shopify Development</a>
                 <a href="<?php echo $base_path; ?>custom-web-application.php" class="offcanvas-sub-link">Custom Web Applications</a>
+                <a href="<?php echo $base_path; ?>quotation-billing-invoice-software.php" class="offcanvas-sub-link fw-semibold" style="color:var(--gold-light);">Quotation, Billing &amp; Invoice App</a>
                 <a href="<?php echo $base_path; ?>api-integrations.php" class="offcanvas-sub-link">API & Webhooks</a>
                 <a href="<?php echo $base_path; ?>website-maintenance.php" class="offcanvas-sub-link">Website Maintenance AMC</a>
               </div>

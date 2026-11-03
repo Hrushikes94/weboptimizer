@@ -81,7 +81,7 @@ foreach ($blogs_catalog as $blogSlug => $post) {
 }
 
 $priorityServices = [
-    'website-development', 'technical-seo', 'performance-marketing',
+    'website-development', 'quotation-billing-invoice-software', 'technical-seo', 'performance-marketing',
     'social-media-marketing', 'ecommerce-development', 'shopify-development',
     'seo-audit', 'local-seo', 'google-ads', 'whatsapp-automation'
 ];
