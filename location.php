@@ -180,7 +180,9 @@ require __DIR__ . '/includes/header.php';
     <div class="container">
       <div class="banner-visual-frame">
         <img src="<?php echo $base_path; ?>assets/images/banners/locations/banner-<?php echo $city_slug; ?>.webp" 
-             alt="<?php echo htmlspecialchars($city_name); ?> Digital Agency Banner" 
+             alt="Website Design, Custom Billing Software & Digital Marketing in <?php echo htmlspecialchars($city_name); ?>, Odisha" 
+             title="<?php echo htmlspecialchars($city_name); ?> Digital Engineering & Marketing Agency | Web Optimizer"
+             draggable="false"
              class="img-fluid"
              onerror="this.src='<?php echo $base_path; ?>assets/images/banners/banner-locations.webp';">
         <div class="banner-floating-badge">
@@ -364,7 +366,11 @@ require __DIR__ . '/includes/header.php';
             <div class="deliverable-card h-100 d-flex flex-column justify-content-between p-3" style="background: rgba(14, 21, 38, 0.75); border: 1px solid var(--border-gold);">
               <div>
                 <a href="<?php echo $base_path; ?>blog/<?php echo $cgSlug; ?>" class="d-block blog-card-thumb">
-                  <img src="<?php echo $base_path . $guide['image']; ?>" alt="<?php echo htmlspecialchars($guide['title']); ?>" loading="lazy">
+                  <img src="<?php echo $base_path . $guide['image']; ?>" 
+                       alt="<?php echo htmlspecialchars($guide['title'] . ' in ' . $city_name); ?>" 
+                       title="<?php echo htmlspecialchars($guide['title'] . ' | ' . $city_name . ', Odisha'); ?>"
+                       draggable="false"
+                       loading="lazy">
                   <span class="thumb-badge"><?php echo htmlspecialchars($guide['category']); ?></span>
                 </a>
                 <div class="d-flex justify-content-between align-items-center mb-2">

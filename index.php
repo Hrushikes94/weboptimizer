@@ -82,7 +82,9 @@ require __DIR__ . '/includes/header.php';
       <div class="container">
         <div class="banner-visual-frame">
           <img src="<?php echo $base_path; ?>assets/images/banners/banner-home.webp" 
-               alt="Web Optimizer Flagship Digital Agency" 
+               alt="Web Optimizer Flagship Digital Engineering, Custom Billing Software & SEO Agency in Odisha" 
+               title="Web Optimizer | Premier Website Design, Custom Billing Software & Digital Marketing Agency"
+               draggable="false"
                class="img-fluid">
           <div class="banner-floating-badge">
             <span class="gold-dot"></span> All 50 Odisha Districts Active &bull; 99.8% Core Web Vitals
@@ -97,19 +99,19 @@ require __DIR__ . '/includes/header.php';
         <span class="brands-tag">Trusted by High-Growth Businesses & Industry Leaders</span>
         <div class="brands-row">
           <div class="brand-logo-item" title="Diesel">
-            <img src="<?php echo $base_path; ?>assets/images/brand/diesel_logo.svg" alt="Diesel Brand Logo">
+            <img src="<?php echo $base_path; ?>assets/images/brand/diesel_logo.svg" alt="Diesel Brand Logo - Web Optimizer Portfolio Client" title="Diesel Brand Logo | Web Optimizer Client" draggable="false">
           </div>
           <div class="brand-logo-item" title="HempMyPET">
-            <img src="<?php echo $base_path; ?>assets/images/brand/HempMyPET-Logo-Purp-Gold-logo.png" alt="HempMyPET Logo">
+            <img src="<?php echo $base_path; ?>assets/images/brand/HempMyPET-Logo-Purp-Gold-logo.png" alt="HempMyPET Logo - Web Optimizer E-Commerce Client" title="HempMyPET Logo | Web Optimizer Client" draggable="false">
           </div>
           <div class="brand-logo-item" title="Cornerstone Media">
-            <img src="<?php echo $base_path; ?>assets/images/brand/cornerstone-logo.svg" alt="Cornerstone Media Logo">
+            <img src="<?php echo $base_path; ?>assets/images/brand/cornerstone-logo.svg" alt="Cornerstone Media Logo - Web Optimizer Digital Client" title="Cornerstone Media Logo | Web Optimizer Client" draggable="false">
           </div>
           <div class="brand-logo-item" title="NW Craft Remodel">
-            <img src="<?php echo $base_path; ?>assets/images/brand/nwcraftremodel-logo.jpg" alt="NW Craft Remodel Logo">
+            <img src="<?php echo $base_path; ?>assets/images/brand/nwcraftremodel-logo.jpg" alt="NW Craft Remodel Logo - Web Optimizer Architecture Client" title="NW Craft Remodel Logo | Web Optimizer Client" draggable="false">
           </div>
           <div class="brand-logo-item" title="Ratnasoft">
-            <img src="<?php echo $base_path; ?>assets/images/brand/ratnasoft-logo1.png" alt="Ratnasoft Logo">
+            <img src="<?php echo $base_path; ?>assets/images/brand/ratnasoft-logo1.png" alt="Ratnasoft Logo - Web Optimizer Enterprise Software Client" title="Ratnasoft Logo | Web Optimizer Client" draggable="false">
           </div>
         </div>
       </div>
@@ -332,7 +334,9 @@ require __DIR__ . '/includes/header.php';
                    data-domain="<?php echo htmlspecialchars($cs['client']); ?>">
                 <div class="project-card-thumb">
                   <img src="<?php echo $base_path . $cs['image']; ?>" 
-                       alt="<?php echo htmlspecialchars($cs['title']); ?>" 
+                       alt="<?php echo htmlspecialchars($cs['title'] . ' - ' . $cs['client'] . ' (' . $cs['city'] . ', Odisha)'); ?>" 
+                       title="<?php echo htmlspecialchars($cs['title'] . ' | Case Study by Web Optimizer'); ?>"
+                       draggable="false"
                        loading="lazy">
                 </div>
                 <div class="project-card-header">
@@ -644,7 +648,11 @@ require __DIR__ . '/includes/header.php';
                 <div class="d-flex flex-column h-100 justify-content-between">
                   <div>
                     <a href="<?php echo $base_path; ?>blog/<?php echo $bSlug; ?>" class="d-block blog-card-thumb" style="height: 185px;">
-                      <img src="<?php echo $base_path . $guide['image']; ?>" alt="<?php echo htmlspecialchars($guide['title']); ?>" loading="lazy">
+                      <img src="<?php echo $base_path . $guide['image']; ?>" 
+                           alt="<?php echo htmlspecialchars($guide['title']); ?>" 
+                           title="<?php echo htmlspecialchars($guide['title'] . ' | Odisha Business Guide'); ?>"
+                           draggable="false"
+                           loading="lazy">
                       <span class="thumb-badge"><?php echo htmlspecialchars($guide['category']); ?></span>
                     </a>
                     <div class="d-flex justify-content-between align-items-center mb-2">
@@ -793,41 +801,55 @@ require __DIR__ . '/includes/header.php';
               </div>
             <?php endif; ?>
 
-            <form id="leadContactForm" method="POST" action="#contact">
-              <div class="form-field">
-                <label for="leadName">Your Name / Organization</label>
-                <input type="text" id="leadName" name="lead_name" class="form-input" placeholder="e.g. Dr. Rajesh Sharma / Acme Corp" required>
+            <div id="leadFormFeedback" style="display:none; margin-bottom:18px;"></div>
+
+            <form id="leadContactForm" method="POST" action="#contact" onsubmit="handleLeadSubmit(event)" novalidate>
+              <!-- Anti-Bot Honeypot Field -->
+              <div style="position:absolute; left:-9999px; top:-9999px; opacity:0; pointer-events:none;" aria-hidden="true">
+                <label for="leadWebsiteHp">Leave this field blank</label>
+                <input type="text" id="leadWebsiteHp" name="website_url_hp" tabindex="-1" autocomplete="off">
               </div>
 
               <div class="form-field">
-                <label for="leadEmail">Business Email</label>
-                <input type="email" id="leadEmail" name="lead_email" class="form-input" placeholder="name@company.com" required>
+                <label for="leadName">Your Name / Organization *</label>
+                <input type="text" id="leadName" name="lead_name" class="form-input" placeholder="e.g. Dr. Rajesh Sharma / Acme Corp" maxlength="120" required>
               </div>
 
               <div class="form-field">
-                <label for="leadPhone">Phone / WhatsApp Number</label>
-                <input type="tel" id="leadPhone" name="lead_phone" class="form-input" placeholder="+91 98765 43210" required>
+                <label for="leadEmail">Business Email *</label>
+                <input type="email" id="leadEmail" name="lead_email" class="form-input" placeholder="name@company.com" maxlength="150" required>
               </div>
 
               <div class="form-field">
-                <label for="leadService">Required Service</label>
+                <label for="leadPhone">Phone / WhatsApp Number *</label>
+                <input type="tel" id="leadPhone" name="lead_phone" class="form-input" placeholder="+91 77359 73818" maxlength="25" required>
+              </div>
+
+              <div class="form-field">
+                <label for="leadService">Required Service *</label>
                 <select id="leadService" name="lead_service" class="form-input" style="background:#080d1a;">
-                  <option value="Custom WordPress Website">Custom WordPress Website</option>
-                  <option value="WooCommerce E-Commerce Store">WooCommerce E-Commerce Store</option>
-                  <option value="Technical SEO & Speed Audit">Technical SEO & Speed Audit</option>
-                  <option value="Custom Plugin Development">Custom Plugin Development</option>
-                  <option value="Enterprise Website Redesign">Enterprise Website Redesign</option>
+                  <option value="Custom Quotation, Billing & GST Invoice Software">Custom Quotation, Billing &amp; GST Invoice Software</option>
+                  <?php foreach ($services_catalog as $sKey => $sItem): ?>
+                    <?php if ($sKey !== 'quotation-billing-invoice-software'): ?>
+                      <option value="<?php echo htmlspecialchars($sItem['title']); ?>"><?php echo htmlspecialchars($sItem['title']); ?></option>
+                    <?php endif; ?>
+                  <?php endforeach; ?>
                 </select>
               </div>
 
               <div class="form-field">
                 <label for="leadMessage">Project Details / Current URL</label>
-                <textarea id="leadMessage" name="lead_message" class="form-input" placeholder="Briefly describe your objectives or paste your current website URL..." required></textarea>
+                <textarea id="leadMessage" name="lead_message" class="form-input" maxlength="2000" placeholder="Briefly describe your objectives, billing/software requirements, or paste your current website URL..." required></textarea>
               </div>
 
-              <button type="submit" name="lead_submit" class="btn-gold" style="width:100%; justify-content:center; padding:14px;">
-                <i class="fa-solid fa-paper-plane"></i> Send Inquiry Now
-              </button>
+              <div class="d-flex flex-wrap gap-2">
+                <button type="submit" id="leadSubmitBtn" name="lead_submit" class="btn-gold" style="flex:1 1 220px; justify-content:center; padding:14px;">
+                  <i class="fa-solid fa-paper-plane"></i> Send Inquiry Now
+                </button>
+                <button type="button" onclick="sendLeadViaWhatsApp()" class="btn-luxury-outline" style="flex:1 1 180px; justify-content:center; padding:14px; border-color:#25d366; color:#25d366;">
+                  <i class="fa-brands fa-whatsapp"></i> Send on WhatsApp
+                </button>
+              </div>
             </form>
           </div>
         </div>

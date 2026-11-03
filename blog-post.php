@@ -201,7 +201,9 @@ require __DIR__ . '/includes/header.php';
     <div class="container">
       <div class="banner-visual-frame">
         <img src="<?php echo $base_path; ?>assets/images/blogs/<?php echo $slug; ?>.webp" 
-             alt="<?php echo htmlspecialchars($post['title']); ?>" 
+             alt="<?php echo htmlspecialchars($post['title']); ?> - Odisha Business Guide" 
+             title="<?php echo htmlspecialchars($post['title']); ?> | Web Optimizer"
+             draggable="false"
              class="img-fluid">
         <div class="banner-floating-badge">
           <span class="gold-dot"></span> Verified Business Guide &bull; Odisha 2026
@@ -295,7 +297,11 @@ require __DIR__ . '/includes/header.php';
             <div class="deliverable-card h-100 d-flex flex-column justify-content-between p-3" style="background: rgba(14, 21, 38, 0.65);">
               <div>
                 <a href="<?php echo $base_path; ?>blog/<?php echo $rSlug; ?>" class="d-block blog-card-thumb" style="height: 160px;">
-                  <img src="<?php echo $base_path . $rPost['image']; ?>" alt="<?php echo htmlspecialchars($rPost['title']); ?>" loading="lazy">
+                  <img src="<?php echo $base_path . $rPost['image']; ?>" 
+                       alt="<?php echo htmlspecialchars($rPost['title']); ?>" 
+                       title="<?php echo htmlspecialchars($rPost['title'] . ' | Web Optimizer Guide'); ?>"
+                       draggable="false"
+                       loading="lazy">
                   <span class="thumb-badge"><?php echo htmlspecialchars($rPost['category']); ?></span>
                 </a>
                 <div class="d-flex justify-content-between align-items-center mb-2">

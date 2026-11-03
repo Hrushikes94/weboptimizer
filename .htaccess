@@ -1,11 +1,60 @@
 # ==============================================================================
-# Web Optimizer - Enterprise Clean SEO, AEO & GEO URL Rewriting Engine
+# Web Optimizer - Enterprise WAF Security, Anti-Hotlink & Clean SEO/AEO/GEO Engine
 # https://www.weboptimizer.in | Founder: Hrushikesh Swain (+91 7735973818)
 # ==============================================================================
+
+# Disable Directory Listing & Server Signature
+Options -Indexes
+ServerSignature Off
+
+# Protect Hidden & Internal Build Files from Public Access
+<FilesMatch "(^\.|\.(env|git|htaccess|htpasswd|ini|log|sh|sql|bak)$|^build-static\.php$)">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# Enterprise HTTP Security Headers Against XSS, Clickjacking & MIME Injection
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=()"
+  Header always unset X-Powered-By
+</IfModule>
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
   DirectoryIndex index.php index.html
+
+  # ----------------------------------------------------------------------------
+  # 0. MALWARE, SQL INJECTION, XSS & HOTLINK FIREWALL (WAF)
+  # ----------------------------------------------------------------------------
+  # Block dangerous HTTP methods
+  RewriteCond %{REQUEST_METHOD} ^(TRACE|DELETE|TRACK|PUT|PATCH) [NC]
+  RewriteRule ^ - [F,L]
+
+  # Block XSS, SQLi, File Inclusion & Base64 Shell Injections in Query Strings
+  RewriteCond %{QUERY_STRING} (<|%3C).*script.*(>|%3E) [NC,OR]
+  RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+  RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2}) [OR]
+  RewriteCond %{QUERY_STRING} base64_(en|de)code\(.*\) [NC,OR]
+  RewriteCond %{QUERY_STRING} (union.*select|insert.*into|drop.*table|information_schema) [NC,OR]
+  RewriteCond %{QUERY_STRING} (eval\(|php://|etc/passwd|boot\.ini|\.\./\.\./) [NC,OR]
+  RewriteCond %{QUERY_STRING} (javascript:|vbscript:|onload=|onerror=|document\.cookie) [NC]
+  RewriteRule ^ - [F,L]
+
+  # Image Anti-Hotlink Protection (Prevent external websites from stealing images)
+  RewriteCond %{HTTP_REFERER} !^$
+  RewriteCond %{HTTP_REFERER} !^https?://(www\.)?weboptimizer\.in [NC]
+  RewriteCond %{HTTP_REFERER} !^https?://(localhost|127\.0\.0\.1|hrushikes94\.github\.io) [NC]
+  RewriteCond %{HTTP_REFERER} !^https?://(www\.)?(google\.|bing\.|facebook\.|linkedin\.|twitter\.|t\.co|whatsapp\.) [NC]
+  RewriteRule \.(webp|jpg|jpeg|png|gif|svg)$ - [F,NC,L]
 
   # ----------------------------------------------------------------------------
   # 1. 301 Permanent Redirects (Query Strings -> Clean SEO URLs)

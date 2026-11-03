@@ -18,6 +18,7 @@ require_once __DIR__ . '/includes/services-data.php';
 require_once __DIR__ . '/includes/locations-data.php';
 require_once __DIR__ . '/includes/blogs-data.php';
 require_once __DIR__ . '/includes/portfolio-data.php';
+require_once __DIR__ . '/includes/security-and-seo.php';
 
 function renderPhpPage(string $scriptFile, array $getParams = [], string $basePath = '/'): string {
     global $services_catalog, $service_parents, $odisha_locations, $blogs_catalog, $portfolio_categories, $portfolio_cases;
@@ -38,6 +39,10 @@ function renderPhpPage(string $scriptFile, array $getParams = [], string $basePa
     $html = preg_replace('/href="([^"]*?)index\.php"/i', 'href="$1"', $html);
     $html = preg_replace('/href="([^"]*?)(services|locations|blog)\.php"/i', 'href="$1$2"', $html);
     $html = preg_replace('/href="([^"]*?)([a-z0-9\-]+)\.php"/i', 'href="$1service/$2"', $html);
+
+    if (function_exists('weboptimizer_enforce_img_attributes') && $scriptFile !== 'sitemap.php') {
+        $html = weboptimizer_enforce_img_attributes($html);
+    }
 
     return $html;
 }

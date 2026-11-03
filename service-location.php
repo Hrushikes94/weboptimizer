@@ -185,7 +185,9 @@ require __DIR__ . '/includes/header.php';
     <div class="container">
       <div class="banner-visual-frame">
         <img src="<?php echo $base_path; ?>assets/images/banners/services/banner-<?php echo $service_slug; ?>.webp" 
-             alt="<?php echo htmlspecialchars($service['title']); ?> in <?php echo htmlspecialchars($city_name); ?>" 
+             alt="Best <?php echo htmlspecialchars($service['title']); ?> in <?php echo htmlspecialchars($city_name); ?>, Odisha - Web Optimizer" 
+             title="<?php echo htmlspecialchars($service['title']); ?> in <?php echo htmlspecialchars($city_name); ?>, Odisha | Web Optimizer"
+             draggable="false"
              class="img-fluid"
              onerror="this.src='<?php echo $base_path; ?>assets/images/banners/locations/banner-<?php echo $city_slug; ?>.webp';">
         <div class="banner-floating-badge">
@@ -365,7 +367,11 @@ require __DIR__ . '/includes/header.php';
               <div class="deliverable-card h-100 d-flex flex-column justify-content-between p-3" style="background: rgba(14, 21, 38, 0.7); border: 1px solid var(--border-gold);">
                 <div>
                   <a href="<?php echo $base_path; ?>blog/<?php echo $gSlug; ?>" class="d-block blog-card-thumb">
-                    <img src="<?php echo $base_path . $guide['image']; ?>" alt="<?php echo htmlspecialchars($guide['title']); ?>" loading="lazy">
+                    <img src="<?php echo $base_path . $guide['image']; ?>" 
+                         alt="<?php echo htmlspecialchars($guide['title'] . ' - ' . $city_name); ?>" 
+                         title="<?php echo htmlspecialchars($guide['title'] . ' | Web Optimizer ' . $city_name); ?>"
+                         draggable="false"
+                         loading="lazy">
                     <span class="thumb-badge"><?php echo htmlspecialchars($guide['category']); ?></span>
                   </a>
                   <div class="d-flex justify-content-between align-items-center mb-2">

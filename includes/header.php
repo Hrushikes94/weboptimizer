@@ -7,6 +7,7 @@
  * Official Phone: +91 7735973818 | Email: info@weboptimizer.in | Location: Bhubaneswar, Odisha
  */
 require_once __DIR__ . '/services-data.php';
+require_once __DIR__ . '/security-and-seo.php';
 
 // Handle Contact Form Submission if POSTed
 $form_status = '';
@@ -50,7 +51,7 @@ $active_nav = $active_nav ?? 'home';
 $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,61 +60,22 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
   <meta name="theme-color" content="#04070e">
   <base href="<?php echo htmlspecialchars($base_path); ?>">
   <link rel="canonical" href="<?php echo htmlspecialchars($canonical_url); ?>" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="<?php echo htmlspecialchars($canonical_url); ?>">
-  <meta property="og:title" content="<?php echo htmlspecialchars($page_title); ?>">
-  <meta property="og:description" content="<?php echo htmlspecialchars($meta_desc); ?>">
-  <meta property="og:image" content="https://www.weboptimizer.in/assets/images/weboptimizer-logo.webp">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="<?php echo htmlspecialchars($page_title); ?>">
-  <meta name="twitter:description" content="<?php echo htmlspecialchars($meta_desc); ?>">
-  <meta name="twitter:image" content="https://www.weboptimizer.in/assets/images/weboptimizer-logo.webp">
-
-  <!-- Schema.org JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "ProfessionalService",
-        "@id": "https://www.weboptimizer.in/#organization",
-        "name": "Web Optimizer",
-        "url": "https://www.weboptimizer.in",
-        "logo": "https://www.weboptimizer.in/assets/images/weboptimizer-logo.webp",
-        "image": "https://www.weboptimizer.in/assets/images/weboptimizer-logo.webp",
-        "description": "Premier Website Design, Custom WordPress Engineering, Performance Marketing, and Technical SEO Agency in Bhubaneswar, Odisha.",
-        "telephone": "+91 7735973818",
-        "email": "info@weboptimizer.in",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Bhubaneswar",
-          "addressRegion": "Odisha",
-          "addressCountry": "IN"
-        },
-        "priceRange": "$$",
-        "founder": {
-          "@type": "Person",
-          "name": "Hrushikesh Swain",
-          "jobTitle": "Senior Associate Web Developer & Founder",
-          "url": "https://www.linkedin.com/in/hrushikesh-swain-a34503211/"
-        }
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://www.weboptimizer.in/#website",
-        "url": "https://www.weboptimizer.in",
-        "name": "Web Optimizer",
-        "publisher": {
-          "@id": "https://www.weboptimizer.in/#organization"
-        }
-      }
-    ]
+<?php
+  if (function_exists('weboptimizer_render_seo_geo_aeo_head')) {
+      weboptimizer_render_seo_geo_aeo_head([
+          'page_title'    => $page_title,
+          'meta_desc'     => $meta_desc,
+          'canonical_url' => $canonical_url,
+          'active_nav'    => $active_nav ?? 'home',
+          'service'       => $service ?? null,
+          'loc'           => $loc ?? null,
+          'post'          => $post ?? null,
+          'slug'          => $slug ?? '',
+          'service_slug'  => $service_slug ?? '',
+          'city_slug'     => $city_slug ?? 'bhubaneswar'
+      ]);
   }
-  </script>
+?>
 
   <!-- Favicon -->
   <link rel="icon" href="<?php echo htmlspecialchars($base_path); ?>assets/images/weboptimizer-icon.webp" sizes="32x32" />
@@ -188,6 +150,65 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
       line-height: 1.7;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* Allow text entry inside Contact & Search Form Fields */
+    input, textarea, select {
+      -webkit-user-select: text !important;
+      -moz-user-select: text !important;
+      -ms-user-select: text !important;
+      user-select: text !important;
+    }
+
+    /* Image Anti-Save, Anti-Drag & Anti-Copy Protection */
+    img {
+      -webkit-user-drag: none !important;
+      -khtml-user-drag: none !important;
+      -moz-user-drag: none !important;
+      -o-user-drag: none !important;
+      user-drag: none !important;
+      -webkit-touch-callout: none !important;
+      -webkit-user-select: none !important;
+      user-select: none !important;
+    }
+
+    /* Block Print-to-PDF Content Scraping */
+    @media print {
+      html, body {
+        display: none !important;
+      }
+    }
+
+    /* Luxury Content Protection Toast Notification */
+    #woDrmToast {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: rgba(8, 13, 26, 0.96);
+      border: 1px solid var(--gold-primary);
+      color: var(--text-white);
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 600;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.25);
+      z-index: 999999;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.28s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+    #woDrmToast.active {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
     }
 
     /* Bootstrap Overrides for Luxury Obsidian & Gold Harmony */
@@ -3264,9 +3285,11 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
   <!-- Luxury Navigation Bar with Mega Menu & Multi-Level Dropdowns -->
   <header class="navbar" id="navbar">
     <div class="container-fluid px-xl-5 px-lg-4 px-3 nav-container position-relative">
-      <a href="<?php echo $base_path; ?>index.php" class="brand-logo-wrap">
+      <a href="<?php echo $base_path; ?>index.php" class="brand-logo-wrap" title="Web Optimizer - Premier Website Design, Custom Billing Software & Digital Marketing Agency">
         <img src="<?php echo $base_path; ?>assets/images/weboptimizer-logo.webp" 
-             alt="Web Optimizer" 
+             alt="Web Optimizer - Premier Website Design, Custom Billing Software & Digital Marketing Agency in Odisha" 
+             title="Web Optimizer | Official Brand Logo"
+             draggable="false"
              class="brand-logo-img"
              onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='block';">
         <div id="logoFallback" class="brand-text" style="display:none;">

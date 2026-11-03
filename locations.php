@@ -73,7 +73,9 @@ require __DIR__ . '/includes/header.php';
     <div class="container">
       <div class="banner-visual-frame">
         <img src="<?php echo $base_path; ?>assets/images/banners/banner-locations.webp" 
-             alt="Web Optimizer Statewide Odisha Network" 
+             alt="Web Optimizer Statewide Odisha Network Across All 50 Cities & 30 Districts" 
+             title="Web Optimizer | Website Design & Digital Marketing Across 50 Odisha Locations"
+             draggable="false"
              class="img-fluid">
         <div class="banner-floating-badge">
           <span class="gold-dot"></span> 50 Service Areas Active &bull; 30 Districts
@@ -176,7 +178,11 @@ require __DIR__ . '/includes/header.php';
             <div class="deliverable-card h-100 d-flex flex-column justify-content-between p-3" style="background: rgba(14, 21, 38, 0.75); border: 1px solid var(--border-gold);">
               <div>
                 <a href="<?php echo $base_path; ?>blog/<?php echo $lSlug; ?>" class="d-block blog-card-thumb">
-                  <img src="<?php echo $base_path . $guide['image']; ?>" alt="<?php echo htmlspecialchars($guide['title']); ?>" loading="lazy">
+                  <img src="<?php echo $base_path . $guide['image']; ?>" 
+                       alt="<?php echo htmlspecialchars($guide['title']); ?>" 
+                       title="<?php echo htmlspecialchars($guide['title'] . ' | Web Optimizer Odisha'); ?>"
+                       draggable="false"
+                       loading="lazy">
                   <span class="thumb-badge"><?php echo htmlspecialchars($guide['category']); ?></span>
                 </a>
                 <div class="d-flex justify-content-between align-items-center mb-2">

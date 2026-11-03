@@ -71,7 +71,9 @@ require __DIR__ . '/includes/header.php';
     <div class="container">
       <div class="banner-visual-frame">
         <img src="<?php echo $base_path; ?>assets/images/banners/banner-blog.webp" 
-             alt="Web Optimizer Business Intelligence Guides" 
+             alt="Web Optimizer 125 Business Intelligence & Digital Marketing Guides for Odisha" 
+             title="Web Optimizer | 125 Practical Digital & Billing Software Guides for Odisha Businesses"
+             draggable="false"
              class="img-fluid">
         <div class="banner-floating-badge">
           <span class="gold-dot"></span> <?php echo count($blogs_catalog); ?> Verified Guides &bull; Written by Senior Dev
@@ -117,6 +119,8 @@ require __DIR__ . '/includes/header.php';
               <div style="height: 200px; width: 100%; overflow: hidden; position: relative;">
                 <img src="<?php echo $base_path . htmlspecialchars($post['image']); ?>" 
                      alt="<?php echo htmlspecialchars($post['title']); ?>" 
+                     title="<?php echo htmlspecialchars($post['title'] . ' | Web Optimizer Odisha Guide'); ?>"
+                     draggable="false"
                      loading="lazy"
                      style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;"
                      onmouseover="this.style.transform='scale(1.05)';"

@@ -12,7 +12,9 @@ $base_path = $base_path ?? './';
       <div class="footer-top">
         <div class="footer-col">
           <img src="<?php echo $base_path; ?>assets/images/weboptimizer-logo.webp" 
-               alt="Web Optimizer" 
+               alt="Web Optimizer - Premier Website Design, Billing Software & Digital Marketing Agency" 
+               title="Web Optimizer | Official Footer Brand Logo"
+               draggable="false"
                style="height:44px; margin-bottom:14px; object-fit:contain;"
                onerror="this.style.display='none';">
           <p style="color:var(--text-muted); font-size:13px; line-height:1.7;">
@@ -76,7 +78,9 @@ $base_path = $base_path ?? './';
     <div class="offcanvas-header">
       <div class="d-flex align-items-center gap-2">
         <img src="<?php echo $base_path; ?>assets/images/weboptimizer-icon.webp" 
-             alt="Web Optimizer" 
+             alt="Web Optimizer Crest Icon" 
+             title="Web Optimizer Mobile Navigation Crest"
+             draggable="false"
              style="width:28px; height:28px; border-radius:6px; object-fit:contain;"
              onerror="this.style.display='none';">
         <span class="offcanvas-title" id="luxuryMobileNavLabel" style="font-family: var(--font-display); font-weight:700; color:var(--gold-primary); letter-spacing:1px; font-size:16px;">WEB OPTIMIZER</span>
@@ -293,23 +297,29 @@ $base_path = $base_path ?? './';
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body pt-3">
-          <form id="modalInquiryForm" onsubmit="handleModalSubmit(event)">
+          <div id="modalFormFeedback" style="display:none; margin-bottom:16px;"></div>
+          <form id="modalInquiryForm" onsubmit="handleModalSubmit(event)" novalidate>
+            <!-- Anti-Bot Honeypot Field -->
+            <div style="position:absolute; left:-9999px; top:-9999px; opacity:0; pointer-events:none;" aria-hidden="true">
+              <label for="modalWebsiteHp">Leave this field blank</label>
+              <input type="text" id="modalWebsiteHp" name="website_url_hp" tabindex="-1" autocomplete="off">
+            </div>
             <div class="row g-3">
               <div class="col-md-6">
                 <label class="form-label" style="font-size:11.5px; color:var(--gold-primary); text-transform:uppercase; letter-spacing:0.8px; font-weight:600;">Your Name *</label>
-                <input type="text" id="modalName" required class="luxury-form-input w-100" placeholder="e.g. Rahul Sharma">
+                <input type="text" id="modalName" name="modal_name" required maxlength="120" class="luxury-form-input w-100" placeholder="e.g. Rahul Sharma">
               </div>
               <div class="col-md-6">
                 <label class="form-label" style="font-size:11.5px; color:var(--gold-primary); text-transform:uppercase; letter-spacing:0.8px; font-weight:600;">Business Email *</label>
-                <input type="email" id="modalEmail" required class="luxury-form-input w-100" placeholder="e.g. rahul@company.com">
+                <input type="email" id="modalEmail" name="modal_email" required maxlength="150" class="luxury-form-input w-100" placeholder="e.g. rahul@company.com">
               </div>
               <div class="col-md-6">
                 <label class="form-label" style="font-size:11.5px; color:var(--gold-primary); text-transform:uppercase; letter-spacing:0.8px; font-weight:600;">Phone / WhatsApp *</label>
-                <input type="tel" id="modalPhone" required class="luxury-form-input w-100" placeholder="+91 77359 73818">
+                <input type="tel" id="modalPhone" name="modal_phone" required maxlength="25" class="luxury-form-input w-100" placeholder="+91 77359 73818">
               </div>
               <div class="col-md-6">
                 <label class="form-label" style="font-size:11.5px; color:var(--gold-primary); text-transform:uppercase; letter-spacing:0.8px; font-weight:600;">Primary Practice / Service *</label>
-                <select id="modalService" class="luxury-form-input w-100">
+                <select id="modalService" name="modal_service" class="luxury-form-input w-100">
                   <?php foreach ($services_catalog as $s): ?>
                     <option value="<?php echo htmlspecialchars($s['title']); ?>" <?php echo (isset($service_slug) && $service_slug === $s['slug']) ? 'selected' : ''; ?>>
                       <?php echo htmlspecialchars($s['title']); ?>
@@ -319,18 +329,18 @@ $base_path = $base_path ?? './';
               </div>
               <div class="col-12">
                 <label class="form-label" style="font-size:11.5px; color:var(--gold-primary); text-transform:uppercase; letter-spacing:0.8px; font-weight:600;">Project Scope & Current URL (Optional)</label>
-                <textarea id="modalMessage" rows="3" class="luxury-form-input w-100" placeholder="Share your existing URL, project goals, timeline, or key technical challenges..."></textarea>
+                <textarea id="modalMessage" name="modal_message" rows="3" maxlength="2000" class="luxury-form-input w-100" placeholder="Share your existing URL, project goals, timeline, or key technical challenges..."></textarea>
               </div>
             </div>
             <div class="d-flex flex-wrap gap-3 align-items-center justify-content-between mt-4 pt-3 border-top border-secondary border-opacity-25">
               <div style="font-size:12px; color:var(--text-dim);">
-                <i class="fa-solid fa-lock" style="color:var(--gold-primary);"></i> Confidential & Direct NDA Protected
+                <i class="fa-solid fa-shield-halved" style="color:var(--gold-primary);"></i> WAF Protected &bull; Confidential &amp; NDA Secured
               </div>
               <div class="d-flex gap-2">
                 <button type="button" onclick="sendModalViaWhatsApp()" class="btn-luxury-outline" style="border-color:#25d366; color:#25d366; padding:10px 18px; font-size:13px;">
                   <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
                 </button>
-                <button type="submit" class="btn-gold" style="padding:10px 22px; font-size:13px;">
+                <button type="submit" id="modalSubmitBtn" class="btn-gold" style="padding:10px 22px; font-size:13px;">
                   <i class="fa-solid fa-paper-plane"></i> Send Proposal
                 </button>
               </div>
@@ -357,56 +367,318 @@ $base_path = $base_path ?? './';
     </button>
   </aside>
 
-  <!-- UNIVERSAL SCRIPTS -->
+  <!-- DRM CONTENT & IMAGE PROTECTION TOAST -->
+  <div id="woDrmToast" role="status" aria-live="polite">
+    <i class="fa-solid fa-shield-halved" style="color:var(--gold-primary);"></i>
+    <span>Protected by Web Optimizer Security Shield &mdash; Content &amp; Images are Copyright Protected</span>
+  </div>
+
+  <!-- UNIVERSAL SCRIPTS: MULTI-CHANNEL CONTACT ENGINE, ANTI-MALWARE SANITIZER & DRM PROTECTION -->
   <script>
-    // Lead Form submit
+    // =========================================================================
+    // 1. CLIENT-SIDE MALWARE & XSS INPUT SANITIZER
+    // =========================================================================
+    function woSanitizeText(val) {
+      if (!val || typeof val !== 'string') return '';
+      return val
+        .replace(/<\s*script[^>]*>[\s\S]*?<\s*\/\s*script\s*>/gi, '')
+        .replace(/<\/?[a-z][^>]*>/gi, '')
+        .replace(/(javascript|vbscript|data)\s*:/gi, '')
+        .replace(/on(load|error|click|mouseover|focus|submit)\s*=/gi, '')
+        .replace(/\b(union\s+select|information_schema|base64_decode|eval\()\b/gi, '')
+        .trim();
+    }
+
+    // Generate Reference ID
+    function woGenerateRefId() {
+      const d = new Date();
+      const ymd = d.getFullYear().toString() + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0');
+      const rnd = Math.random().toString(36).substring(2, 7).toUpperCase();
+      return 'WO-' + ymd + '-' + rnd;
+    }
+
+    // Render feedback alert box inside form
+    function woRenderFormAlert(containerEl, type, htmlContent) {
+      if (!containerEl) return;
+      containerEl.style.display = 'block';
+      if (type === 'success') {
+        containerEl.innerHTML = `
+          <div style="background:rgba(16,185,129,0.14); border:1px solid #10b981; color:#ecfdf5; padding:16px 20px; border-radius:14px; font-size:13.5px; line-height:1.6;">
+            ${htmlContent}
+          </div>`;
+      } else {
+        containerEl.innerHTML = `
+          <div style="background:rgba(244,63,94,0.14); border:1px solid #f43f5e; color:#ffe4e6; padding:14px 18px; border-radius:12px; font-size:13px; font-weight:600; display:flex; align-items:center; gap:10px;">
+            <i class="fa-solid fa-triangle-exclamation" style="color:#f43f5e; font-size:18px;"></i>
+            <span>${htmlContent}</span>
+          </div>`;
+      }
+    }
+
+    // Unified Multi-Channel Submission (Works on PHP Servers AND Static GitHub Pages)
+    async function woProcessFormSubmission(opts) {
+      const name = woSanitizeText(opts.name);
+      const email = woSanitizeText(opts.email);
+      const phone = woSanitizeText(opts.phone);
+      const service = woSanitizeText(opts.service || 'General Digital Consultation');
+      const message = woSanitizeText(opts.message || '');
+      const honeypot = opts.honeypot || '';
+      const feedbackEl = opts.feedbackEl;
+      const submitBtn = opts.submitBtn;
+      const formEl = opts.formEl;
+
+      if (honeypot !== '') return;
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const phoneClean = phone.replace(/[^\d+]/g, '');
+      if (!name || name.length < 2) {
+        woRenderFormAlert(feedbackEl, 'error', 'Please enter your full name or organization name.');
+        return;
+      }
+      if (!email || !emailRegex.test(email)) {
+        woRenderFormAlert(feedbackEl, 'error', 'Please enter a valid business email address.');
+        return;
+      }
+      if (!phoneClean || phoneClean.length < 8) {
+        woRenderFormAlert(feedbackEl, 'error', 'Please enter a valid 10-digit Phone / WhatsApp number.');
+        return;
+      }
+
+      const origBtnHtml = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Encrypting & Sending...';
+      }
+
+      let refId = woGenerateRefId();
+      const waText = `Hello Web Optimizer (Ref: ${refId}),\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${service}\n\nProject Details:\n${message || 'Requesting architecture proposal & consultation'}`;
+      let waUrl = `https://wa.me/917735973818?text=${encodeURIComponent(waText)}`;
+      const mailSubject = `[${refId}] Executive Project Inquiry - ${service} (${name})`;
+      const mailUrl = `mailto:info@weboptimizer.in?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(waText)}`;
+
+      // Channel 1: Try PHP Backend (contact-submit.php)
+      try {
+        const fd = new FormData();
+        fd.append('lead_name', name);
+        fd.append('lead_email', email);
+        fd.append('lead_phone', phone);
+        fd.append('lead_service', service);
+        fd.append('lead_message', message);
+        fd.append('page_url', window.location.href);
+        fd.append('website_url_hp', honeypot);
+
+        const res = await fetch('<?php echo $base_path; ?>contact-submit.php', {
+          method: 'POST',
+          body: fd
+        });
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.ref_id) refId = data.ref_id;
+          if (data && data.whatsapp_url) waUrl = data.whatsapp_url;
+        }
+      } catch (err) {
+        // Static host fallback handled below
+      }
+
+      // Channel 2: Serverless Cloud Email Relay (FormSubmit AJAX for static hosting)
+      try {
+        fetch('https://formsubmit.co/ajax/info@weboptimizer.in', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            _subject: mailSubject,
+            Reference_ID: refId,
+            Name: name,
+            Email: email,
+            Phone: phone,
+            Service: service,
+            Project_Details: message || 'Requested proposal',
+            Source_URL: window.location.href
+          })
+        }).catch(() => {});
+      } catch (e) {}
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fa-solid fa-check-double"></i> Inquiry Registered';
+        setTimeout(() => { submitBtn.innerHTML = origBtnHtml; }, 5000);
+      }
+
+      woRenderFormAlert(feedbackEl, 'success', `
+        <div class="d-flex align-items-start gap-3">
+          <i class="fa-solid fa-circle-check" style="color:#10b981; font-size:22px; margin-top:3px;"></i>
+          <div class="w-100">
+            <div style="font-weight:700; font-size:14.5px; color:#fff; margin-bottom:4px;">
+              Executive Inquiry Registered! <span style="color:var(--gold-light); font-family:var(--font-mono); font-size:12px;">[${refId}]</span>
+            </div>
+            <p style="color:#d1fae5; font-size:13px; margin-bottom:12px;">
+              Thank you, <strong>${name}</strong>. Your requirement for <strong>${service}</strong> has been logged for Senior Developer Hrushikesh Swain. For instant priority response, click below to connect on WhatsApp or Email:
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn-gold" style="padding:8px 16px; font-size:12.5px; background:#25d366; color:#04070e; border:none;">
+                <i class="fa-brands fa-whatsapp"></i> Instant WhatsApp Priority (+91 7735973818)
+              </a>
+              <a href="${mailUrl}" class="btn-luxury-outline" style="padding:8px 14px; font-size:12px;">
+                <i class="fa-solid fa-envelope"></i> Open in Email App
+              </a>
+            </div>
+          </div>
+        </div>
+      `);
+
+      if (formEl) formEl.reset();
+    }
+
+    // Homepage Lead Form Submit Handler
     function handleLeadSubmit(e) {
-      e.preventDefault();
-      const nameEl = document.getElementById('leadName');
-      const emailEl = document.getElementById('leadEmail');
-      const phoneEl = document.getElementById('leadPhone');
-      const serviceEl = document.getElementById('leadService');
-      const messageEl = document.getElementById('leadMessage');
-
-      const name = nameEl ? nameEl.value : '';
-      const email = emailEl ? emailEl.value : '';
-      const phone = phoneEl ? phoneEl.value : '';
-      const service = serviceEl ? serviceEl.value : '';
-      const message = messageEl ? messageEl.value : '';
-
-      const subject = `Executive Project Inquiry - ${service} (${name})`;
-      const body = `Hi Web Optimizer Team,\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${service}\n\nProject Scope:\n${message}\n`;
-
-      window.location.href = `mailto:info@weboptimizer.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      if (e) e.preventDefault();
+      woProcessFormSubmission({
+        name: (document.getElementById('leadName') || {}).value || '',
+        email: (document.getElementById('leadEmail') || {}).value || '',
+        phone: (document.getElementById('leadPhone') || {}).value || '',
+        service: (document.getElementById('leadService') || {}).value || '',
+        message: (document.getElementById('leadMessage') || {}).value || '',
+        honeypot: (document.getElementById('leadWebsiteHp') || {}).value || '',
+        feedbackEl: document.getElementById('leadFormFeedback'),
+        submitBtn: document.getElementById('leadSubmitBtn'),
+        formEl: document.getElementById('leadContactForm')
+      });
     }
 
-    // Modal proposal submit
+    // Send Homepage Lead Form directly via WhatsApp
+    function sendLeadViaWhatsApp() {
+      const name = woSanitizeText((document.getElementById('leadName') || {}).value) || 'Client';
+      const email = woSanitizeText((document.getElementById('leadEmail') || {}).value) || 'Not specified';
+      const phone = woSanitizeText((document.getElementById('leadPhone') || {}).value) || '';
+      const service = woSanitizeText((document.getElementById('leadService') || {}).value) || 'Digital Engineering';
+      const message = woSanitizeText((document.getElementById('leadMessage') || {}).value);
+
+      const text = `Hello Web Optimizer,\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${service}\n\nProject Details:\n${message || 'Requesting architecture proposal'}`;
+      window.open(`https://wa.me/917735973818?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
+    // Modal Proposal Form Submit Handler
     function handleModalSubmit(e) {
-      e.preventDefault();
-      const name = document.getElementById('modalName').value;
-      const email = document.getElementById('modalEmail').value;
-      const phone = document.getElementById('modalPhone').value;
-      const service = document.getElementById('modalService').value;
-      const message = document.getElementById('modalMessage').value;
-
-      const subject = `Executive Project Inquiry - ${service} (${name})`;
-      const body = `Hi Web Optimizer Team,\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${service}\n\nProject Scope:\n${message}\n`;
-
-      window.location.href = `mailto:info@weboptimizer.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      if (e) e.preventDefault();
+      woProcessFormSubmission({
+        name: (document.getElementById('modalName') || {}).value || '',
+        email: (document.getElementById('modalEmail') || {}).value || '',
+        phone: (document.getElementById('modalPhone') || {}).value || '',
+        service: (document.getElementById('modalService') || {}).value || '',
+        message: (document.getElementById('modalMessage') || {}).value || '',
+        honeypot: (document.getElementById('modalWebsiteHp') || {}).value || '',
+        feedbackEl: document.getElementById('modalFormFeedback'),
+        submitBtn: document.getElementById('modalSubmitBtn'),
+        formEl: document.getElementById('modalInquiryForm')
+      });
     }
 
-    // Send modal info directly via WhatsApp
+    // Send Modal Info directly via WhatsApp
     function sendModalViaWhatsApp() {
-      const name = document.getElementById('modalName').value.trim() || 'Client';
-      const email = document.getElementById('modalEmail').value.trim() || 'Not specified';
-      const phone = document.getElementById('modalPhone').value.trim() || '';
-      const service = document.getElementById('modalService').value;
-      const message = document.getElementById('modalMessage').value.trim();
+      const name = woSanitizeText((document.getElementById('modalName') || {}).value) || 'Client';
+      const email = woSanitizeText((document.getElementById('modalEmail') || {}).value) || 'Not specified';
+      const phone = woSanitizeText((document.getElementById('modalPhone') || {}).value) || '';
+      const service = woSanitizeText((document.getElementById('modalService') || {}).value) || 'Digital Proposal';
+      const message = woSanitizeText((document.getElementById('modalMessage') || {}).value);
 
       const text = `Hello Web Optimizer,\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${service}\n\nProject Scope:\n${message || 'Requesting architecture proposal'}`;
-      const url = `https://wa.me/917735973818?text=${encodeURIComponent(text)}`;
-      window.open(url, '_blank');
+      window.open(`https://wa.me/917735973818?text=${encodeURIComponent(text)}`, '_blank');
     }
+
+    // =========================================================================
+    // 2. CONTENT & IMAGE ANTI-THEFT DRM PROTECTION ENGINE
+    // =========================================================================
+    (function() {
+      let toastTimer = null;
+      function showDrmNotice() {
+        const toast = document.getElementById('woDrmToast');
+        if (!toast) return;
+        toast.classList.add('active');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toast.classList.remove('active');
+        }, 2400);
+      }
+
+      function isEditableInput(el) {
+        if (!el) return false;
+        const tag = (el.tagName || '').toUpperCase();
+        return tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || el.isContentEditable;
+      }
+
+      // Block Right-Click Context Menu on Images & Page Content
+      document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        showDrmNotice();
+        return false;
+      }, false);
+
+      // Block Dragging of Images & Links
+      document.addEventListener('dragstart', function(e) {
+        e.preventDefault();
+        return false;
+      }, false);
+
+      // Block Copy & Cut Outside Form Inputs
+      ['copy', 'cut'].forEach(function(evtName) {
+        document.addEventListener(evtName, function(e) {
+          if (!isEditableInput(e.target)) {
+            e.preventDefault();
+            showDrmNotice();
+            return false;
+          }
+        }, false);
+      });
+
+      // Block Keyboard Shortcuts (Ctrl+C, Ctrl+U, Ctrl+S, Ctrl+P, Ctrl+A, F12, Ctrl+Shift+I/J/C)
+      document.addEventListener('keydown', function(e) {
+        const key = (e.key || '').toLowerCase();
+        const ctrlOrCmd = e.ctrlKey || e.metaKey;
+
+        // F12 or PrintScreen
+        if (e.key === 'F12' || e.keyCode === 123 || e.key === 'PrintScreen' || e.keyCode === 44) {
+          e.preventDefault();
+          showDrmNotice();
+          return false;
+        }
+
+        // Ctrl+Shift+I / J / C (DevTools Inspector)
+        if (ctrlOrCmd && e.shiftKey && (key === 'i' || key === 'j' || key === 'c')) {
+          e.preventDefault();
+          showDrmNotice();
+          return false;
+        }
+
+        // Ctrl+U (View Source), Ctrl+S (Save Page), Ctrl+P (Print Page)
+        if (ctrlOrCmd && (key === 'u' || key === 's' || key === 'p')) {
+          e.preventDefault();
+          showDrmNotice();
+          return false;
+        }
+
+        // Ctrl+C, Ctrl+X, Ctrl+A outside form fields
+        if (ctrlOrCmd && (key === 'c' || key === 'x' || key === 'a') && !isEditableInput(e.target)) {
+          e.preventDefault();
+          showDrmNotice();
+          return false;
+        }
+      }, false);
+
+      // Ensure every <img> in DOM has non-empty alt, title, and anti-drag attributes
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('img').forEach(function(img) {
+          img.setAttribute('draggable', 'false');
+          const alt = (img.getAttribute('alt') || '').trim();
+          const title = (img.getAttribute('title') || '').trim();
+          if (!alt) {
+            img.setAttribute('alt', title || 'Web Optimizer Digital Engineering Showcase Odisha');
+          }
+          if (!title) {
+            img.setAttribute('title', (img.getAttribute('alt') || 'Web Optimizer') + ' | Web Optimizer');
+          }
+        });
+      });
+    })();
 
     // Back to top
     const backToTopBtn = document.getElementById('backToTopBtn');

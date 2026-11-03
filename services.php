@@ -8,7 +8,8 @@ require_once __DIR__ . '/includes/services-data.php';
 require_once __DIR__ . '/includes/blogs-data.php';
 
 $page_title = 'Enterprise Digital Engineering & Marketing Services | Web Optimizer';
-$meta_desc = "Explore Web Optimizer's full suite of digital practices: Custom WordPress, Shopify, AI SEO, Performance Marketing, Social Media, Branding, Video Production, and WhatsApp Automation. Call +91 7735973818.";
+$meta_desc = "Explore Web Optimizer's full suite of 47 digital practices: Custom Quotation & GST Billing Software, Custom WordPress, Shopify, AI SEO, Performance Marketing, Branding, and WhatsApp Automation. Call +91 7735973818.";
+$canonical_url = 'https://www.weboptimizer.in/services';
 $active_nav = 'services';
 $base_path = './';
 
@@ -70,10 +71,12 @@ require __DIR__ . '/includes/header.php';
     <div class="container">
       <div class="banner-visual-frame">
         <img src="<?php echo $base_path; ?>assets/images/banners/banner-services.webp" 
-             alt="Web Optimizer Full Services Ecosystem" 
+             alt="Web Optimizer Full 47 Digital Services & Custom Software Ecosystem in Odisha" 
+             title="Web Optimizer | 47 Enterprise Digital Engineering & Marketing Capabilities"
+             draggable="false"
              class="img-fluid">
         <div class="banner-floating-badge">
-          <span class="gold-dot"></span> 46 Capabilities Active &bull; All Odisha
+          <span class="gold-dot"></span> 47 Capabilities Active &bull; All Odisha
         </div>
       </div>
     </div>
@@ -251,7 +254,11 @@ require __DIR__ . '/includes/header.php';
             <div class="deliverable-card h-100 d-flex flex-column justify-content-between p-3" style="background: rgba(14, 21, 38, 0.75); border: 1px solid var(--border-gold);">
               <div>
                 <a href="<?php echo $base_path; ?>blog/<?php echo $sSlug; ?>" class="d-block blog-card-thumb">
-                  <img src="<?php echo $base_path . $guide['image']; ?>" alt="<?php echo htmlspecialchars($guide['title']); ?>" loading="lazy">
+                  <img src="<?php echo $base_path . $guide['image']; ?>" 
+                       alt="<?php echo htmlspecialchars($guide['title']); ?>" 
+                       title="<?php echo htmlspecialchars($guide['title'] . ' | Web Optimizer Odisha'); ?>"
+                       draggable="false"
+                       loading="lazy">
                   <span class="thumb-badge"><?php echo htmlspecialchars($guide['category']); ?></span>
                 </a>
                 <div class="d-flex justify-content-between align-items-center mb-2">
