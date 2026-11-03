@@ -515,10 +515,57 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
       pointer-events: none;
     }
     .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
       align-items: center;
+      text-align: center;
+    }
+    .hero-left {
+      max-width: 920px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero-lead {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 780px !important;
+    }
+    .hero-actions, .hero-pills {
+      justify-content: center;
+    }
+    .hero-stats-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 18px;
+      width: 100%;
+    }
+    @media (max-width: 991px) {
+      .hero-stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+    .full-banner-showcase-section {
+      padding: 0 0 65px 0;
+      background: #060914;
+      position: relative;
+      z-index: 2;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .full-banner-showcase-section .banner-visual-frame {
+      max-width: 1140px;
+      margin: 0 auto;
+      border-radius: 24px;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.75), 0 0 40px rgba(255, 122, 0, 0.15);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+    }
+    .full-banner-showcase-section .banner-visual-frame img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
     }
 
     .hero-badge-gold {

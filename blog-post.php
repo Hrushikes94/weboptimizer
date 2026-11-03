@@ -152,13 +152,12 @@ require __DIR__ . '/includes/header.php';
 </style>
 
 <main>
-  <!-- BLOG POST HERO BANNER SECTION WITH PROMINENT FEATURED IMAGE -->
-  <section class="page-banner-section">
+  <!-- BLOG POST HERO BANNER SECTION (FULL-WIDTH SEPARATE SECTION) -->
+  <section class="page-banner-section" style="padding-bottom: 45px;">
     <div class="container position-relative" style="z-index: 2;">
-      <div class="row align-items-center g-5">
-        <!-- Left: Text, Meta & Actions -->
-        <div class="col-lg-7">
-          <nav class="banner-breadcrumb" aria-label="breadcrumb">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 mx-auto text-center">
+          <nav class="banner-breadcrumb justify-content-center" aria-label="breadcrumb">
             <a href="<?php echo $base_path; ?>index.php"><i class="fa-solid fa-house"></i> Home</a>
             <span class="sep">/</span>
             <a href="<?php echo $base_path; ?>blog">Business Guides</a>
@@ -171,15 +170,15 @@ require __DIR__ . '/includes/header.php';
             <span><?php echo htmlspecialchars($post['category']); ?> &bull; <?php echo htmlspecialchars($post['read_time']); ?> READ</span>
           </div>
 
-          <h1 class="banner-title" style="font-size: clamp(1.8rem, 3.4vw, 2.8rem);">
+          <h1 class="banner-title" style="font-size: clamp(1.9rem, 3.6vw, 3rem);">
             <?php echo htmlspecialchars($post['title']); ?>
           </h1>
 
-          <p class="banner-lead">
+          <p class="banner-lead mx-auto" style="max-width: 780px;">
             <?php echo htmlspecialchars($post['excerpt']); ?>
           </p>
 
-          <div class="d-flex flex-wrap align-items-center gap-3">
+          <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
             <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
               <i class="fa-solid fa-user-check text-gold"></i>
               <span style="font-size:12.5px; color:#fff; font-weight:600;"><?php echo htmlspecialchars($post['author']); ?> &bull; Senior Developer</span>
@@ -193,62 +192,26 @@ require __DIR__ . '/includes/header.php';
             </a>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Right: Prominent Banner Visual Frame -->
-        <div class="col-lg-5">
-          <div class="banner-visual-frame">
-            <img src="<?php echo $base_path; ?>assets/images/blogs/<?php echo $slug; ?>.webp" 
-                 alt="<?php echo htmlspecialchars($post['title']); ?>" 
-                 class="img-fluid">
-            <div class="banner-floating-badge">
-              <span class="gold-dot"></span> Verified Business Guide &bull; Odisha 2026
-            </div>
-          </div>
+  <!-- SEPARATE FULL-WIDTH BLOG POST BANNER SHOWCASE SECTION -->
+  <section class="full-banner-showcase-section">
+    <div class="container">
+      <div class="banner-visual-frame">
+        <img src="<?php echo $base_path; ?>assets/images/blogs/<?php echo $slug; ?>.webp" 
+             alt="<?php echo htmlspecialchars($post['title']); ?>" 
+             class="img-fluid">
+        <div class="banner-floating-badge">
+          <span class="gold-dot"></span> Verified Business Guide &bull; Odisha 2026
         </div>
       </div>
     </div>
   </section>
-  <article class="section-wrap" style="padding-top: 40px; padding-bottom: 80px;">
+
+  <article class="section-wrap" style="padding-top: 25px; padding-bottom: 80px;">
     <div class="container article-container">
-
-      <!-- Breadcrumbs -->
-      <nav class="breadcrumb-nav mb-4" aria-label="breadcrumb">
-        <a href="<?php echo $base_path; ?>index.php"><i class="fa-solid fa-house"></i> Home</a>
-        <span class="breadcrumb-separator">/</span>
-        <a href="<?php echo $base_path; ?>blog">Guides</a>
-        <span class="breadcrumb-separator">/</span>
-        <span class="text-white"><?php echo htmlspecialchars($post['category']); ?></span>
-      </nav>
-
-      <!-- Post Header -->
-      <header class="mb-4">
-        <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
-          <span class="badge" style="background: rgba(212, 175, 55, 0.15); border: 1px solid var(--border-gold); color: var(--gold-light); font-size: 11px; text-transform: uppercase; padding: 6px 12px;">
-            <?php echo htmlspecialchars($post['category']); ?>
-          </span>
-          <span style="font-size: 12.5px; color: var(--text-dim);">
-            <i class="fa-regular fa-calendar text-gold me-1"></i> <?php echo htmlspecialchars($post['date']); ?>
-          </span>
-          <span style="font-size: 12.5px; color: var(--text-dim);">
-            <i class="fa-regular fa-clock text-gold me-1"></i> <?php echo htmlspecialchars($post['read_time']); ?>
-          </span>
-        </div>
-
-        <h1 style="font-family: var(--font-display); font-size: clamp(1.9rem, 3.8vw, 2.8rem); line-height: 1.25; color: #fff; margin-bottom: 18px;">
-          <?php echo htmlspecialchars($post['title']); ?>
-        </h1>
-
-        <p style="font-size: 1.15rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 0;">
-          <?php echo htmlspecialchars($post['excerpt']); ?>
-        </p>
-      </header>
-
-      <!-- Featured Image -->
-      <div class="blog-hero-image-wrap">
-        <img src="<?php echo $base_path . htmlspecialchars($post['image']); ?>" 
-             alt="<?php echo htmlspecialchars($post['title']); ?>" 
-             onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80';">
-      </div>
 
       <!-- Quick Executive Takeaway Callout Box -->
       <div class="blog-callout">

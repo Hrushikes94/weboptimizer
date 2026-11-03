@@ -93,26 +93,24 @@ require __DIR__ . '/includes/header.php';
 ?>
 
 <main>
-  <!-- BREADCRUMB & HERO -->
-    <!-- SERVICE HERO BANNER SECTION WITH PROMINENT BANNER IMAGE -->
-  <section class="page-banner-section">
+  <!-- BREADCRUMB & HERO (FULL-WIDTH SEPARATE SECTION) -->
+  <section class="page-banner-section" style="padding-bottom: 45px;">
     <div class="container position-relative" style="z-index: 2;">
-      <!-- Multi-Tier Breadcrumb -->
-      <nav class="banner-breadcrumb" aria-label="breadcrumb">
-        <a href="<?php echo $base_path; ?>index.php"><i class="fa-solid fa-house"></i> Home</a>
-        <span class="sep">/</span>
-        <a href="<?php echo $base_path; ?>services">Services</a>
-        <?php if (!$is_parent && $parent_info): ?>
-          <span class="sep">/</span>
-          <a href="<?php echo $base_path; ?>service/<?php echo htmlspecialchars($parent_info['slug']); ?>"><?php echo htmlspecialchars($parent_info['short_title']); ?></a>
-        <?php endif; ?>
-        <span class="sep">/</span>
-        <span class="current"><?php echo htmlspecialchars($service['short_title']); ?></span>
-      </nav>
+      <div class="row justify-content-center">
+        <div class="col-lg-10 mx-auto text-center">
+          <!-- Multi-Tier Breadcrumb -->
+          <nav class="banner-breadcrumb justify-content-center" aria-label="breadcrumb">
+            <a href="<?php echo $base_path; ?>index.php"><i class="fa-solid fa-house"></i> Home</a>
+            <span class="sep">/</span>
+            <a href="<?php echo $base_path; ?>services">Services</a>
+            <?php if (!$is_parent && $parent_info): ?>
+              <span class="sep">/</span>
+              <a href="<?php echo $base_path; ?>service/<?php echo htmlspecialchars($parent_info['slug']); ?>"><?php echo htmlspecialchars($parent_info['short_title']); ?></a>
+            <?php endif; ?>
+            <span class="sep">/</span>
+            <span class="current"><?php echo htmlspecialchars($service['short_title']); ?></span>
+          </nav>
 
-      <div class="row align-items-center g-5 pt-2">
-        <!-- Left: Text & Actions -->
-        <div class="col-lg-7">
           <div class="banner-pill-badge mb-3">
             <span class="gold-dot"></span>
             <span><?php echo htmlspecialchars($service['category_name']); ?></span>
@@ -124,11 +122,11 @@ require __DIR__ . '/includes/header.php';
             <?php echo $service['hero_headline']; ?>
           </h1>
 
-          <p class="banner-lead">
+          <p class="banner-lead mx-auto" style="max-width: 780px;">
             <?php echo htmlspecialchars($service['hero_lead']); ?>
           </p>
 
-          <div class="d-flex flex-wrap gap-3 mb-4">
+          <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
             <button type="button" class="btn-gold" data-bs-toggle="modal" data-bs-target="#inquiryModal" style="padding: 12px 26px; font-size: 14px;">
               <i class="fa-solid fa-file-signature"></i> Request Proposal for <?php echo htmlspecialchars($service['short_title']); ?>
             </button>
@@ -141,7 +139,7 @@ require __DIR__ . '/includes/header.php';
             </a>
           </div>
 
-          <div class="d-flex flex-wrap gap-2">
+          <div class="d-flex flex-wrap justify-content-center gap-2">
             <?php foreach (array_slice($service['metrics'] ?? [], 0, 3) as $m): ?>
               <span class="banner-stat-chip">
                 <strong style="color:var(--gold-light);"><?php echo htmlspecialchars($m['num']); ?></strong> 
@@ -151,18 +149,20 @@ require __DIR__ . '/includes/header.php';
             <span class="banner-stat-chip"><i class="fa-solid fa-shield-halved text-gold"></i> Direct Senior Dev</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Right: Prominent Banner Visual Frame -->
-        <div class="col-lg-5">
-          <div class="banner-visual-frame mb-3">
-            <img src="<?php echo $base_path; ?>assets/images/banners/services/banner-<?php echo $slug; ?>.webp" 
-                 alt="<?php echo htmlspecialchars($service['title']); ?> Banner" 
-                 class="img-fluid"
-                 onerror="this.src='<?php echo $base_path; ?>assets/images/banners/banner-<?php echo $parent_key; ?>.webp';">
-            <div class="banner-floating-badge">
-              <span class="gold-dot"></span> <?php echo htmlspecialchars($service['badge']); ?> &bull; Verified Standards
-            </div>
-          </div>
+  <!-- SEPARATE FULL-WIDTH SERVICE BANNER SHOWCASE SECTION -->
+  <section class="full-banner-showcase-section">
+    <div class="container">
+      <div class="banner-visual-frame">
+        <img src="<?php echo $base_path; ?>assets/images/banners/services/banner-<?php echo $slug; ?>.webp" 
+             alt="<?php echo htmlspecialchars($service['title']); ?> Banner" 
+             class="img-fluid"
+             onerror="this.src='<?php echo $base_path; ?>assets/images/banners/banner-<?php echo $parent_key; ?>.webp';">
+        <div class="banner-floating-badge">
+          <span class="gold-dot"></span> <?php echo htmlspecialchars($service['badge']); ?> &bull; Verified Standards
         </div>
       </div>
     </div>

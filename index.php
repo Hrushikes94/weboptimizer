@@ -17,14 +17,13 @@ require __DIR__ . '/includes/header.php';
 ?>
 
 <main>
-    <!-- HERO SECTION -->
-    <section class="hero" id="hero">
-      <div class="hero-banner-backdrop" style="background-image: url('<?php echo $base_path; ?>assets/images/hero/hero-home.webp');"></div>
+    <!-- HERO SECTION (FULL-WIDTH UNIFIED HERO) -->
+    <section class="hero" id="hero" style="padding-bottom: 45px;">
       <div class="container hero-grid" style="position: relative; z-index: 2;">
         <div class="hero-left">
           <div class="hero-badge-gold">
             <span class="gold-dot"></span>
-            <span>Premier Website Design & Digital Agency</span>
+            <span>Premier Website Design &amp; Digital Agency</span>
           </div>
 
           <h1 class="hero-title">
@@ -57,33 +56,36 @@ require __DIR__ . '/includes/header.php';
           </div>
         </div>
 
-        <!-- Hero Right: Prominent Banner Visual Frame & Live Agency HUD -->
-        <div class="hero-right-wrap">
-          <div class="banner-visual-frame mb-3">
-            <img src="<?php echo $base_path; ?>assets/images/banners/banner-home.webp" 
-                 alt="Web Optimizer Flagship Digital Agency" 
-                 class="img-fluid">
-            <div class="banner-floating-badge">
-              <span class="gold-dot"></span> All 50 Odisha Districts Active &bull; 99.8% Core Web Vitals
-            </div>
+        <div class="hero-stats-grid">
+          <div class="stat-card text-center">
+            <div class="stat-num">158+</div>
+            <div class="stat-desc">Projects Delivered</div>
           </div>
-          <div class="hero-stats-grid">
-            <div class="stat-card">
-              <div class="stat-num">158+</div>
-              <div class="stat-desc">Projects Delivered</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-num">448+</div>
-              <div class="stat-desc">Happy Customers</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-num">&lt;800ms</div>
-              <div class="stat-desc">Avg Load Speed</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-num">99.8%</div>
-              <div class="stat-desc">Core Web Vitals</div>
-            </div>
+          <div class="stat-card text-center">
+            <div class="stat-num">448+</div>
+            <div class="stat-desc">Happy Customers</div>
+          </div>
+          <div class="stat-card text-center">
+            <div class="stat-num">&lt;800ms</div>
+            <div class="stat-desc">Avg Load Speed</div>
+          </div>
+          <div class="stat-card text-center">
+            <div class="stat-num">99.8%</div>
+            <div class="stat-desc">Core Web Vitals</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEPARATE FULL-WIDTH HERO BANNER SHOWCASE SECTION -->
+    <section class="full-banner-showcase-section">
+      <div class="container">
+        <div class="banner-visual-frame">
+          <img src="<?php echo $base_path; ?>assets/images/banners/banner-home.webp" 
+               alt="Web Optimizer Flagship Digital Agency" 
+               class="img-fluid">
+          <div class="banner-floating-badge">
+            <span class="gold-dot"></span> All 50 Odisha Districts Active &bull; 99.8% Core Web Vitals
           </div>
         </div>
       </div>

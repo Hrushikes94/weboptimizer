@@ -19,14 +19,12 @@ require __DIR__ . '/includes/header.php';
 ?>
 
 <main>
-  <!-- LOCATIONS HERO -->
-    <!-- LOCATIONS HERO BANNER SECTION WITH PROMINENT BANNER IMAGE -->
-  <section class="page-banner-section">
+  <!-- LOCATIONS HERO (FULL-WIDTH SEPARATE SECTION) -->
+  <section class="page-banner-section" style="padding-bottom: 45px;">
     <div class="container position-relative" style="z-index: 2;">
-      <div class="row align-items-center g-5">
-        <!-- Left: Text & Actions -->
-        <div class="col-lg-7">
-          <nav class="banner-breadcrumb" aria-label="breadcrumb">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 mx-auto text-center">
+          <nav class="banner-breadcrumb justify-content-center" aria-label="breadcrumb">
             <a href="<?php echo $base_path; ?>index.php"><i class="fa-solid fa-house"></i> Home</a>
             <span class="sep">/</span>
             <span class="current">Odisha Service Locations</span>
@@ -42,11 +40,11 @@ require __DIR__ . '/includes/header.php';
             <span class="gold-gradient-text">All 50 Cities &amp; Belts in Odisha</span>
           </h1>
 
-          <p class="banner-lead">
+          <p class="banner-lead mx-auto" style="max-width: 780px;">
             Headquartered in Bhubaneswar, <strong>Web Optimizer</strong> delivers elite website engineering, custom WordPress architectures, surgical AI SEO, and ROI-driven paid advertising to businesses, healthcare networks, and manufacturers throughout all 30 districts of Odisha.
           </p>
 
-          <div class="d-flex flex-wrap gap-3 mb-4">
+          <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
             <a href="locations#locations-list" onclick="const el=document.getElementById('locations-list'); if(el){el.scrollIntoView({behavior:'smooth'}); return false;}" class="btn-gold" style="padding: 12px 26px; font-size: 14px;">
               <i class="fa-solid fa-map-location-dot"></i> Browse All 50 City Hubs
             </a>
@@ -59,24 +57,26 @@ require __DIR__ . '/includes/header.php';
             </a>
           </div>
 
-          <div class="d-flex flex-wrap gap-2">
+          <div class="d-flex flex-wrap justify-content-center gap-2">
             <span class="banner-stat-chip"><i class="fa-solid fa-city text-gold"></i> 50 Cities Covered</span>
             <span class="banner-stat-chip"><i class="fa-solid fa-award text-gold"></i> 158+ Deployments</span>
             <span class="banner-stat-chip"><i class="fa-solid fa-clock text-gold"></i> &lt;2h Direct Response</span>
             <span class="banner-stat-chip"><i class="fa-solid fa-location-dot text-gold"></i> Bhubaneswar HQ</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Right: Prominent Banner Visual Frame -->
-        <div class="col-lg-5">
-          <div class="banner-visual-frame">
-            <img src="<?php echo $base_path; ?>assets/images/banners/banner-locations.webp" 
-                 alt="Web Optimizer Statewide Odisha Network" 
-                 class="img-fluid">
-            <div class="banner-floating-badge">
-              <span class="gold-dot"></span> 50 Service Areas Active &bull; 30 Districts
-            </div>
-          </div>
+  <!-- SEPARATE FULL-WIDTH LOCATIONS BANNER SHOWCASE SECTION -->
+  <section class="full-banner-showcase-section">
+    <div class="container">
+      <div class="banner-visual-frame">
+        <img src="<?php echo $base_path; ?>assets/images/banners/banner-locations.webp" 
+             alt="Web Optimizer Statewide Odisha Network" 
+             class="img-fluid">
+        <div class="banner-floating-badge">
+          <span class="gold-dot"></span> 50 Service Areas Active &bull; 30 Districts
         </div>
       </div>
     </div>

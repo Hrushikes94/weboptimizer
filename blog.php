@@ -17,14 +17,12 @@ require __DIR__ . '/includes/header.php';
 ?>
 
 <main>
-  <!-- BLOG HERO -->
-    <!-- BLOG HERO BANNER SECTION WITH PROMINENT BANNER IMAGE -->
-  <section class="page-banner-section">
+  <!-- BLOG HERO (FULL-WIDTH SEPARATE SECTION) -->
+  <section class="page-banner-section" style="padding-bottom: 45px;">
     <div class="container position-relative" style="z-index: 2;">
-      <div class="row align-items-center g-5">
-        <!-- Left: Text & Actions -->
-        <div class="col-lg-7">
-          <nav class="banner-breadcrumb" aria-label="breadcrumb">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 mx-auto text-center">
+          <nav class="banner-breadcrumb justify-content-center" aria-label="breadcrumb">
             <a href="<?php echo $base_path; ?>index.php"><i class="fa-solid fa-house"></i> Home</a>
             <span class="sep">/</span>
             <span class="current">Business Guides &amp; Knowledge</span>
@@ -40,11 +38,11 @@ require __DIR__ . '/includes/header.php';
             <span class="gold-gradient-text">Actually Need to Succeed Online</span>
           </h1>
 
-          <p class="banner-lead">
+          <p class="banner-lead mx-auto" style="max-width: 780px;">
             No confusing technical buzzwords. No false promises. Just direct, honest explanations of how websites, Google Maps, search ranking, and digital advertising actually generate phone calls and revenue in Odisha.
           </p>
 
-          <div class="d-flex flex-wrap gap-3 mb-4">
+          <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
             <a href="blog#blogs-grid" onclick="const el=document.getElementById('blogs-grid'); if(el){el.scrollIntoView({behavior:'smooth'}); return false;}" class="btn-gold" style="padding: 12px 26px; font-size: 14px;">
               <i class="fa-solid fa-book-open"></i> Read All 25 Verified Guides
             </a>
@@ -57,24 +55,26 @@ require __DIR__ . '/includes/header.php';
             </a>
           </div>
 
-          <div class="d-flex flex-wrap gap-2">
+          <div class="d-flex flex-wrap justify-content-center gap-2">
             <span class="banner-stat-chip"><i class="fa-solid fa-bolt text-gold"></i> Sub-Second Speed</span>
             <span class="banner-stat-chip"><i class="fa-solid fa-map-pin text-gold"></i> Top 3 Google Maps</span>
             <span class="banner-stat-chip"><i class="fa-brands fa-whatsapp text-gold"></i> 24/7 WhatsApp Leads</span>
             <span class="banner-stat-chip"><i class="fa-solid fa-shield-halved text-gold"></i> Zero Code Bloat</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Right: Prominent Banner Visual Frame -->
-        <div class="col-lg-5">
-          <div class="banner-visual-frame">
-            <img src="<?php echo $base_path; ?>assets/images/banners/banner-blog.webp" 
-                 alt="Web Optimizer Business Intelligence Guides" 
-                 class="img-fluid">
-            <div class="banner-floating-badge">
-              <span class="gold-dot"></span> 25 Verified Guides &bull; Written by Senior Dev
-            </div>
-          </div>
+  <!-- SEPARATE FULL-WIDTH BLOG BANNER SHOWCASE SECTION -->
+  <section class="full-banner-showcase-section">
+    <div class="container">
+      <div class="banner-visual-frame">
+        <img src="<?php echo $base_path; ?>assets/images/banners/banner-blog.webp" 
+             alt="Web Optimizer Business Intelligence Guides" 
+             class="img-fluid">
+        <div class="banner-floating-badge">
+          <span class="gold-dot"></span> 25 Verified Guides &bull; Written by Senior Dev
         </div>
       </div>
     </div>

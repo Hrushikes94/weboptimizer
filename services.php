@@ -16,14 +16,12 @@ require __DIR__ . '/includes/header.php';
 ?>
 
 <main>
-  <!-- SERVICES HERO -->
-    <!-- SERVICES HERO BANNER SECTION WITH PROMINENT BANNER IMAGE -->
-  <section class="page-banner-section">
+  <!-- SERVICES HERO (FULL-WIDTH SEPARATE SECTION) -->
+  <section class="page-banner-section" style="padding-bottom: 45px;">
     <div class="container position-relative" style="z-index: 2;">
-      <div class="row align-items-center g-5">
-        <!-- Left: Text & Actions -->
-        <div class="col-lg-7">
-          <nav class="banner-breadcrumb" aria-label="breadcrumb">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 mx-auto text-center">
+          <nav class="banner-breadcrumb justify-content-center" aria-label="breadcrumb">
             <a href="index.php"><i class="fa-solid fa-house"></i> Home</a>
             <span class="sep">/</span>
             <span class="current">Full Services Directory</span>
@@ -39,11 +37,11 @@ require __DIR__ . '/includes/header.php';
             <span class="gold-gradient-text">Performance Growth Practices</span>
           </h1>
 
-          <p class="banner-lead">
+          <p class="banner-lead mx-auto" style="max-width: 780px;">
             Explore Web Optimizer's complete suite of digital practices: custom WordPress engineering, WooCommerce development, aggressive AI SEO, high-conversion performance marketing, social media dominance, luxury brand identity, and automated conversational funnels.
           </p>
 
-          <div class="d-flex flex-wrap gap-3 mb-4">
+          <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
             <button type="button" class="btn-gold" data-bs-toggle="modal" data-bs-target="#inquiryModal" style="padding: 12px 26px; font-size: 14px;">
               <i class="fa-solid fa-file-signature"></i> Request Architecture Proposal
             </button>
@@ -56,24 +54,26 @@ require __DIR__ . '/includes/header.php';
             </a>
           </div>
 
-          <div class="d-flex flex-wrap gap-2">
+          <div class="d-flex flex-wrap justify-content-center gap-2">
             <span class="banner-stat-chip"><i class="fa-solid fa-laptop-code text-gold"></i> 46 Capabilities</span>
             <span class="banner-stat-chip"><i class="fa-solid fa-bolt text-gold"></i> Sub-Second Speed</span>
             <span class="banner-stat-chip"><i class="fa-solid fa-shield-halved text-gold"></i> Zero Code Bloat</span>
             <span class="banner-stat-chip"><i class="fa-solid fa-phone text-gold"></i> +91 7735973818</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Right: Prominent Banner Visual Frame -->
-        <div class="col-lg-5">
-          <div class="banner-visual-frame">
-            <img src="<?php echo $base_path; ?>assets/images/banners/banner-services.webp" 
-                 alt="Web Optimizer Full Services Ecosystem" 
-                 class="img-fluid">
-            <div class="banner-floating-badge">
-              <span class="gold-dot"></span> 46 Capabilities Active &bull; All Odisha
-            </div>
-          </div>
+  <!-- SEPARATE FULL-WIDTH SERVICES BANNER SHOWCASE SECTION -->
+  <section class="full-banner-showcase-section">
+    <div class="container">
+      <div class="banner-visual-frame">
+        <img src="<?php echo $base_path; ?>assets/images/banners/banner-services.webp" 
+             alt="Web Optimizer Full Services Ecosystem" 
+             class="img-fluid">
+        <div class="banner-floating-badge">
+          <span class="gold-dot"></span> 46 Capabilities Active &bull; All Odisha
         </div>
       </div>
     </div>

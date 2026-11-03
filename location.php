@@ -122,22 +122,20 @@ require __DIR__ . '/includes/header.php';
 </script>
 
 <main>
-  <!-- CITY HERO SECTION -->
-    <!-- CITY LOCATION HERO BANNER SECTION WITH PROMINENT BANNER IMAGE -->
-  <section class="page-banner-section">
+  <!-- CITY HERO SECTION (FULL-WIDTH SEPARATE SECTION) -->
+  <section class="page-banner-section" style="padding-bottom: 45px;">
     <div class="container position-relative" style="z-index: 2;">
-      <!-- Breadcrumb -->
-      <nav class="banner-breadcrumb" aria-label="breadcrumb">
-        <a href="<?php echo $base_path; ?>index.php"><i class="fa-solid fa-house"></i> Home</a>
-        <span class="sep">/</span>
-        <a href="<?php echo $base_path; ?>locations">Locations</a>
-        <span class="sep">/</span>
-        <span class="current"><?php echo htmlspecialchars($city_name); ?>, Odisha</span>
-      </nav>
+      <div class="row justify-content-center">
+        <div class="col-lg-10 mx-auto text-center">
+          <!-- Breadcrumb -->
+          <nav class="banner-breadcrumb justify-content-center" aria-label="breadcrumb">
+            <a href="<?php echo $base_path; ?>index.php"><i class="fa-solid fa-house"></i> Home</a>
+            <span class="sep">/</span>
+            <a href="<?php echo $base_path; ?>locations">Locations</a>
+            <span class="sep">/</span>
+            <span class="current"><?php echo htmlspecialchars($city_name); ?>, Odisha</span>
+          </nav>
 
-      <div class="row align-items-center g-5 pt-2">
-        <!-- Left: Text & Actions -->
-        <div class="col-lg-7">
           <div class="banner-pill-badge mb-3">
             <span class="gold-dot"></span>
             <span><?php echo htmlspecialchars($loc['tier']); ?></span>
@@ -150,11 +148,11 @@ require __DIR__ . '/includes/header.php';
             <span class="gold-gradient-text">Digital Growth Agency in <?php echo htmlspecialchars($city_name); ?></span>
           </h1>
 
-          <p class="banner-lead">
+          <p class="banner-lead mx-auto" style="max-width: 780px;">
             Empowering enterprises, manufacturers, healthcare providers, and high-growth businesses in <strong><?php echo htmlspecialchars($city_name); ?></strong> with bespoke digital platforms, sub-second WordPress architectures, and aggressive AI SEO that capture dominant local market share.
           </p>
 
-          <div class="d-flex flex-wrap gap-3 mb-4">
+          <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
             <button type="button" class="btn-gold" data-bs-toggle="modal" data-bs-target="#inquiryModal" style="padding: 12px 26px; font-size: 14px;">
               <i class="fa-solid fa-file-signature"></i> Request <?php echo htmlspecialchars($city_name); ?> Proposal
             </button>
@@ -167,24 +165,26 @@ require __DIR__ . '/includes/header.php';
             </a>
           </div>
 
-          <div class="d-flex flex-wrap gap-2">
+          <div class="d-flex flex-wrap justify-content-center gap-2">
             <span class="banner-stat-chip"><i class="fa-solid fa-map-pin text-gold"></i> Top 1 Target Map Pack</span>
             <span class="banner-stat-chip"><i class="fa-solid fa-bolt text-gold"></i> &lt;800ms Avg Load</span>
             <span class="banner-stat-chip"><i class="fa-solid fa-phone text-gold"></i> +91 7735973818</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Right: Prominent Banner Visual Frame -->
-        <div class="col-lg-5">
-          <div class="banner-visual-frame mb-3">
-            <img src="<?php echo $base_path; ?>assets/images/banners/locations/banner-<?php echo $city_slug; ?>.webp" 
-                 alt="<?php echo htmlspecialchars($city_name); ?> Digital Agency Banner" 
-                 class="img-fluid"
-                 onerror="this.src='<?php echo $base_path; ?>assets/images/banners/banner-locations.webp';">
-            <div class="banner-floating-badge">
-              <span class="gold-dot"></span> <?php echo htmlspecialchars($loc['tier']); ?> &bull; Active Deployment
-            </div>
-          </div>
+  <!-- SEPARATE FULL-WIDTH CITY BANNER SHOWCASE SECTION -->
+  <section class="full-banner-showcase-section">
+    <div class="container">
+      <div class="banner-visual-frame">
+        <img src="<?php echo $base_path; ?>assets/images/banners/locations/banner-<?php echo $city_slug; ?>.webp" 
+             alt="<?php echo htmlspecialchars($city_name); ?> Digital Agency Banner" 
+             class="img-fluid"
+             onerror="this.src='<?php echo $base_path; ?>assets/images/banners/banner-locations.webp';">
+        <div class="banner-floating-badge">
+          <span class="gold-dot"></span> <?php echo htmlspecialchars($loc['tier']); ?> &bull; Active Deployment
         </div>
       </div>
     </div>

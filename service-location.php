@@ -125,24 +125,22 @@ require __DIR__ . '/includes/header.php';
 </script>
 
 <main>
-  <!-- HYPER-LOCAL HERO -->
-    <!-- SERVICE + LOCATION HERO BANNER SECTION WITH PROMINENT BANNER IMAGE -->
-  <section class="page-banner-section">
+  <!-- HYPER-LOCAL HERO (FULL-WIDTH SEPARATE SECTION) -->
+  <section class="page-banner-section" style="padding-bottom: 45px;">
     <div class="container position-relative" style="z-index: 2;">
-      <!-- Multi-Tier Breadcrumbs -->
-      <nav class="banner-breadcrumb" aria-label="breadcrumb">
-        <a href="<?php echo $base_path; ?>index.php"><i class="fa-solid fa-house"></i> Home</a>
-        <span class="sep">/</span>
-        <a href="<?php echo $base_path; ?>services">Services</a>
-        <span class="sep">/</span>
-        <a href="<?php echo $base_path; ?>service/<?php echo htmlspecialchars($service_slug); ?>"><?php echo htmlspecialchars($service['short_title']); ?></a>
-        <span class="sep">/</span>
-        <span class="current"><?php echo htmlspecialchars($city_name); ?> Hub</span>
-      </nav>
+      <div class="row justify-content-center">
+        <div class="col-lg-10 mx-auto text-center">
+          <!-- Multi-Tier Breadcrumbs -->
+          <nav class="banner-breadcrumb justify-content-center" aria-label="breadcrumb">
+            <a href="<?php echo $base_path; ?>index.php"><i class="fa-solid fa-house"></i> Home</a>
+            <span class="sep">/</span>
+            <a href="<?php echo $base_path; ?>services">Services</a>
+            <span class="sep">/</span>
+            <a href="<?php echo $base_path; ?>service/<?php echo htmlspecialchars($service_slug); ?>"><?php echo htmlspecialchars($service['short_title']); ?></a>
+            <span class="sep">/</span>
+            <span class="current"><?php echo htmlspecialchars($city_name); ?> Hub</span>
+          </nav>
 
-      <div class="row align-items-center g-5 pt-2">
-        <!-- Left: Text & Actions -->
-        <div class="col-lg-7">
           <div class="banner-pill-badge mb-3">
             <span class="gold-dot"></span>
             <span><?php echo htmlspecialchars($service['short_title']); ?></span>
@@ -155,11 +153,11 @@ require __DIR__ . '/includes/header.php';
             <span class="gold-gradient-text">in <?php echo htmlspecialchars($city_name); ?>, Odisha</span>
           </h1>
 
-          <p class="banner-lead">
+          <p class="banner-lead mx-auto" style="max-width: 780px;">
             Accelerate your business with enterprise <?php echo htmlspecialchars($service['title']); ?> in <strong><?php echo htmlspecialchars($city_name); ?></strong>. Engineered by Web Optimizer with sub-second page performance, localized Google Maps dominance, and direct developer access.
           </p>
 
-          <div class="d-flex flex-wrap gap-3 mb-4">
+          <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
             <button type="button" class="btn-gold" data-bs-toggle="modal" data-bs-target="#inquiryModal" style="padding: 12px 26px; font-size: 14px;">
               <i class="fa-solid fa-file-signature"></i> Get <?php echo htmlspecialchars($city_name); ?> Proposal
             </button>
@@ -172,24 +170,26 @@ require __DIR__ . '/includes/header.php';
             </a>
           </div>
 
-          <div class="d-flex flex-wrap gap-2">
+          <div class="d-flex flex-wrap justify-content-center gap-2">
             <span class="banner-stat-chip"><i class="fa-solid fa-award text-gold"></i> Guaranteed Google 3-Pack</span>
             <span class="banner-stat-chip"><i class="fa-solid fa-bolt text-gold"></i> Sub-Second Speed</span>
             <span class="banner-stat-chip"><i class="fa-solid fa-phone text-gold"></i> +91 7735973818</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Right: Prominent Banner Visual Frame -->
-        <div class="col-lg-5">
-          <div class="banner-visual-frame mb-3">
-            <img src="<?php echo $base_path; ?>assets/images/banners/services/banner-<?php echo $service_slug; ?>.webp" 
-                 alt="<?php echo htmlspecialchars($service['title']); ?> in <?php echo htmlspecialchars($city_name); ?>" 
-                 class="img-fluid"
-                 onerror="this.src='<?php echo $base_path; ?>assets/images/banners/locations/banner-<?php echo $city_slug; ?>.webp';">
-            <div class="banner-floating-badge">
-              <span class="gold-dot"></span> <?php echo htmlspecialchars($city_name); ?> &bull; <?php echo htmlspecialchars($service['badge']); ?>
-            </div>
-          </div>
+  <!-- SEPARATE FULL-WIDTH SERVICE+LOCATION BANNER SHOWCASE SECTION -->
+  <section class="full-banner-showcase-section">
+    <div class="container">
+      <div class="banner-visual-frame">
+        <img src="<?php echo $base_path; ?>assets/images/banners/services/banner-<?php echo $service_slug; ?>.webp" 
+             alt="<?php echo htmlspecialchars($service['title']); ?> in <?php echo htmlspecialchars($city_name); ?>" 
+             class="img-fluid"
+             onerror="this.src='<?php echo $base_path; ?>assets/images/banners/locations/banner-<?php echo $city_slug; ?>.webp';">
+        <div class="banner-floating-badge">
+          <span class="gold-dot"></span> <?php echo htmlspecialchars($city_name); ?> &bull; <?php echo htmlspecialchars($service['badge']); ?>
         </div>
       </div>
     </div>
