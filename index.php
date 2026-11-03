@@ -95,19 +95,19 @@ require __DIR__ . '/includes/header.php';
         <span class="brands-tag">Trusted by High-Growth Businesses & Industry Leaders</span>
         <div class="brands-row">
           <div class="brand-logo-item" title="Diesel">
-            <img src="<?php echo $base_path; ?>assets/images/brand/diesel.svg" alt="Diesel Brand Logo">
+            <img src="<?php echo $base_path; ?>assets/images/brand/diesel_logo.svg" alt="Diesel Brand Logo">
           </div>
           <div class="brand-logo-item" title="HempMyPET">
-            <img src="<?php echo $base_path; ?>assets/images/brand/hempmypet.svg" alt="HempMyPET Logo">
+            <img src="<?php echo $base_path; ?>assets/images/brand/HempMyPET-Logo-Purp-Gold-logo.png" alt="HempMyPET Logo">
           </div>
           <div class="brand-logo-item" title="Cornerstone Media">
-            <img src="<?php echo $base_path; ?>assets/images/brand/cornerstone.svg" alt="Cornerstone Media Logo">
+            <img src="<?php echo $base_path; ?>assets/images/brand/cornerstone-logo.svg" alt="Cornerstone Media Logo">
           </div>
           <div class="brand-logo-item" title="NW Craft Remodel">
-            <img src="<?php echo $base_path; ?>assets/images/brand/nwcraftremodel.svg" alt="NW Craft Remodel Logo">
+            <img src="<?php echo $base_path; ?>assets/images/brand/nwcraftremodel-logo.jpg" alt="NW Craft Remodel Logo">
           </div>
           <div class="brand-logo-item" title="Ratnasoft">
-            <img src="<?php echo $base_path; ?>assets/images/brand/ratnasoft.svg" alt="Ratnasoft Logo">
+            <img src="<?php echo $base_path; ?>assets/images/brand/ratnasoft-logo1.png" alt="Ratnasoft Logo">
           </div>
         </div>
       </div>

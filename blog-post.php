@@ -60,7 +60,7 @@ require __DIR__ . '/includes/header.php';
     "name": "Web Optimizer",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.weboptimizer.in/assets/images/weboptimizer-logo.svg"
+      "url": "https://www.weboptimizer.in/assets/images/weboptimizer-logo.webp"
     }
   },
   "datePublished": "2026-10-15",

@@ -65,13 +65,13 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
   <meta property="og:url" content="<?php echo htmlspecialchars($canonical_url); ?>">
   <meta property="og:title" content="<?php echo htmlspecialchars($page_title); ?>">
   <meta property="og:description" content="<?php echo htmlspecialchars($meta_desc); ?>">
-  <meta property="og:image" content="https://www.weboptimizer.in/assets/images/weboptimizer-logo.svg">
+  <meta property="og:image" content="https://www.weboptimizer.in/assets/images/weboptimizer-logo.webp">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="<?php echo htmlspecialchars($page_title); ?>">
   <meta name="twitter:description" content="<?php echo htmlspecialchars($meta_desc); ?>">
-  <meta name="twitter:image" content="https://www.weboptimizer.in/assets/images/weboptimizer-logo.svg">
+  <meta name="twitter:image" content="https://www.weboptimizer.in/assets/images/weboptimizer-logo.webp">
 
   <!-- Schema.org JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -83,8 +83,8 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
         "@id": "https://www.weboptimizer.in/#organization",
         "name": "Web Optimizer",
         "url": "https://www.weboptimizer.in",
-        "logo": "https://www.weboptimizer.in/assets/images/weboptimizer-logo.svg",
-        "image": "https://www.weboptimizer.in/assets/images/weboptimizer-logo.svg",
+        "logo": "https://www.weboptimizer.in/assets/images/weboptimizer-logo.webp",
+        "image": "https://www.weboptimizer.in/assets/images/weboptimizer-logo.webp",
         "description": "Premier Website Design, Custom WordPress Engineering, Performance Marketing, and Technical SEO Agency in Bhubaneswar, Odisha.",
         "telephone": "+91 7735973818",
         "email": "info@weboptimizer.in",
@@ -116,7 +116,7 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
   </script>
 
   <!-- Favicon -->
-  <link rel="icon" href="<?php echo htmlspecialchars($base_path); ?>assets/images/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="<?php echo htmlspecialchars($base_path); ?>assets/images/weboptimizer-icon.webp" sizes="32x32" />
 
   <!-- Bootstrap 5.3.3 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -3218,7 +3218,7 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
   <header class="navbar" id="navbar">
     <div class="container-fluid px-xl-5 px-lg-4 px-3 nav-container position-relative">
       <a href="<?php echo $base_path; ?>index.php" class="brand-logo-wrap">
-        <img src="<?php echo $base_path; ?>assets/images/weboptimizer-logo.svg" 
+        <img src="<?php echo $base_path; ?>assets/images/weboptimizer-logo.webp" 
              alt="Web Optimizer" 
              class="brand-logo-img"
              onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='block';">
@@ -3289,7 +3289,7 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
                 </div>
                 <ul class="mega-sub-list">
                   <li><a href="<?php echo $base_path; ?>paid-social-media.php" class="mega-sub-link">Paid Social Media Ads</a></li>
-                  <li><a href="<?php echo $base_path; ?>google-ads.php" class="mega-sub-link">Google Ads â€“ PPC & PMax</a></li>
+                  <li><a href="<?php echo $base_path; ?>google-ads.php" class="mega-sub-link">Google Ads ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ PPC & PMax</a></li>
                   <li><a href="<?php echo $base_path; ?>lead-generation.php" class="mega-sub-link">High-Intent Lead Gen</a></li>
                   <li><a href="<?php echo $base_path; ?>search-engine-marketing.php" class="mega-sub-link">Search Engine Marketing</a></li>
                   <li><a href="<?php echo $base_path; ?>content-marketing.php" class="mega-sub-link">Content Marketing</a></li>

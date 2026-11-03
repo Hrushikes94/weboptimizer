@@ -68,8 +68,8 @@ require __DIR__ . '/includes/header.php';
       "@id": "https://www.weboptimizer.in/location/<?php echo $city_slug; ?>#service",
       "name": "Web Optimizer - <?php echo $city_name; ?>",
       "url": "https://www.weboptimizer.in/location/<?php echo $city_slug; ?>",
-      "logo": "https://www.weboptimizer.in/assets/images/weboptimizer-logo.svg",
-      "image": "https://www.weboptimizer.in/assets/images/weboptimizer-logo.svg",
+      "logo": "https://www.weboptimizer.in/assets/images/weboptimizer-logo.webp",
+      "image": "https://www.weboptimizer.in/assets/images/weboptimizer-logo.webp",
       "telephone": "+91 7735973818",
       "email": "info@weboptimizer.in",
       "description": "Premier Website Design, WordPress Engineering, AI SEO, and Performance Marketing in <?php echo $city_name; ?>, Odisha.",
@@ -96,7 +96,7 @@ require __DIR__ . '/includes/header.php';
           "name": "Why choose Web Optimizer for digital marketing and web design in <?php echo $city_name; ?>?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Web Optimizer combines local Odisha market knowledge with elite enterprise engineeringÃ¢â‚¬â€delivering sub-second loading WordPress sites, 99+ Core Web Vitals, and data-backed performance marketing with direct senior developer access."
+            "text": "Web Optimizer combines local Odisha market knowledge with elite enterprise engineeringÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Âdelivering sub-second loading WordPress sites, 99+ Core Web Vitals, and data-backed performance marketing with direct senior developer access."
           }
         },
         {

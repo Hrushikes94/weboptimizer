@@ -11,7 +11,7 @@ $base_path = $base_path ?? './';
     <div class="container">
       <div class="footer-top">
         <div class="footer-col">
-          <img src="<?php echo $base_path; ?>assets/images/weboptimizer-logo.svg" 
+          <img src="<?php echo $base_path; ?>assets/images/weboptimizer-logo.webp" 
                alt="Web Optimizer" 
                style="height:44px; margin-bottom:14px; object-fit:contain;"
                onerror="this.style.display='none';">
@@ -61,7 +61,7 @@ $base_path = $base_path ?? './';
 
       <div class="footer-bottom">
         <div>
-          &copy; 2017 – <?php echo date('Y'); ?> <strong>Web Optimizer</strong> (weboptimizer.in). All Rights Reserved. Engineered by Hrushikesh Swain.
+          &copy; 2017 â€“ <?php echo date('Y'); ?> <strong>Web Optimizer</strong> (weboptimizer.in). All Rights Reserved. Engineered by Hrushikesh Swain.
         </div>
         <div style="display:flex; gap:18px;">
           <a href="#navbar" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;" style="color:var(--gold-primary); text-decoration:none;"><i class="fa-solid fa-arrow-up"></i> Back to Top</a>
@@ -74,7 +74,7 @@ $base_path = $base_path ?? './';
   <div class="offcanvas offcanvas-end luxury-offcanvas" tabindex="-1" id="luxuryMobileNav" aria-labelledby="luxuryMobileNavLabel">
     <div class="offcanvas-header">
       <div class="d-flex align-items-center gap-2">
-        <img src="<?php echo $base_path; ?>assets/images/favicon.svg" 
+        <img src="<?php echo $base_path; ?>assets/images/weboptimizer-icon.webp" 
              alt="Web Optimizer" 
              style="width:28px; height:28px; border-radius:6px; object-fit:contain;"
              onerror="this.style.display='none';">
@@ -170,7 +170,7 @@ $base_path = $base_path ?? './';
             <div id="collapseMobileAds" class="accordion-collapse collapse" aria-labelledby="headingMobileAds" data-bs-parent="#mobileMenuAccordion">
               <div class="accordion-body">
                 <a href="<?php echo $base_path; ?>performance-marketing.php" class="offcanvas-sub-link fw-bold" style="color:var(--gold-light);">Performance Marketing Hub</a>
-                <a href="<?php echo $base_path; ?>google-ads.php" class="offcanvas-sub-link">Google Ads – PPC & PMax</a>
+                <a href="<?php echo $base_path; ?>google-ads.php" class="offcanvas-sub-link">Google Ads â€“ PPC & PMax</a>
                 <a href="<?php echo $base_path; ?>paid-social-media.php" class="offcanvas-sub-link">Paid Social Media Ads</a>
                 <a href="<?php echo $base_path; ?>lead-generation.php" class="offcanvas-sub-link">Lead Generation Funnels</a>
                 <a href="<?php echo $base_path; ?>search-engine-marketing.php" class="offcanvas-sub-link">Search Engine Marketing</a>
