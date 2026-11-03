@@ -1,0 +1,84 @@
+# ==============================================================================
+# Web Optimizer - Enterprise Clean SEO, AEO & GEO URL Rewriting Engine
+# https://www.weboptimizer.in | Founder: Hrushikesh Swain (+91 7735973818)
+# ==============================================================================
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  DirectoryIndex index.php index.html
+
+  # ----------------------------------------------------------------------------
+  # 1. 301 Permanent Redirects (Query Strings -> Clean SEO URLs)
+  # Uses %{THE_REQUEST} to prevent internal rewrite loops (Works on / and /Portfolio/)
+  # ----------------------------------------------------------------------------
+
+  # Redirect service-location.php?service=X&city=Y -> service/X/Y
+  RewriteCond %{THE_REQUEST} \s/(?:Portfolio/)?service-location\.php\?service=([a-z0-9\-]+)&city=([a-z0-9\-]+)\s [NC]
+  RewriteRule ^ service/%1/%2? [R=301,L]
+
+  # Redirect service-location.php?city=Y&service=X -> service/X/Y
+  RewriteCond %{THE_REQUEST} \s/(?:Portfolio/)?service-location\.php\?city=([a-z0-9\-]+)&service=([a-z0-9\-]+)\s [NC]
+  RewriteRule ^ service/%2/%1? [R=301,L]
+
+  # Redirect location.php?city=X -> location/X
+  RewriteCond %{THE_REQUEST} \s/(?:Portfolio/)?location\.php\?city=([a-z0-9\-]+)\s [NC]
+  RewriteRule ^ location/%1? [R=301,L]
+
+  # Redirect service-detail.php?slug=X -> service/X
+  RewriteCond %{THE_REQUEST} \s/(?:Portfolio/)?service-detail\.php\?slug=([a-z0-9\-]+)\s [NC]
+  RewriteRule ^ service/%1? [R=301,L]
+
+  # ----------------------------------------------------------------------------
+  # Retired Services 301 Permanent Redirects
+  # ----------------------------------------------------------------------------
+  RewriteRule ^(production-content|video-production|commercial-photography|audio-production)(\.php)?/?$ services [R=301,L]
+
+  # ----------------------------------------------------------------------------
+  # 2. Dynamic XML Sitemap Rewrite
+  # ----------------------------------------------------------------------------
+  RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+  # ----------------------------------------------------------------------------
+  # 3. Clean Master Directories & Blog Knowledge Hub
+  # ----------------------------------------------------------------------------
+  RewriteRule ^locations/?$ locations.php [L,QSA]
+  RewriteRule ^services/?$ services.php [L,QSA]
+  RewriteRule ^blog/?$ blog.php [L,QSA]
+  RewriteRule ^blogs/?$ blog.php [L,QSA]
+  RewriteRule ^blog/([a-z0-9\-]+)/?$ blog-post.php?slug=$1 [L,QSA]
+
+  # ----------------------------------------------------------------------------
+  # 4. Programmatic Service + Location SEO Landing Pages
+  # Pattern A (Hierarchical): /service/{service}/{city}
+  # Example: /service/technical-seo/paradeep
+  # ----------------------------------------------------------------------------
+  RewriteRule ^service/([a-z0-9\-]+)/([a-z0-9\-]+)/?$ service-location.php?service=$1&city=$2 [L,QSA]
+
+  # Pattern B (Keyword-Rich Local SEO): /{service}-in-{city}
+  # Example: /technical-seo-in-paradeep
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^([a-z0-9\-]+)-in-([a-z0-9\-]+)/?$ service-location.php?service=$1&city=$2 [L,QSA]
+
+  # ----------------------------------------------------------------------------
+  # 5. City Hub Landing Pages (50 Odisha Locations)
+  # Example: /location/paradeep, /location/bhubaneswar, /location/cuttack
+  # ----------------------------------------------------------------------------
+  RewriteRule ^location/([a-z0-9\-]+)/?$ location.php?city=$1 [L,QSA]
+
+  # ----------------------------------------------------------------------------
+  # 6. Service Detail / Category Hub Dynamic Pages
+  # Example: /service/technical-seo, /services/technical-seo
+  # ----------------------------------------------------------------------------
+  RewriteRule ^service/([a-z0-9\-]+)/?$ service-detail.php?slug=$1 [L,QSA]
+  RewriteRule ^services/([a-z0-9\-]+)/?$ service-detail.php?slug=$1 [L,QSA]
+
+  # ----------------------------------------------------------------------------
+  # 7. Extensionless PHP Fallback
+  # Example: /digital-marketing -> digital-marketing.php
+  # ----------------------------------------------------------------------------
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.php -f
+  RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+</IfModule>

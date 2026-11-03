@@ -1,0 +1,561 @@
+<?php
+/**
+ * Web Optimizer - Master Odisha Locations Registry (50 Service Locations)
+ * Programmatic SEO, AEO & GEO Architecture
+ * Web Optimizer (https://www.weboptimizer.in)
+ * Founder & Senior Web Developer: Hrushikesh Swain
+ * Official Contact: +91 7735973818 | Email: info@weboptimizer.in | Location: Bhubaneswar, Odisha
+ */
+
+$odisha_locations = [
+    'bhubaneswar' => [
+        'name' => 'Bhubaneswar',
+        'slug' => 'bhubaneswar',
+        'district' => 'Khordha',
+        'region' => 'Central Odisha',
+        'tier' => 'Capital & IT Hub',
+        'profile' => 'Capital city of Odisha, primary IT corridor (Infocity, DLF Cybercity), premier education, startup & healthcare hub.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'cuttack' => [
+        'name' => 'Cuttack',
+        'slug' => 'cuttack',
+        'district' => 'Cuttack',
+        'region' => 'Central Odisha',
+        'tier' => 'Commercial Capital',
+        'profile' => 'Millennium City, commercial wholesale trade center, silver filigree craft, healthcare hub and major legal & administrative center.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'rourkela' => [
+        'name' => 'Rourkela',
+        'slug' => 'rourkela',
+        'district' => 'Sundargarh',
+        'region' => 'Western Odisha',
+        'tier' => 'Steel & Industrial City',
+        'profile' => 'Steel City of Odisha, heavy engineering, manufacturing, metallurgical industry and educational center of Western Odisha.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'berhampur' => [
+        'name' => 'Berhampur',
+        'slug' => 'berhampur',
+        'district' => 'Ganjam',
+        'region' => 'Southern Odisha',
+        'tier' => 'Silk City & Gateway',
+        'profile' => 'Silk City of Odisha, commercial gateway of Southern Odisha, agricultural trading hub and prominent educational center.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'sambalpur' => [
+        'name' => 'Sambalpur',
+        'slug' => 'sambalpur',
+        'district' => 'Sambalpur',
+        'region' => 'Western Odisha',
+        'tier' => 'Industrial & Cultural Hub',
+        'profile' => 'Commercial and cultural capital of Western Odisha, world-famous Sambalpuri handloom, power generation and aluminum corridor.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'puri' => [
+        'name' => 'Puri',
+        'slug' => 'puri',
+        'district' => 'Puri',
+        'region' => 'Coastal Odisha',
+        'tier' => 'Heritage & Tourism Hub',
+        'profile' => 'World-renowned coastal pilgrimage destination, luxury hospitality, international beach tourism, arts and cultural economy.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'balasore' => [
+        'name' => 'Balasore',
+        'slug' => 'balasore',
+        'district' => 'Balasore',
+        'region' => 'Northern Coastal Odisha',
+        'tier' => 'Industrial & Maritime Hub',
+        'profile' => 'Prominent industrial hub of Northern Odisha, defense testing, maritime trade, plastic manufacturing and seafood export corridor.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'baripada' => [
+        'name' => 'Baripada',
+        'slug' => 'baripada',
+        'district' => 'Mayurbhanj',
+        'region' => 'Northern Odisha',
+        'tier' => 'Heritage & District HQ',
+        'profile' => 'Cultural capital of North Odisha, gateway to Similipal biosphere, agricultural hub and historic princely center.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'bhadrak' => [
+        'name' => 'Bhadrak',
+        'slug' => 'bhadrak',
+        'district' => 'Bhadrak',
+        'region' => 'Coastal Odisha',
+        'tier' => 'Commercial & Trading Hub',
+        'profile' => 'Strategic trading and transit corridor connecting Northern and Central Odisha, agricultural commerce and manufacturing.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'jharsuguda' => [
+        'name' => 'Jharsuguda',
+        'slug' => 'jharsuguda',
+        'district' => 'Jharsuguda',
+        'region' => 'Western Odisha',
+        'tier' => 'Airport & Industrial Hub',
+        'profile' => 'Little Dubai of Odisha, booming industrial powerhouse, commercial airport, power plants, cement and aluminum smelters.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'angul' => [
+        'name' => 'Angul',
+        'slug' => 'angul',
+        'district' => 'Angul',
+        'region' => 'Central Odisha',
+        'tier' => 'Energy & Metal Capital',
+        'profile' => 'Major industrial powerhouse, aluminium production, thermal power, steel processing and heavy engineering enterprises.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'dhenkanal' => [
+        'name' => 'Dhenkanal',
+        'slug' => 'dhenkanal',
+        'district' => 'Dhenkanal',
+        'region' => 'Central Odisha',
+        'tier' => 'Industrial & Heritage Hub',
+        'profile' => 'Fast-developing industrial belt, metal industries, agro-processing, tourism and educational institutions.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'jajpur' => [
+        'name' => 'Jajpur',
+        'slug' => 'jajpur',
+        'district' => 'Jajpur',
+        'region' => 'Central Coastal Odisha',
+        'tier' => 'Steel & Mining Corridor',
+        'profile' => 'Kalinganagar steel hub, ferrochrome manufacturing, heavy industrial investments and ancient temple heritage.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'kendrapara' => [
+        'name' => 'Kendrapara',
+        'slug' => 'kendrapara',
+        'district' => 'Kendrapara',
+        'region' => 'Coastal Odisha',
+        'tier' => 'Coastal & Agro Hub',
+        'profile' => 'Agricultural and aquaculture powerhouse, seafood export, handicraft heritage and emerging coastal trade.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'jagatsinghpur' => [
+        'name' => 'Jagatsinghpur',
+        'slug' => 'jagatsinghpur',
+        'district' => 'Jagatsinghpur',
+        'region' => 'Coastal Odisha',
+        'tier' => 'Port & Industrial Gateway',
+        'profile' => 'Strategic coastal district housing major petrochemicals, agricultural trade, shipping logistics and fertile agro-belts.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'koraput' => [
+        'name' => 'Koraput',
+        'slug' => 'koraput',
+        'district' => 'Koraput',
+        'region' => 'Southern Odisha',
+        'tier' => 'Aero & Coffee Belt',
+        'profile' => 'Aeronautical engineering (HAL), bauxite mining (NALCO), coffee plantations, tribal culture and eco-tourism center.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'rayagada' => [
+        'name' => 'Rayagada',
+        'slug' => 'rayagada',
+        'district' => 'Rayagada',
+        'region' => 'Southern Odisha',
+        'tier' => 'Paper & Metal Corridor',
+        'profile' => 'Paper manufacturing, ferroalloys, bauxite mining, agricultural trade and transit junction of South Odisha.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'bhawanipatna' => [
+        'name' => 'Bhawanipatna',
+        'slug' => 'bhawanipatna',
+        'district' => 'Kalahandi',
+        'region' => 'Western Odisha',
+        'tier' => 'Commercial & Agro Center',
+        'profile' => 'Headquarters of Kalahandi, booming agricultural economy, educational institutions and emerging retail markets.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'balangir' => [
+        'name' => 'Balangir',
+        'slug' => 'balangir',
+        'district' => 'Balangir',
+        'region' => 'Western Odisha',
+        'tier' => 'Ordnance & Commercial Hub',
+        'profile' => 'Historic commercial center of Western Odisha, ordnance manufacturing (Badmal), agriculture and education.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'keonjhar' => [
+        'name' => 'Keonjhar',
+        'slug' => 'keonjhar',
+        'district' => 'Keonjhar',
+        'region' => 'Northern Odisha',
+        'tier' => 'Mineral & Mining Capital',
+        'profile' => 'Iron ore and mineral capital of Odisha, heavy mining enterprises, steel raw materials and rich forestry.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'nayagarh' => [
+        'name' => 'Nayagarh',
+        'slug' => 'nayagarh',
+        'district' => 'Nayagarh',
+        'region' => 'Central Odisha',
+        'tier' => 'Sugar & Agricultural Hub',
+        'profile' => 'Sugar manufacturing, brass metal crafts, agricultural trade and scenic ecotourism corridor near the Mahanadi basin.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'phulbani' => [
+        'name' => 'Phulbani',
+        'slug' => 'phulbani',
+        'district' => 'Kandhamal',
+        'region' => 'Central-Southern Odisha',
+        'tier' => 'Organic & Spice Capital',
+        'profile' => 'Famed for organic turmeric, spices, tribal cottage enterprises, sericulture and pristine hill station tourism.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'paradeep' => [
+        'name' => 'Paradeep',
+        'slug' => 'paradeep',
+        'district' => 'Jagatsinghpur',
+        'region' => 'Coastal Odisha',
+        'tier' => 'Major Port & Petrochemical Hub',
+        'profile' => 'Premier deepwater port of Eastern India, massive petrochemical refineries (IOCL), fertilizer plants and international cargo shipping.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'jeypore' => [
+        'name' => 'Jeypore',
+        'slug' => 'jeypore',
+        'district' => 'Koraput',
+        'region' => 'Southern Odisha',
+        'tier' => 'Commercial Gateway of South',
+        'profile' => 'Largest commercial town in Koraput district, trading center for agricultural produce, paper and regional commerce.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'bargarh' => [
+        'name' => 'Bargarh',
+        'slug' => 'bargarh',
+        'district' => 'Bargarh',
+        'region' => 'Western Odisha',
+        'tier' => 'Rice Bowl & Handloom Hub',
+        'profile' => 'Rice bowl of Odisha, cement manufacturing, agricultural commodity trading and world-renowned Sambalpuri handloom weaving.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'sonepur' => [
+        'name' => 'Sonepur',
+        'slug' => 'sonepur',
+        'district' => 'Subarnapur',
+        'region' => 'Western Odisha',
+        'tier' => 'Silk & Textile Heritage',
+        'profile' => 'Second Varanasi of India, temple heritage, handloom silk clusters, brassware and fertile agrarian trade.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'nuapada' => [
+        'name' => 'Nuapada',
+        'slug' => 'nuapada',
+        'district' => 'Nuapada',
+        'region' => 'Western Odisha',
+        'tier' => 'Border & Mining Gateway',
+        'profile' => 'Border trading town connecting Odisha with Chhattisgarh, mineral deposits, teakwood and emerging local enterprise.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'malkangiri' => [
+        'name' => 'Malkangiri',
+        'slug' => 'malkangiri',
+        'district' => 'Malkangiri',
+        'region' => 'Southern Odisha',
+        'tier' => 'Hydro & Agro Frontier',
+        'profile' => 'Hydroelectric power production (Balimela), bamboo processing, aquaculture and border agricultural trading.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'nabarangpur' => [
+        'name' => 'Nabarangpur',
+        'slug' => 'nabarangpur',
+        'district' => 'Nabarangpur',
+        'region' => 'Southern Odisha',
+        'tier' => 'Maize & Agro Corridor',
+        'profile' => 'Top maize producing district of Odisha, cash crop cultivation, forest produce and expanding retail commerce.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'deogarh' => [
+        'name' => 'Deogarh',
+        'slug' => 'deogarh',
+        'district' => 'Deogarh',
+        'region' => 'Western Odisha',
+        'tier' => 'Eco & Heritage Town',
+        'profile' => 'Home to Pradhanpat waterfalls, historic palaces, forest produce, stone crafts and quiet eco-hospitality.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'sundargarh' => [
+        'name' => 'Sundargarh',
+        'slug' => 'sundargarh',
+        'district' => 'Sundargarh',
+        'region' => 'Western Odisha',
+        'tier' => 'Industrial & Mining District',
+        'profile' => 'Rich in iron ore, manganese, coal mining, industrial workshops and sports nursery of Indian hockey.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'boudh' => [
+        'name' => 'Boudh',
+        'slug' => 'boudh',
+        'district' => 'Boudh',
+        'region' => 'Central Odisha',
+        'tier' => 'Handloom & Temple Heritage',
+        'profile' => 'Ancient Buddhist heritage, cotton handloom weaving, Mahanadi river trade and agricultural marketplaces.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'ganjam' => [
+        'name' => 'Ganjam',
+        'slug' => 'ganjam',
+        'district' => 'Ganjam',
+        'region' => 'Southern Odisha',
+        'tier' => 'Coastal & Salt Producing Hub',
+        'profile' => 'Chemical manufacturing (Grasim), sea salt production, aquaculture and coastal commerce along the Bay of Bengal.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'gajapati' => [
+        'name' => 'Gajapati',
+        'slug' => 'gajapati',
+        'district' => 'Gajapati',
+        'region' => 'Southern Odisha',
+        'tier' => 'Horticulture & Border Trade',
+        'profile' => 'Headquartered at Paralakhemundi, known for brass crafts, horn work, cashew processing and agricultural trading.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'kalahandi' => [
+        'name' => 'Kalahandi',
+        'slug' => 'kalahandi',
+        'district' => 'Kalahandi',
+        'region' => 'Western Odisha',
+        'tier' => 'Agro & Industrial Frontier',
+        'profile' => 'Cotton ginning, rice milling, bauxite processing and fast-growing district commercial hubs.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'kandhamal' => [
+        'name' => 'Kandhamal',
+        'slug' => 'kandhamal',
+        'district' => 'Kandhamal',
+        'region' => 'Central-Southern Odisha',
+        'tier' => 'Herbal & Forest Economy',
+        'profile' => 'GI-tagged Kandhamal Haldi (turmeric), organic honey, coffee cultivation and scenic hill station tourism.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'mayurbhanj' => [
+        'name' => 'Mayurbhanj',
+        'slug' => 'mayurbhanj',
+        'district' => 'Mayurbhanj',
+        'region' => 'Northern Odisha',
+        'tier' => 'Mineral & Ecotourism Hub',
+        'profile' => 'Rich mineral reserves, tribal handicrafts, Chhau dance heritage and world-famous Similipal national park.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'soro' => [
+        'name' => 'Soro',
+        'slug' => 'soro',
+        'district' => 'Balasore',
+        'region' => 'Northern Coastal Odisha',
+        'tier' => 'Trading & Agro Municipality',
+        'profile' => 'Active trading municipality on NH-16, rice mills, educational centers and local commercial distribution.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'talcher' => [
+        'name' => 'Talcher',
+        'slug' => 'talcher',
+        'district' => 'Angul',
+        'region' => 'Central Odisha',
+        'tier' => 'Coal & Energy Capital',
+        'profile' => 'Black Diamond City, one of India\'s largest coalfields (MCL), massive thermal power stations and heavy machinery.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'barbil' => [
+        'name' => 'Barbil',
+        'slug' => 'barbil',
+        'district' => 'Keonjhar',
+        'region' => 'Northern Odisha',
+        'tier' => 'Iron Ore Mining Capital',
+        'profile' => 'One of the richest mineral belts in the world, massive iron and manganese mining, pellet plants and heavy logistics.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'joda' => [
+        'name' => 'Joda',
+        'slug' => 'joda',
+        'district' => 'Keonjhar',
+        'region' => 'Northern Odisha',
+        'tier' => 'Steel & Mining Hub',
+        'profile' => 'Heavy iron ore mining, sponge iron plants, steel raw material processing and mining transportation.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'chhatrapur' => [
+        'name' => 'Chhatrapur',
+        'slug' => 'chhatrapur',
+        'district' => 'Ganjam',
+        'region' => 'Southern Odisha',
+        'tier' => 'Port & Rare Earths Hub',
+        'profile' => 'Administrative headquarters of Ganjam, home to IREL (Indian Rare Earths), near Gopalpur port, and coastal logistics.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'aska' => [
+        'name' => 'Aska',
+        'slug' => 'aska',
+        'district' => 'Ganjam',
+        'region' => 'Southern Odisha',
+        'tier' => 'Sugar & Cooperative Hub',
+        'profile' => 'Home to Asia\'s first cooperative sugar mill, agricultural trade, distillery operations and commercial enterprise.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'hinjilicut' => [
+        'name' => 'Hinjilicut',
+        'slug' => 'hinjilicut',
+        'district' => 'Ganjam',
+        'region' => 'Southern Odisha',
+        'tier' => 'Modern Urban & Agro Center',
+        'profile' => 'Fast-developing smart municipality, spinning mills, modern educational hubs and regional trade.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'gopalpur' => [
+        'name' => 'Gopalpur',
+        'slug' => 'gopalpur',
+        'district' => 'Ganjam',
+        'region' => 'Southern Odisha',
+        'tier' => 'Deepwater Port & Beach Resort',
+        'profile' => 'Major private all-weather deepwater port (Gopalpur Port), coastal SEZ, titanium dioxide manufacturing and beach hospitality.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'konark' => [
+        'name' => 'Konark',
+        'slug' => 'konark',
+        'district' => 'Puri',
+        'region' => 'Coastal Odisha',
+        'tier' => 'UNESCO World Heritage City',
+        'profile' => 'Home to the iconic Sun Temple (UNESCO World Heritage Site), international tourism, marine drive hospitality and crafts.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'pipili' => [
+        'name' => 'Pipili',
+        'slug' => 'pipili',
+        'district' => 'Puri',
+        'region' => 'Coastal Odisha',
+        'tier' => 'Applique Craft Capital',
+        'profile' => 'World-famous applique craft village, national highway commercial strip, tourist transit point and cottage handicraft exports.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'athagarh' => [
+        'name' => 'Athagarh',
+        'slug' => 'athagarh',
+        'district' => 'Cuttack',
+        'region' => 'Central Odisha',
+        'tier' => 'Agro & Industrial Belt',
+        'profile' => 'Sugar factories, paper manufacturing, agro-processing, temple heritage and vibrant sub-divisional commercial market.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'banki' => [
+        'name' => 'Banki',
+        'slug' => 'banki',
+        'district' => 'Cuttack',
+        'region' => 'Central Odisha',
+        'tier' => 'Mahanadi Basin Commerce',
+        'profile' => 'Historic commercial center on the banks of Mahanadi, fertile vegetable belts, Charchika temple heritage and trade.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+    'anandapur' => [
+        'name' => 'Anandapur',
+        'slug' => 'anandapur',
+        'district' => 'Keonjhar',
+        'region' => 'Northern Odisha',
+        'tier' => 'Baitarani Trade & Agro Hub',
+        'profile' => 'Strategic trade center along the Baitarani river, agro-processing, stone quarries and connecting corridor between Keonjhar and coastal Odisha.',
+        'pincode_prefix' => '75',
+        'state' => 'Odisha',
+        'country' => 'India'
+    ],
+];
