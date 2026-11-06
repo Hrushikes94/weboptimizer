@@ -155,30 +155,6 @@ $homepage_faqs = [
       </div>
     </section>
 
-    <!-- TRUSTED CLIENT BRANDS MARQUEE -->
-    <section class="brands-section">
-      <div class="container">
-        <span class="brands-tag">Trusted by Growing Businesses, Enterprises &amp; Global Brands</span>
-        <div class="brands-row">
-          <div class="brand-logo-item" title="Diesel">
-            <img src="<?php echo $base_path; ?>assets/images/brand/diesel_logo.svg" alt="Diesel Brand Logo - Web Optimizer Portfolio Client" title="Diesel Brand Logo | Web Optimizer Client" draggable="false">
-          </div>
-          <div class="brand-logo-item" title="HempMyPET">
-            <img src="<?php echo $base_path; ?>assets/images/brand/HempMyPET-Logo-Purp-Gold-logo.png" alt="HempMyPET Logo - Web Optimizer E-Commerce Client" title="HempMyPET Logo | Web Optimizer Client" draggable="false">
-          </div>
-          <div class="brand-logo-item" title="Cornerstone Media">
-            <img src="<?php echo $base_path; ?>assets/images/brand/cornerstone-logo.svg" alt="Cornerstone Media Logo - Web Optimizer Digital Client" title="Cornerstone Media Logo | Web Optimizer Client" draggable="false">
-          </div>
-          <div class="brand-logo-item" title="NW Craft Remodel">
-            <img src="<?php echo $base_path; ?>assets/images/brand/nwcraftremodel-logo.jpg" alt="NW Craft Remodel Logo - Web Optimizer Architecture Client" title="NW Craft Remodel Logo | Web Optimizer Client" draggable="false">
-          </div>
-          <div class="brand-logo-item" title="Ratnasoft">
-            <img src="<?php echo $base_path; ?>assets/images/brand/ratnasoft-logo1.png" alt="Ratnasoft Logo - Web Optimizer Enterprise Software Client" title="Ratnasoft Logo | Web Optimizer Client" draggable="false">
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- 2. WHAT WE DO & HOW WE HELP BUSINESSES -->
     <section class="section-wrap" id="what-we-do" style="padding-bottom: 20px;">
       <div class="container">
