@@ -3581,14 +3581,14 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
             <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3 pb-2 border-bottom border-secondary border-opacity-25">
               <div class="d-flex align-items-center gap-2">
                 <i class="fa-solid fa-crown text-gold" style="color:var(--gold-primary);"></i>
-                <span style="font-size:12px; text-transform:uppercase; letter-spacing:1px; color:var(--gold-primary); font-weight:700;">Full-Service Digital Marketing &amp; Engineering Ecosystem (47 Capabilities)</span>
+                <span style="font-size:12px; text-transform:uppercase; letter-spacing:1px; color:var(--gold-primary); font-weight:700;">Full-Service Digital Marketing &amp; Engineering Ecosystem (50 Capabilities)</span>
               </div>
               <div class="d-flex align-items-center gap-3">
                 <a href="<?php echo $base_path; ?>service/digital-marketing" style="font-size:12px; color:#cbd5e1; font-weight:600; text-decoration:none;">
                   Digital Marketing Overview <i class="fa-solid fa-arrow-right" style="margin-left:3px;"></i>
                 </a>
                 <a href="<?php echo $base_path; ?>services" style="font-size:12.5px; color:var(--gold-light); font-weight:700; text-decoration:none;">
-                  Explore All 47 Services <i class="fa-solid fa-arrow-right" style="margin-left:4px;"></i>
+                  Explore All 50 Services <i class="fa-solid fa-arrow-right" style="margin-left:4px;"></i>
                 </a>
               </div>
             </div>
@@ -3651,12 +3651,12 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
                 </div>
                 <ul class="mega-sub-list">
                   <li><a href="<?php echo $base_path; ?>service/quotation-billing-invoice-software" class="mega-sub-link" style="color:var(--gold-light) !important; font-weight:700 !important;"><i class="fa-solid fa-file-invoice-dollar" style="color:var(--gold-primary); width:14px;"></i> Quotation, Billing &amp; GST App</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/hospital-doctor-appointment-booking" class="mega-sub-link"><i class="fa-solid fa-user-doctor" style="color:var(--gold-primary); width:14px;"></i> Doctor Appointment Booking</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/school-website-maintenance" class="mega-sub-link"><i class="fa-solid fa-graduation-cap" style="color:var(--gold-primary); width:14px;"></i> School Website Maintenance</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/mobile-application-development" class="mega-sub-link"><i class="fa-solid fa-mobile-screen-button" style="color:var(--gold-primary); width:14px;"></i> Mobile Application Service</a></li>
                   <li><a href="<?php echo $base_path; ?>service/website-development" class="mega-sub-link"><i class="fa-solid fa-desktop" style="color:var(--gold-primary); width:14px;"></i> UI-UX Website Design</a></li>
-                  <li><a href="<?php echo $base_path; ?>service/wordpress-development" class="mega-sub-link"><i class="fa-brands fa-wordpress" style="color:var(--gold-primary); width:14px;"></i> WordPress Development</a></li>
                   <li><a href="<?php echo $base_path; ?>service/ecommerce-development" class="mega-sub-link"><i class="fa-solid fa-cart-shopping" style="color:var(--gold-primary); width:14px;"></i> E-Commerce &amp; WooCommerce</a></li>
-                  <li><a href="<?php echo $base_path; ?>service/shopify-development" class="mega-sub-link"><i class="fa-brands fa-shopify" style="color:var(--gold-primary); width:14px;"></i> Shopify Development</a></li>
                   <li><a href="<?php echo $base_path; ?>service/custom-web-application" class="mega-sub-link"><i class="fa-solid fa-cubes" style="color:var(--gold-primary); width:14px;"></i> Custom Web Applications</a></li>
-                  <li><a href="<?php echo $base_path; ?>service/api-integrations" class="mega-sub-link"><i class="fa-solid fa-plug" style="color:var(--gold-primary); width:14px;"></i> API &amp; Webhook Integrations</a></li>
                 </ul>
               </div>
 
@@ -3702,6 +3702,9 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
           </a>
           <div class="nav-dropdown-menu-standard" role="menu">
             <a href="<?php echo $base_path; ?>service/quotation-billing-invoice-software" class="standard-drop-item" style="color:var(--gold-light) !important; font-weight:700 !important;"><i class="fa-solid fa-file-invoice-dollar"></i> Quotation, Billing &amp; Invoice App</a>
+            <a href="<?php echo $base_path; ?>service/hospital-doctor-appointment-booking" class="standard-drop-item"><i class="fa-solid fa-user-doctor"></i> Hospital &amp; Doctor Booking App</a>
+            <a href="<?php echo $base_path; ?>service/school-website-maintenance" class="standard-drop-item"><i class="fa-solid fa-graduation-cap"></i> School Website Maintenance</a>
+            <a href="<?php echo $base_path; ?>service/mobile-application-development" class="standard-drop-item"><i class="fa-solid fa-mobile-screen-button"></i> Mobile Application Service</a>
             <a href="<?php echo $base_path; ?>service/website-development" class="standard-drop-item"><i class="fa-solid fa-laptop-code"></i> UI-UX Website Design</a>
             <a href="<?php echo $base_path; ?>service/wordpress-development" class="standard-drop-item"><i class="fa-brands fa-wordpress"></i> WordPress Development</a>
             <a href="<?php echo $base_path; ?>service/ecommerce-development" class="standard-drop-item"><i class="fa-solid fa-bag-shopping"></i> WooCommerce E-Commerce</a>
@@ -3709,8 +3712,6 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
             <a href="<?php echo $base_path; ?>service/custom-web-application" class="standard-drop-item"><i class="fa-solid fa-server"></i> Custom Web Applications</a>
             <a href="<?php echo $base_path; ?>service/api-integrations" class="standard-drop-item"><i class="fa-solid fa-network-wired"></i> API Integrations</a>
             <a href="<?php echo $base_path; ?>service/website-maintenance" class="standard-drop-item"><i class="fa-solid fa-screwdriver-wrench"></i> Website Maintenance AMC</a>
-            <a href="<?php echo $base_path; ?>service/plugin-development" class="standard-drop-item"><i class="fa-solid fa-puzzle-piece"></i> Plugin Development</a>
-            <a href="<?php echo $base_path; ?>service/theme-development" class="standard-drop-item"><i class="fa-solid fa-palette"></i> Theme Development</a>
           </div>
         </li>
 

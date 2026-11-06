@@ -250,9 +250,9 @@ $base_path = $base_path ?? './';
           <h4><i class="fa-solid fa-compass"></i> Quick Navigation</h4>
           <ul class="wo-footer-list">
             <li><a href="<?php echo $base_path; ?>"><i class="fa-solid fa-chevron-right link-arrow"></i> Home</a></li>
-            <li><a href="<?php echo $base_path; ?>services"><i class="fa-solid fa-chevron-right link-arrow"></i> All 47 Digital Services</a></li>
+            <li><a href="<?php echo $base_path; ?>services"><i class="fa-solid fa-chevron-right link-arrow"></i> All 50 Digital Services</a></li>
             <li><a href="<?php echo $base_path; ?>locations" style="color:var(--gold-light); font-weight:700;"><i class="fa-solid fa-map-location-dot" style="color:var(--gold-primary); font-size:12px;"></i> Odisha 50 Locations</a></li>
-            <li><a href="<?php echo $base_path; ?>blog" style="color:var(--gold-light); font-weight:700;"><i class="fa-solid fa-book-open" style="color:var(--gold-primary); font-size:12px;"></i> Business Guides (125)</a></li>
+            <li><a href="<?php echo $base_path; ?>blog" style="color:var(--gold-light); font-weight:700;"><i class="fa-solid fa-book-open" style="color:var(--gold-primary); font-size:12px;"></i> Business Guides (128)</a></li>
             <li><a href="<?php echo $base_path; ?>contact" style="color:var(--gold-light); font-weight:700;"><i class="fa-solid fa-paper-plane" style="color:var(--gold-primary); font-size:12px;"></i> Contact Us</a></li>
             <li><a href="<?php echo $base_path; ?>#portfolio"><i class="fa-solid fa-chevron-right link-arrow"></i> Client Case Studies</a></li>
             <li><a href="<?php echo $base_path; ?>about"><i class="fa-solid fa-chevron-right link-arrow"></i> About Web Optimizer</a></li>
@@ -262,16 +262,16 @@ $base_path = $base_path ?? './';
 
         <!-- Col 3: Web, Apps & Billing Software -->
         <div class="wo-footer-col">
-          <h4><i class="fa-solid fa-laptop-code"></i> Web &amp; Billing Apps</h4>
+          <h4><i class="fa-solid fa-laptop-code"></i> Web &amp; Custom Apps</h4>
           <ul class="wo-footer-list">
-            <li><a href="<?php echo $base_path; ?>service/quotation-billing-invoice-software" style="color:var(--gold-light); font-weight:700;"><i class="fa-solid fa-file-invoice-dollar" style="color:var(--gold-primary); font-size:12px;"></i> Quotation, Billing &amp; GST App</a></li>
-            <li><a href="<?php echo $base_path; ?>service/web-development"><i class="fa-solid fa-chevron-right link-arrow"></i> Website &amp; UI/UX Engineering</a></li>
-            <li><a href="<?php echo $base_path; ?>service/website-development"><i class="fa-solid fa-chevron-right link-arrow"></i> UI/UX Website Design</a></li>
+            <li><a href="<?php echo $base_path; ?>service/quotation-billing-invoice-software" style="color:var(--gold-light); font-weight:700;"><i class="fa-solid fa-file-invoice-dollar" style="color:var(--gold-primary); font-size:12px;"></i> Quotation &amp; Billing App Service</a></li>
+            <li><a href="<?php echo $base_path; ?>service/hospital-doctor-appointment-booking"><i class="fa-solid fa-chevron-right link-arrow"></i> Doctor Appointment Booking</a></li>
+            <li><a href="<?php echo $base_path; ?>service/school-website-maintenance"><i class="fa-solid fa-chevron-right link-arrow"></i> School Website Maintenance</a></li>
+            <li><a href="<?php echo $base_path; ?>service/mobile-application-development"><i class="fa-solid fa-chevron-right link-arrow"></i> Mobile Application Service</a></li>
+            <li><a href="<?php echo $base_path; ?>service/website-development"><i class="fa-solid fa-chevron-right link-arrow"></i> Website Design Service</a></li>
             <li><a href="<?php echo $base_path; ?>service/wordpress-development"><i class="fa-solid fa-chevron-right link-arrow"></i> Custom WordPress Dev</a></li>
             <li><a href="<?php echo $base_path; ?>service/ecommerce-development"><i class="fa-solid fa-chevron-right link-arrow"></i> WooCommerce E-Commerce</a></li>
-            <li><a href="<?php echo $base_path; ?>service/shopify-development"><i class="fa-solid fa-chevron-right link-arrow"></i> Shopify Storefronts</a></li>
-            <li><a href="<?php echo $base_path; ?>service/custom-web-application"><i class="fa-solid fa-chevron-right link-arrow"></i> Custom Web &amp; ERP Apps</a></li>
-            <li><a href="<?php echo $base_path; ?>service/api-integrations"><i class="fa-solid fa-chevron-right link-arrow"></i> API &amp; Webhook Integrations</a></li>
+            <li><a href="<?php echo $base_path; ?>service/custom-web-application"><i class="fa-solid fa-chevron-right link-arrow"></i> Web Application Service</a></li>
             <li><a href="<?php echo $base_path; ?>service/website-maintenance"><i class="fa-solid fa-chevron-right link-arrow"></i> Website Maintenance AMC</a></li>
           </ul>
         </div>
@@ -346,9 +346,9 @@ $base_path = $base_path ?? './';
           &copy; 2017 &ndash; <?php echo date('Y'); ?> <strong>Web Optimizer</strong> (weboptimizer.in). All Rights Reserved. Engineered by <strong>Hrushikesh Swain</strong>.
         </div>
         <div class="wo-footer-bottom-links">
-          <a href="<?php echo $base_path; ?>services">Services</a>
+          <a href="<?php echo $base_path; ?>services">Services (50)</a>
           <a href="<?php echo $base_path; ?>locations">Locations (50)</a>
-          <a href="<?php echo $base_path; ?>blog">Guides (125)</a>
+          <a href="<?php echo $base_path; ?>blog">Guides (128)</a>
           <a href="<?php echo $base_path; ?>contact">Contact Us</a>
           <a href="<?php echo $base_path; ?>sitemap.xml">XML Sitemap</a>
           <a href="#navbar" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;" style="color:var(--gold-primary); font-weight:700;">
@@ -386,7 +386,7 @@ $base_path = $base_path ?? './';
               <i class="fa-solid fa-house me-2" style="color:var(--gold-primary);"></i> Home
             </a>
             <a href="<?php echo $base_path; ?>services" class="badge text-decoration-none" style="background:rgba(212,175,55,0.15); border:1px solid var(--border-gold); color:var(--gold-light); font-size:11px;">
-              <i class="fa-solid fa-layer-group me-1"></i> 47 Services
+              <i class="fa-solid fa-layer-group me-1"></i> 50 Services
             </a>
           </div>
 
@@ -406,7 +406,7 @@ $base_path = $base_path ?? './';
                 <a href="<?php echo $base_path; ?>service/linkedin-marketing" class="offcanvas-sub-link">LinkedIn B2B Marketing</a>
                 <a href="<?php echo $base_path; ?>service/youtube-marketing" class="offcanvas-sub-link">YouTube Video Marketing</a>
                 <a href="<?php echo $base_path; ?>service/influencer-marketing" class="offcanvas-sub-link">Influencer Marketing &amp; UGC</a>
-                <a href="<?php echo $base_path; ?>services" class="offcanvas-sub-link fw-semibold" style="color:var(--gold-primary);">View All 47 Services &rarr;</a>
+                <a href="<?php echo $base_path; ?>services" class="offcanvas-sub-link fw-semibold" style="color:var(--gold-primary);">View All 50 Services &rarr;</a>
               </div>
             </div>
           </div>
@@ -415,13 +415,15 @@ $base_path = $base_path ?? './';
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingMobileWeb">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMobileWeb" aria-expanded="false" aria-controls="collapseMobileWeb">
-                <i class="fa-solid fa-laptop-code me-2" style="color:var(--gold-primary);"></i> Website &amp; Billing Apps
+                <i class="fa-solid fa-laptop-code me-2" style="color:var(--gold-primary);"></i> Website &amp; Custom Apps
               </button>
             </h2>
             <div id="collapseMobileWeb" class="accordion-collapse collapse" aria-labelledby="headingMobileWeb" data-bs-parent="#mobileMenuAccordion">
               <div class="accordion-body">
                 <a href="<?php echo $base_path; ?>service/quotation-billing-invoice-software" class="offcanvas-sub-link fw-bold" style="color:var(--gold-light);"><i class="fa-solid fa-file-invoice-dollar me-1"></i> Quotation, Billing &amp; Invoice App</a>
-                <a href="<?php echo $base_path; ?>service/web-development" class="offcanvas-sub-link">All Web Capabilities</a>
+                <a href="<?php echo $base_path; ?>service/hospital-doctor-appointment-booking" class="offcanvas-sub-link">Hospital &amp; Doctor Appointment Booking</a>
+                <a href="<?php echo $base_path; ?>service/school-website-maintenance" class="offcanvas-sub-link">School Website Maintenance</a>
+                <a href="<?php echo $base_path; ?>service/mobile-application-development" class="offcanvas-sub-link">Mobile Application Service</a>
                 <a href="<?php echo $base_path; ?>service/website-development" class="offcanvas-sub-link">UI-UX Website Design</a>
                 <a href="<?php echo $base_path; ?>service/wordpress-development" class="offcanvas-sub-link">WordPress Development</a>
                 <a href="<?php echo $base_path; ?>service/ecommerce-development" class="offcanvas-sub-link">WooCommerce E-Commerce</a>

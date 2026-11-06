@@ -71,9 +71,11 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
   <!-- Top Hyper-Local Service + Location Clean Programmatic Landing Pages -->
   <?php 
   $priority_services = [
-    'website-development', 'quotation-billing-invoice-software', 'technical-seo', 'performance-marketing', 
-    'social-media-marketing', 'ecommerce-development', 'shopify-development', 
-    'seo-audit', 'local-seo', 'google-ads', 'whatsapp-automation'
+    'website-development', 'digital-marketing', 'hospital-doctor-appointment-booking',
+    'school-website-maintenance', 'quotation-billing-invoice-software', 'google-ads',
+    'paid-social-media', 'mobile-application-development', 'custom-web-application',
+    'technical-seo', 'performance-marketing', 'social-media-marketing',
+    'ecommerce-development', 'shopify-development', 'seo-audit', 'local-seo', 'whatsapp-automation'
   ];
   foreach ($priority_services as $pSlug):
     if (isset($services_catalog[$pSlug])):

@@ -79,81 +79,622 @@ $homepage_faqs = [
 </script>
 
 <main>
-    <!-- 1. HERO SECTION: STRONG HEADLINE & CLEAR BUSINESS INTRODUCTION -->
-    <section class="hero" id="hero" style="padding-bottom: 45px;">
-      <div class="container hero-grid" style="position: relative; z-index: 2;">
-        <div class="hero-left">
-          <div class="hero-badge-gold">
-            <span class="gold-dot"></span>
-            <span>Website Design, Custom Software &amp; Digital Growth Partner</span>
-          </div>
+    <?php
+    // 9 Flagship Service Slides for the Homepage Hero Slider (100% Custom Services — Not Off-the-Shelf Products)
+    $hero_slides = [
+        [
+            'num' => '01',
+            'tab_label' => 'Website Design',
+            'icon' => 'fa-solid fa-laptop-code',
+            'badge' => 'CUSTOM WEBSITE DESIGN & DEVELOPMENT SERVICE',
+            'slogan_main' => 'Turn Every Visitor Into a Customer With ',
+            'slogan_highlight' => 'Fast, Custom Website Design',
+            'lead' => 'We provide bespoke website design and engineering services tailored to your brand—delivering mobile-first responsiveness, sub-second page speeds, and conversion-focused layouts that generate daily business enquiries.',
+            'cta_text' => 'Explore Website Design Service',
+            'cta_url' => $base_path . 'service/website-development',
+            'image' => $base_path . 'assets/images/banners/services/banner-website-development.webp',
+            'image_alt' => 'Custom Website Design and Development Service by Web Optimizer in Bhubaneswar, Odisha',
+            'image_title' => 'Website Design Service | Fast, Mobile-First Custom Business Websites',
+            'caption' => 'Custom UI/UX • 99+ Core Web Vitals • SEO-Ready Architecture'
+        ],
+        [
+            'num' => '02',
+            'tab_label' => 'Digital Marketing',
+            'icon' => 'fa-solid fa-bullhorn',
+            'badge' => 'FULL-FUNNEL DIGITAL MARKETING SERVICE',
+            'slogan_main' => 'Attract High-Intent Buyers & Scale Sales With ',
+            'slogan_highlight' => 'Data-Driven Digital Marketing',
+            'lead' => 'Our managed digital marketing services combine search engine ranking, local Google Business optimization, performance campaigns, and conversion tracking to bring qualified leads directly to your sales team.',
+            'cta_text' => 'Explore Digital Marketing Service',
+            'cta_url' => $base_path . 'service/digital-marketing',
+            'image' => $base_path . 'assets/images/banners/services/banner-digital-marketing.webp',
+            'image_alt' => 'Full-Funnel Digital Marketing Service for Business Lead Generation by Web Optimizer',
+            'image_title' => 'Digital Marketing Service | SEO, Paid Ads & Conversion Growth',
+            'caption' => '360° Growth Strategy • Verified Enquiries • Transparent ROI Reporting'
+        ],
+        [
+            'num' => '03',
+            'tab_label' => 'Hospital & Doctor Booking',
+            'icon' => 'fa-solid fa-user-doctor',
+            'badge' => 'HEALTHCARE APPOINTMENT & PAYMENT INTEGRATION SERVICE',
+            'slogan_main' => 'Simplify Patient Care With Custom ',
+            'slogan_highlight' => 'Hospital & Doctor Appointment Booking + Payment',
+            'lead' => 'We design and integrate custom online OPD slot scheduling, multi-specialty doctor calendars, instant UPI/card fee payment gateways, and automated WhatsApp patient reminders for clinics and hospitals.',
+            'cta_text' => 'Explore Doctor Booking Service',
+            'cta_url' => $base_path . 'service/hospital-doctor-appointment-booking',
+            'image' => $base_path . 'assets/images/banners/services/banner-hospital-doctor-appointment-booking.webp',
+            'image_alt' => 'Custom Hospital and Doctor Appointment Booking with Online Payment Service by Web Optimizer',
+            'image_title' => 'Hospital & Doctor Appointment Booking with Payment Service',
+            'caption' => 'Live OPD Slot Calendar • Instant UPI/Card Payment • WhatsApp Patient Alerts'
+        ],
+        [
+            'num' => '04',
+            'tab_label' => 'School Website Maintenance',
+            'icon' => 'fa-solid fa-Graduation-cap fa-graduation-cap',
+            'badge' => 'EDUCATIONAL PORTAL & ANNUAL AMC SERVICE',
+            'slogan_main' => 'Keep Your Institution Updated & Compliant With ',
+            'slogan_highlight' => 'School Website Design & Maintenance Service',
+            'lead' => 'Dedicated website development and year-round annual maintenance services for schools and colleges—covering CBSE/ICSE mandatory disclosures, notice boards, admission forms, event galleries, and security backups.',
+            'cta_text' => 'Explore School Website Service',
+            'cta_url' => $base_path . 'service/school-website-maintenance',
+            'image' => $base_path . 'assets/images/banners/services/banner-school-website-maintenance.webp',
+            'image_alt' => 'School Website Design and Annual Maintenance Service in Odisha by Web Optimizer',
+            'image_title' => 'School Website Design & Annual Maintenance (AMC) Service',
+            'caption' => 'CBSE/ICSE Mandatory Disclosure • Same-Day Notice Updates • Admission Portal'
+        ],
+        [
+            'num' => '05',
+            'tab_label' => 'Quotation & Billing App',
+            'icon' => 'fa-solid fa-file-invoice-dollar',
+            'badge' => 'CUSTOM QUOTATION & GST BILLING APPLICATION SERVICE',
+            'slogan_main' => 'Send Branded Quotes & GST Invoices in Seconds With ',
+            'slogan_highlight' => 'Custom Quotation & Billing Application Service',
+            'lead' => 'We build custom web and mobile quotation, billing, and GST invoicing applications tailored to your exact pricing rules, HSN/SAC tax slabs, and inventory workflow—with one-click WhatsApp PDF delivery.',
+            'cta_text' => 'Explore Quotation & Billing Service',
+            'cta_url' => $base_path . 'service/quotation-billing-invoice-software',
+            'image' => $base_path . 'assets/images/banners/services/banner-quotation-billing-invoice-software.webp',
+            'image_alt' => 'Custom Quotation, Billing and GST Invoicing Application Development Service by Web Optimizer',
+            'image_title' => 'Custom Quotation & GST Billing Application Development Service',
+            'caption' => '1-Click Quote-to-Invoice • HSN/SAC GST Engine • Direct WhatsApp PDF Share'
+        ],
+        [
+            'num' => '06',
+            'tab_label' => 'Paid Google Ads',
+            'icon' => 'fa-brands fa-google',
+            'badge' => 'CERTIFIED PAID GOOGLE ADS MANAGEMENT SERVICE',
+            'slogan_main' => 'Capture Ready-to-Buy Customers Instantly With ',
+            'slogan_highlight' => 'High-ROI Paid Google Ads Service',
+            'lead' => 'Our Google Ads management service puts your business at the top of Google Search the exact moment customers look for your services—maximizing phone calls and qualified form leads while eliminating wasted click spend.',
+            'cta_text' => 'Explore Paid Google Ads Service',
+            'cta_url' => $base_path . 'service/google-ads',
+            'image' => $base_path . 'assets/images/banners/services/banner-google-ads.webp',
+            'image_alt' => 'Paid Google Ads PPC Campaign Management Service by Web Optimizer',
+            'image_title' => 'Paid Google Ads Service | Search, Call-Only & Lead Generation PPC',
+            'caption' => 'High-Intent Search Keywords • Negative Keyword Shield • Call & Lead Tracking'
+        ],
+        [
+            'num' => '07',
+            'tab_label' => 'Meta Paid Ads',
+            'icon' => 'fa-brands fa-meta',
+            'badge' => 'FACEBOOK & INSTAGRAM META PAID ADS SERVICE',
+            'slogan_main' => 'Turn Social Scrolling Into Daily Enquiries With ',
+            'slogan_highlight' => 'Targeted Meta Paid Ads Service',
+            'lead' => 'We plan, design, and manage high-converting Facebook and Instagram ad campaigns—including Click-to-WhatsApp ads, instant lead forms, and retargeting funnels that connect your business with local and national buyers.',
+            'cta_text' => 'Explore Meta Paid Ads Service',
+            'cta_url' => $base_path . 'service/paid-social-media',
+            'image' => $base_path . 'assets/images/banners/services/banner-paid-social-media.webp',
+            'image_alt' => 'Meta Paid Ads Management Service for Facebook and Instagram Lead Generation by Web Optimizer',
+            'image_title' => 'Meta Paid Ads Service | Facebook & Instagram Ad Campaigns',
+            'caption' => 'Click-to-WhatsApp Ads • Precision Audience Targeting • Server-Side CAPI'
+        ],
+        [
+            'num' => '08',
+            'tab_label' => 'Mobile Application',
+            'icon' => 'fa-solid fa-mobile-screen-button',
+            'badge' => 'CUSTOM ANDROID & iOS MOBILE APP SERVICE',
+            'slogan_main' => 'Put Your Business Directly in Customers’ Hands With ',
+            'slogan_highlight' => 'Custom Mobile Application Service',
+            'lead' => 'End-to-end mobile application design, development, API integration, and Play Store / App Store deployment services—building fast, secure Android and iOS apps for booking, ordering, field teams, and customer loyalty.',
+            'cta_text' => 'Explore Mobile Application Service',
+            'cta_url' => $base_path . 'service/mobile-application-development',
+            'image' => $base_path . 'assets/images/banners/services/banner-mobile-application-development.webp',
+            'image_alt' => 'Custom Android and iOS Mobile Application Development Service by Web Optimizer',
+            'image_title' => 'Mobile Application Development Service | Custom Android & iOS Apps',
+            'caption' => 'Android & iOS Engineering • UPI & Push Notifications • Full Code Ownership'
+        ],
+        [
+            'num' => '09',
+            'tab_label' => 'Web Application',
+            'icon' => 'fa-solid fa-cubes',
+            'badge' => 'BESPOKE CLOUD WEB APPLICATION SERVICE',
+            'slogan_main' => 'Automate Complex Business Operations With ',
+            'slogan_highlight' => 'Custom Web Application Service',
+            'lead' => 'Replace disconnected spreadsheets with a secure, custom-engineered web application built around your exact business rules—featuring role-based dashboards, automated reporting, CRM workflows, and API integrations.',
+            'cta_text' => 'Explore Web Application Service',
+            'cta_url' => $base_path . 'service/custom-web-application',
+            'image' => $base_path . 'assets/images/banners/services/banner-custom-web-application.webp',
+            'image_alt' => 'Custom Cloud Web Application Development Service for Business Automation by Web Optimizer',
+            'image_title' => 'Web Application Development Service | Custom Portals & Dashboards',
+            'caption' => 'Role-Based Cloud Portals • Automated Workflows • Enterprise Security'
+        ]
+    ];
+    ?>
 
-          <h1 class="hero-title">
-            Websites, Custom Software &amp; <span class="gradient-text-agency">Digital Marketing Built to Grow Your Business</span>
-          </h1>
-
-          <p class="hero-lead">
-            <strong>Web Optimizer</strong> helps businesses attract qualified customers, automate billing and daily operations, and increase sales through fast custom websites, e-commerce stores, GST quotation &amp; invoice software, technical SEO, and ROI-driven digital marketing.
-          </p>
-
-          <div class="hero-actions">
-            <button type="button" class="btn-gold" data-bs-toggle="modal" data-bs-target="#inquiryModal">
-              <i class="fa-solid fa-calendar-check"></i> Get a Free Consultation
+    <!-- 1. INTERACTIVE 9-SERVICE HERO SLIDER (IMAGE + SLOGAN + ONE CLEAR CTA PER SLIDE) -->
+    <section class="hero hero-slider-section" id="hero">
+      <div class="container" style="position: relative; z-index: 2;">
+        
+        <!-- Quick Service Selector Tabs (All 9 Core Services) -->
+        <div class="hero-service-tabs-bar" role="tablist" aria-label="Featured Digital and Application Services">
+          <?php foreach ($hero_slides as $s_idx => $slide): ?>
+            <button type="button"
+                    class="hero-service-tab <?php echo $s_idx === 0 ? 'active' : ''; ?>"
+                    data-hero-slide="<?php echo $s_idx; ?>"
+                    role="tab"
+                    aria-selected="<?php echo $s_idx === 0 ? 'true' : 'false'; ?>">
+              <i class="<?php echo htmlspecialchars($slide['icon']); ?>"></i>
+              <span><?php echo htmlspecialchars($slide['tab_label']); ?></span>
             </button>
-            <a href="<?php echo $base_path; ?>services" class="btn-luxury-outline">
-              <i class="fa-solid fa-layer-group"></i> Explore Our Services
-            </a>
+          <?php endforeach; ?>
+        </div>
+
+        <!-- Slides Stage -->
+        <div class="hero-slides-stage" id="heroSlidesStage">
+          <?php foreach ($hero_slides as $s_idx => $slide): ?>
+            <div class="hero-slide-item <?php echo $s_idx === 0 ? 'active' : ''; ?>" data-slide-index="<?php echo $s_idx; ?>">
+              <div class="row align-items-center g-4 g-lg-5">
+                
+                <!-- Left Column: Service Badge, Slogan, Description & Single CTA -->
+                <div class="col-lg-6">
+                  <div class="hero-badge-gold mb-3">
+                    <span class="gold-dot"></span>
+                    <span><?php echo $slide['num']; ?> / 09 &bull; <?php echo htmlspecialchars($slide['badge']); ?></span>
+                  </div>
+
+                  <?php if ($s_idx === 0): ?>
+                    <h1 class="hero-title hero-slide-slogan">
+                      <?php echo htmlspecialchars($slide['slogan_main']); ?>
+                      <span class="gradient-text-agency"><?php echo htmlspecialchars($slide['slogan_highlight']); ?></span>
+                    </h1>
+                  <?php else: ?>
+                    <h2 class="hero-title hero-slide-slogan">
+                      <?php echo htmlspecialchars($slide['slogan_main']); ?>
+                      <span class="gradient-text-agency"><?php echo htmlspecialchars($slide['slogan_highlight']); ?></span>
+                    </h2>
+                  <?php endif; ?>
+
+                  <p class="hero-lead mb-4">
+                    <?php echo htmlspecialchars($slide['lead']); ?>
+                  </p>
+
+                  <!-- Strictly ONE Focused CTA Per Slide -->
+                  <div class="hero-actions mb-3">
+                    <a href="<?php echo htmlspecialchars($slide['cta_url']); ?>" class="btn-gold hero-single-cta">
+                      <span><?php echo htmlspecialchars($slide['cta_text']); ?></span>
+                      <i class="fa-solid fa-arrow-right ms-2"></i>
+                    </a>
+                  </div>
+
+                  <div class="hero-service-note">
+                    <i class="fa-solid fa-circle-check" style="color: var(--gold-primary);"></i>
+                    <span>100% Custom-Engineered Service Tailored to Your Business &bull; Direct Senior Support (+91 7735973818)</span>
+                  </div>
+                </div>
+
+                <!-- Right Column: Visual Service Banner Image Frame -->
+                <div class="col-lg-6">
+                  <div class="hero-slide-image-card">
+                    <div class="hero-slide-img-wrapper">
+                      <img src="<?php echo htmlspecialchars($slide['image']); ?>"
+                           alt="<?php echo htmlspecialchars($slide['image_alt']); ?>"
+                           title="<?php echo htmlspecialchars($slide['image_title']); ?>"
+                           width="1280"
+                           height="720"
+                           <?php echo $s_idx === 0 ? 'fetchpriority="high"' : 'loading="lazy"'; ?>
+                           draggable="false"
+                           class="img-fluid hero-slide-img">
+                      <div class="hero-slide-caption-bar">
+                        <span class="gold-dot"></span>
+                        <span><?php echo htmlspecialchars($slide['caption']); ?></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          <?php endforeach; ?>
+        </div>
+
+        <!-- Slider Controls Bar: Prev/Next Arrows, Dots & Progress Bar -->
+        <div class="hero-slider-controls-bar">
+          <div class="d-flex align-items-center gap-2">
+            <button type="button" class="hero-nav-arrow" id="heroPrevBtn" aria-label="Previous Service Slide">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button type="button" class="hero-nav-arrow" id="heroNextBtn" aria-label="Next Service Slide">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <span class="hero-slide-counter ms-2" id="heroSlideCounter">Slide 01 of 09</span>
           </div>
 
-          <div class="hero-pills">
-            <a href="tel:+917735973818" class="hero-pill">
-              <i class="fa-solid fa-phone"></i> +91 7735973818
-            </a>
-            <a href="https://wa.me/917735973818" target="_blank" rel="noopener noreferrer" class="hero-pill">
-              <i class="fa-brands fa-whatsapp" style="color:#25d366;"></i> Talk to Our Experts
-            </a>
-            <a href="mailto:info@weboptimizer.in" class="hero-pill">
-              <i class="fa-solid fa-envelope"></i> info@weboptimizer.in
-            </a>
+          <div class="hero-slider-dots" id="heroSliderDots">
+            <?php foreach ($hero_slides as $s_idx => $slide): ?>
+              <button type="button"
+                      class="hero-dot <?php echo $s_idx === 0 ? 'active' : ''; ?>"
+                      data-hero-dot="<?php echo $s_idx; ?>"
+                      aria-label="Go to slide <?php echo ($s_idx + 1) . ': ' . htmlspecialchars($slide['tab_label']); ?>"></button>
+            <?php endforeach; ?>
+          </div>
+
+          <div class="hero-autoplay-progress">
+            <div class="hero-autoplay-fill" id="heroAutoplayFill"></div>
           </div>
         </div>
 
-        <div class="hero-stats-grid">
-          <div class="stat-card text-center">
-            <div class="stat-num">158+</div>
-            <div class="stat-desc">Projects Delivered</div>
+        <!-- Key Agency Credibility Metrics Strip -->
+        <div class="row g-3 mt-3 pt-3 border-top border-secondary border-opacity-25">
+          <div class="col-6 col-md-3">
+            <div class="stat-card text-center py-3">
+              <div class="stat-num" style="font-size: 1.55rem;">158+</div>
+              <div class="stat-desc">Projects Delivered</div>
+            </div>
           </div>
-          <div class="stat-card text-center">
-            <div class="stat-num">448+</div>
-            <div class="stat-desc">Business Clients</div>
+          <div class="col-6 col-md-3">
+            <div class="stat-card text-center py-3">
+              <div class="stat-num" style="font-size: 1.55rem;">448+</div>
+              <div class="stat-desc">Business Clients</div>
+            </div>
           </div>
-          <div class="stat-card text-center">
-            <div class="stat-num">&lt;800ms</div>
-            <div class="stat-desc">Avg Page Speed</div>
+          <div class="col-6 col-md-3">
+            <div class="stat-card text-center py-3">
+              <div class="stat-num" style="font-size: 1.55rem;">&lt;800ms</div>
+              <div class="stat-desc">Avg Page Speed</div>
+            </div>
           </div>
-          <div class="stat-card text-center">
-            <div class="stat-num">8+ Yrs</div>
-            <div class="stat-desc">Proven Experience</div>
+          <div class="col-6 col-md-3">
+            <div class="stat-card text-center py-3">
+              <div class="stat-num" style="font-size: 1.55rem;">8+ Yrs</div>
+              <div class="stat-desc">Service Excellence</div>
+            </div>
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- SEPARATE FULL-WIDTH HERO BANNER SHOWCASE SECTION -->
-    <section class="full-banner-showcase-section">
-      <div class="container">
-        <div class="banner-visual-frame">
-          <img src="<?php echo $base_path; ?>assets/images/banners/banner-home.webp" 
-               alt="Web Optimizer - Custom Website Design, GST Billing Software & Digital Marketing Company in Bhubaneswar, Odisha" 
-               title="Web Optimizer | Website Design, Custom Billing Software & Digital Marketing Services"
-               draggable="false"
-               class="img-fluid">
-          <div class="banner-floating-badge">
-            <span class="gold-dot"></span> Serving All 50 Odisha Cities &amp; Global Clients &bull; 99.8% Core Web Vitals
-          </div>
-        </div>
-      </div>
-    </section>
+    <style>
+      .hero-slider-section {
+        padding-top: 32px;
+        padding-bottom: 44px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-service-tabs-bar {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 12px;
+        margin-bottom: 24px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        scrollbar-width: thin;
+      }
+      .hero-service-tabs-bar::-webkit-scrollbar {
+        height: 4px;
+      }
+      .hero-service-tabs-bar::-webkit-scrollbar-thumb {
+        background: rgba(212, 175, 55, 0.35);
+        border-radius: 99px;
+      }
+      .hero-service-tab {
+        flex: 0 0 auto;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-size: 12.5px;
+        font-weight: 600;
+        color: #cbd5e1;
+        background: rgba(15, 23, 42, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        cursor: pointer;
+        transition: all 0.25s ease;
+        white-space: nowrap;
+      }
+      .hero-service-tab i {
+        color: var(--gold-primary);
+        font-size: 12px;
+      }
+      .hero-service-tab:hover {
+        color: #ffffff;
+        border-color: rgba(212, 175, 55, 0.5);
+        background: rgba(30, 41, 59, 0.9);
+      }
+      .hero-service-tab.active {
+        color: #090d16;
+        background: linear-gradient(135deg, #f5d061 0%, #d4af37 100%);
+        border-color: #f5d061;
+        font-weight: 700;
+        box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
+      }
+      .hero-service-tab.active i {
+        color: #090d16;
+      }
+      .hero-slides-stage {
+        position: relative;
+        min-height: 410px;
+      }
+      .hero-slide-item {
+        display: none;
+        animation: heroSlideFadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .hero-slide-item.active {
+        display: block;
+      }
+      @keyframes heroSlideFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .hero-slide-slogan {
+        font-size: clamp(1.85rem, 3.3vw, 2.85rem);
+        line-height: 1.18;
+        margin-bottom: 16px;
+        font-weight: 800;
+      }
+      .hero-single-cta {
+        display: inline-flex;
+        align-items: center;
+        padding: 14px 28px;
+        font-size: 15px;
+        font-weight: 700;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(212, 175, 55, 0.28);
+      }
+      .hero-service-note {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12.5px;
+        color: #94a3b8;
+        margin-top: 6px;
+      }
+      .hero-slide-image-card {
+        position: relative;
+        padding: 10px;
+        border-radius: 18px;
+        background: linear-gradient(145deg, rgba(30, 41, 59, 0.75), rgba(15, 23, 42, 0.92));
+        border: 1px solid rgba(212, 175, 55, 0.32);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+      }
+      .hero-slide-img-wrapper {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        aspect-ratio: 16 / 9;
+        background: #090d16;
+      }
+      .hero-slide-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s ease;
+      }
+      .hero-slide-image-card:hover .hero-slide-img {
+        transform: scale(1.02);
+      }
+      .hero-slide-caption-bar {
+        position: absolute;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        padding: 8px 14px;
+        border-radius: 10px;
+        background: rgba(9, 13, 22, 0.88);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        color: #f8fafc;
+        font-size: 12px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .hero-slider-controls-bar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        margin-top: 24px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .hero-nav-arrow {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid rgba(212, 175, 55, 0.4);
+        background: rgba(15, 23, 42, 0.85);
+        color: #f8fafc;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .hero-nav-arrow:hover {
+        background: var(--gold-primary);
+        color: #090d16;
+        border-color: var(--gold-primary);
+      }
+      .hero-slide-counter {
+        font-size: 12.5px;
+        font-weight: 700;
+        color: #cbd5e1;
+        letter-spacing: 0.5px;
+      }
+      .hero-slider-dots {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .hero-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 99px;
+        border: none;
+        background: rgba(255, 255, 255, 0.22);
+        cursor: pointer;
+        transition: all 0.25s ease;
+        padding: 0;
+      }
+      .hero-dot.active {
+        width: 28px;
+        background: var(--gold-primary);
+      }
+      .hero-autoplay-progress {
+        width: 140px;
+        height: 5px;
+        border-radius: 99px;
+        background: rgba(255, 255, 255, 0.12);
+        overflow: hidden;
+      }
+      .hero-autoplay-fill {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, var(--gold-primary), #38bdf8);
+        transition: width 0.1s linear;
+      }
+      @media (max-width: 991.98px) {
+        .hero-slides-stage {
+          min-height: auto;
+        }
+        .hero-slide-slogan {
+          font-size: 1.75rem;
+        }
+      }
+      @media (max-width: 575.98px) {
+        .hero-single-cta {
+          width: 100%;
+          justify-content: center;
+        }
+        .hero-autoplay-progress {
+          display: none;
+        }
+      }
+    </style>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var slides = document.querySelectorAll('.hero-slide-item');
+        var tabs = document.querySelectorAll('.hero-service-tab');
+        var dots = document.querySelectorAll('.hero-dot');
+        var prevBtn = document.getElementById('heroPrevBtn');
+        var nextBtn = document.getElementById('heroNextBtn');
+        var counterEl = document.getElementById('heroSlideCounter');
+        var progressFill = document.getElementById('heroAutoplayFill');
+        var stage = document.getElementById('heroSlidesStage');
+        if (!slides.length) return;
+
+        var currentIndex = 0;
+        var totalSlides = slides.length;
+        var intervalMs = 5500;
+        var stepMs = 55;
+        var elapsed = 0;
+        var isPaused = false;
+
+        function pad2(n) {
+          return n < 10 ? '0' + n : '' + n;
+        }
+
+        function goToSlide(idx) {
+          currentIndex = (idx + totalSlides) % totalSlides;
+          slides.forEach(function (s, i) {
+            s.classList.toggle('active', i === currentIndex);
+          });
+          tabs.forEach(function (t, i) {
+            var active = i === currentIndex;
+            t.classList.toggle('active', active);
+            t.setAttribute('aria-selected', active ? 'true' : 'false');
+          });
+          dots.forEach(function (d, i) {
+            d.classList.toggle('active', i === currentIndex);
+          });
+          if (counterEl) {
+            counterEl.textContent = 'Slide ' + pad2(currentIndex + 1) + ' of ' + pad2(totalSlides);
+          }
+          elapsed = 0;
+          if (progressFill) progressFill.style.width = '0%';
+        }
+
+        tabs.forEach(function (tab) {
+          tab.addEventListener('click', function () {
+            var target = parseInt(tab.getAttribute('data-hero-slide'), 10);
+            if (!isNaN(target)) goToSlide(target);
+          });
+        });
+
+        dots.forEach(function (dot) {
+          dot.addEventListener('click', function () {
+            var target = parseInt(dot.getAttribute('data-hero-dot'), 10);
+            if (!isNaN(target)) goToSlide(target);
+          });
+        });
+
+        if (prevBtn) {
+          prevBtn.addEventListener('click', function () {
+            goToSlide(currentIndex - 1);
+          });
+        }
+        if (nextBtn) {
+          nextBtn.addEventListener('click', function () {
+            goToSlide(currentIndex + 1);
+          });
+        }
+
+        // Touch swipe support on mobile/tablet
+        var touchStartX = 0;
+        if (stage) {
+          stage.addEventListener('touchstart', function (e) {
+            if (e.changedTouches && e.changedTouches.length) {
+              touchStartX = e.changedTouches[0].screenX;
+            }
+          }, { passive: true });
+          stage.addEventListener('touchend', function (e) {
+            if (e.changedTouches && e.changedTouches.length) {
+              var diff = e.changedTouches[0].screenX - touchStartX;
+              if (Math.abs(diff) > 45) {
+                if (diff < 0) goToSlide(currentIndex + 1);
+                else goToSlide(currentIndex - 1);
+              }
+            }
+          }, { passive: true });
+          stage.addEventListener('mouseenter', function () { isPaused = true; });
+          stage.addEventListener('mouseleave', function () { isPaused = false; });
+        }
+
+        setInterval(function () {
+          if (isPaused) return;
+          elapsed += stepMs;
+          if (progressFill) {
+            var pct = Math.min(100, (elapsed / intervalMs) * 100);
+            progressFill.style.width = pct + '%';
+          }
+          if (elapsed >= intervalMs) {
+            goToSlide(currentIndex + 1);
+          }
+        }, stepMs);
+      });
+    </script>
 
     <!-- 2. WHAT WE DO & HOW WE HELP BUSINESSES -->
     <section class="section-wrap" id="what-we-do" style="padding-bottom: 20px;">
@@ -387,17 +928,16 @@ $homepage_faqs = [
 
           <!-- Quick Service Pills Jump Bar -->
           <div class="pt-3 mt-3 border-top border-secondary border-opacity-25 d-flex flex-wrap align-items-center gap-2">
-            <span style="font-size: 11px; color: var(--gold-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Popular Services:</span>
-            <a href="<?php echo $base_path; ?>service/website-development" class="badge text-decoration-none" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); color: #cbd5e1; font-size: 11px; padding: 6px 10px;">Website Design &amp; Development</a>
-            <a href="<?php echo $base_path; ?>service/quotation-billing-invoice-software" class="badge text-decoration-none" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); color: #cbd5e1; font-size: 11px; padding: 6px 10px;">Quotation &amp; GST Billing Software</a>
-            <a href="<?php echo $base_path; ?>service/wordpress-development" class="badge text-decoration-none" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); color: #cbd5e1; font-size: 11px; padding: 6px 10px;">Custom WordPress</a>
-            <a href="<?php echo $base_path; ?>service/ecommerce-development" class="badge text-decoration-none" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); color: #cbd5e1; font-size: 11px; padding: 6px 10px;">WooCommerce &amp; E-Commerce</a>
-            <a href="<?php echo $base_path; ?>service/technical-seo" class="badge text-decoration-none" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); color: #cbd5e1; font-size: 11px; padding: 6px 10px;">Technical SEO</a>
-            <a href="<?php echo $base_path; ?>service/local-seo" class="badge text-decoration-none" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); color: #cbd5e1; font-size: 11px; padding: 6px 10px;">Google Maps Local SEO</a>
-            <a href="<?php echo $base_path; ?>service/google-ads" class="badge text-decoration-none" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); color: #cbd5e1; font-size: 11px; padding: 6px 10px;">Google Ads (PPC)</a>
-            <a href="<?php echo $base_path; ?>service/paid-social-media" class="badge text-decoration-none" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); color: #cbd5e1; font-size: 11px; padding: 6px 10px;">Paid Social Media Ads</a>
-            <a href="<?php echo $base_path; ?>service/branding-design" class="badge text-decoration-none" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); color: #cbd5e1; font-size: 11px; padding: 6px 10px;">Brand Identity</a>
-            <a href="<?php echo $base_path; ?>service/whatsapp-automation" class="badge text-decoration-none" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); color: #cbd5e1; font-size: 11px; padding: 6px 10px;">WhatsApp Automation</a>
+            <span style="font-size: 11px; color: var(--gold-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Featured Services:</span>
+            <a href="<?php echo $base_path; ?>service/website-development" class="badge text-decoration-none" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); color: #cbd5e1; font-size: 11px; padding: 6px 10px;">Website Design Service</a>
+            <a href="<?php echo $base_path; ?>service/digital-marketing" class="badge text-decoration-none" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); color: #cbd5e1; font-size: 11px; padding: 6px 10px;">Digital Marketing Service</a>
+            <a href="<?php echo $base_path; ?>service/hospital-doctor-appointment-booking" class="badge text-decoration-none" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); color: #cbd5e1; font-size: 11px; padding: 6px 10px;">Hospital &amp; Doctor Appointment Booking</a>
+            <a href="<?php echo $base_path; ?>service/school-website-maintenance" class="badge text-decoration-none" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); color: #cbd5e1; font-size: 11px; padding: 6px 10px;">School Website Maintenance</a>
+            <a href="<?php echo $base_path; ?>service/quotation-billing-invoice-software" class="badge text-decoration-none" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); color: #cbd5e1; font-size: 11px; padding: 6px 10px;">Quotation &amp; Billing Application Service</a>
+            <a href="<?php echo $base_path; ?>service/google-ads" class="badge text-decoration-none" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); color: #cbd5e1; font-size: 11px; padding: 6px 10px;">Paid Google Ads Service</a>
+            <a href="<?php echo $base_path; ?>service/paid-social-media" class="badge text-decoration-none" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); color: #cbd5e1; font-size: 11px; padding: 6px 10px;">Meta Paid Ads Service</a>
+            <a href="<?php echo $base_path; ?>service/mobile-application-development" class="badge text-decoration-none" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); color: #cbd5e1; font-size: 11px; padding: 6px 10px;">Mobile Application Service</a>
+            <a href="<?php echo $base_path; ?>service/custom-web-application" class="badge text-decoration-none" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); color: #cbd5e1; font-size: 11px; padding: 6px 10px;">Web Application Service</a>
           </div>
         </div>
 

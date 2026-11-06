@@ -93,9 +93,11 @@ foreach ($blogs_catalog as $blogSlug => $post) {
 }
 
 $priorityServices = [
-    'website-development', 'quotation-billing-invoice-software', 'technical-seo', 'performance-marketing',
-    'social-media-marketing', 'ecommerce-development', 'shopify-development',
-    'seo-audit', 'local-seo', 'google-ads', 'whatsapp-automation'
+    'website-development', 'digital-marketing', 'hospital-doctor-appointment-booking',
+    'school-website-maintenance', 'quotation-billing-invoice-software', 'google-ads',
+    'paid-social-media', 'mobile-application-development', 'custom-web-application',
+    'technical-seo', 'performance-marketing', 'social-media-marketing',
+    'ecommerce-development', 'shopify-development', 'seo-audit', 'local-seo', 'whatsapp-automation'
 ];
 echo "Building priority service + location landing pages...\n";
 foreach ($priorityServices as $pSlug) {

@@ -7,8 +7,8 @@
 require_once __DIR__ . '/includes/services-data.php';
 require_once __DIR__ . '/includes/blogs-data.php';
 
-$page_title = 'Web Design, Software & Marketing Services | Web Optimizer';
-$meta_desc = "Explore Web Optimizer's 47 services: custom website design, GST billing software, WordPress, Shopify, SEO, Google Ads, and WhatsApp automation.";
+$page_title = 'Web Design, Custom Apps & Marketing Services | Web Optimizer';
+$meta_desc = "Explore Web Optimizer's 50 custom services: website design, doctor appointment booking, school AMC, quotation & billing apps, Google/Meta ads & mobile apps.";
 $canonical_url = 'https://www.weboptimizer.in/services';
 $active_nav = 'services';
 $base_path = './';
@@ -30,21 +30,21 @@ require __DIR__ . '/includes/header.php';
 
           <div class="banner-pill-badge mb-3">
             <span class="gold-dot"></span>
-            <span>END-TO-END DIGITAL ENGINEERING &bull; 47 CAPABILITIES</span>
+            <span>100% CUSTOM SERVICES &bull; 50 SPECIALIZED CAPABILITIES</span>
           </div>
 
           <h1 class="banner-title">
-            Bespoke Digital Engineering &amp; <br>
-            <span class="gold-gradient-text">Performance Growth Practices</span>
+            Bespoke Website, Custom Application &amp; <br>
+            <span class="gold-gradient-text">Digital Marketing Services</span>
           </h1>
 
           <p class="banner-lead mx-auto" style="max-width: 780px;">
-            Explore Web Optimizer's complete suite of digital practices: custom WordPress engineering, WooCommerce development, aggressive AI SEO, high-conversion performance marketing, social media dominance, luxury brand identity, and automated conversational funnels.
+            We are a custom service company—not an off-the-shelf software vendor. Every website, hospital appointment portal, school maintenance plan, quotation &amp; GST billing application, mobile app, and paid advertising campaign is custom-engineered around your business workflow.
           </p>
 
           <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
             <button type="button" class="btn-gold" data-bs-toggle="modal" data-bs-target="#inquiryModal" style="padding: 12px 26px; font-size: 14px;">
-              <i class="fa-solid fa-file-signature"></i> Request Architecture Proposal
+              <i class="fa-solid fa-file-signature"></i> Request Service Proposal
             </button>
             <a href="https://wa.me/917735973818?text=Hello%20Web%20Optimizer%2C%20I%20am%20exploring%20your%20services%20and%20would%20like%20to%20discuss%20a%20project." 
                target="_blank" 
@@ -56,8 +56,8 @@ require __DIR__ . '/includes/header.php';
           </div>
 
           <div class="d-flex flex-wrap justify-content-center gap-2">
-            <span class="banner-stat-chip"><i class="fa-solid fa-laptop-code text-gold"></i> 47 Capabilities</span>
-            <span class="banner-stat-chip"><i class="fa-solid fa-file-invoice-dollar text-gold"></i> Custom Billing &amp; ERP</span>
+            <span class="banner-stat-chip"><i class="fa-solid fa-laptop-code text-gold"></i> 50 Custom Services</span>
+            <span class="banner-stat-chip"><i class="fa-solid fa-file-invoice-dollar text-gold"></i> Custom Billing &amp; Booking Apps</span>
             <span class="banner-stat-chip"><i class="fa-solid fa-bolt text-gold"></i> Sub-Second Speed</span>
             <span class="banner-stat-chip"><i class="fa-solid fa-phone text-gold"></i> +91 7735973818</span>
           </div>
@@ -71,13 +71,70 @@ require __DIR__ . '/includes/header.php';
     <div class="container">
       <div class="banner-visual-frame">
         <img src="<?php echo $base_path; ?>assets/images/banners/banner-services.webp" 
-             alt="Web Optimizer Full 47 Digital Services & Custom Software Ecosystem in Odisha" 
-             title="Web Optimizer | 47 Enterprise Digital Engineering & Marketing Capabilities"
+             alt="Web Optimizer Full 50 Digital Services & Custom Application Engineering Ecosystem in Odisha" 
+             title="Web Optimizer | 50 Custom Digital Engineering & Marketing Services"
              draggable="false"
              class="img-fluid">
         <div class="banner-floating-badge">
-          <span class="gold-dot"></span> 47 Capabilities Active &bull; All Odisha
+          <span class="gold-dot"></span> 50 Custom Services Active &bull; All Odisha &amp; Global Clients
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 FLAGSHIP SERVICES SPOTLIGHT -->
+  <section class="section-wrap" style="padding-top: 10px; padding-bottom: 30px;">
+    <div class="container">
+      <div class="section-header text-center mb-4">
+        <span class="section-tag"><i class="fa-solid fa-star"></i> Most Requested Custom Services</span>
+        <h2 class="section-title-lg">Our 9 Flagship Digital &amp; Application Services</h2>
+        <p class="section-desc mx-auto" style="max-width: 780px;">
+          Tailored development, maintenance, and marketing services engineered for businesses, hospitals, schools, and growing brands.
+        </p>
+      </div>
+      <div class="row g-4 mb-4">
+        <?php
+        $flagship_9 = [
+          'website-development',
+          'digital-marketing',
+          'hospital-doctor-appointment-booking',
+          'school-website-maintenance',
+          'quotation-billing-invoice-software',
+          'google-ads',
+          'paid-social-media',
+          'mobile-application-development',
+          'custom-web-application'
+        ];
+        foreach ($flagship_9 as $f_slug):
+          if (!isset($services_catalog[$f_slug])) continue;
+          $f_svc = $services_catalog[$f_slug];
+        ?>
+          <div class="col-lg-4 col-md-6">
+            <div class="deliverable-card h-100 d-flex flex-column justify-content-between p-4" style="border: 1px solid rgba(212, 175, 55, 0.3);">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <div class="dropdown-item-icon" style="width: 44px; height: 44px; font-size: 18px;">
+                    <i class="<?php echo htmlspecialchars($f_svc['icon']); ?>"></i>
+                  </div>
+                  <span class="badge" style="background: rgba(212, 175, 55, 0.14); color: var(--gold-light); border: 1px solid var(--border-gold); font-size: 10px;">
+                    CUSTOM SERVICE
+                  </span>
+                </div>
+                <h3 style="font-size: 1.2rem; color: #fff; font-weight: 700; margin-bottom: 8px;">
+                  <?php echo htmlspecialchars($f_svc['title']); ?>
+                </h3>
+                <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
+                  <?php echo htmlspecialchars($f_svc['meta_description']); ?>
+                </p>
+              </div>
+              <div class="pt-3 border-top border-secondary border-opacity-25">
+                <a href="<?php echo $base_path; ?>service/<?php echo $f_svc['slug']; ?>" class="btn-gold w-100 text-center" style="padding: 10px 16px; font-size: 13px; text-decoration: none;">
+                  Explore <?php echo htmlspecialchars($f_svc['short_title']); ?> <i class="fa-solid fa-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        <?php endforeach; ?>
       </div>
     </div>
   </section>

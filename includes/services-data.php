@@ -1,6 +1,6 @@
 <?php
 /**
- * Web Optimizer - Master Services & Sub-Services Catalog (47 Services)
+ * Web Optimizer - Master Services & Sub-Services Catalog (50 Services)
  * Complete Professional Content & SEO Architecture
  * https://www.weboptimizer.in
  * Founder & Senior Web Developer: Hrushikesh Swain (+91 7735973818 | info@weboptimizer.in)
@@ -28,6 +28,9 @@ $service_parents = array (
       7 => 'website-maintenance',
       8 => 'plugin-development',
       9 => 'theme-development',
+      10 => 'hospital-doctor-appointment-booking',
+      11 => 'school-website-maintenance',
+      12 => 'mobile-application-development',
     ),
   ),
   'ai-seo' => 
@@ -12231,16 +12234,16 @@ $services_catalog = array (
     'slug' => 'quotation-billing-invoice-software',
     'parent_slug' => 'web-development',
     'parent_name' => 'Website & UI/UX Engineering',
-    'title' => 'Custom Quotation, Billing & GST Invoice Software',
-    'short_title' => 'Quotation, Billing & Invoice App',
+    'title' => 'Custom Quotation, Billing & GST Invoice Application Service',
+    'short_title' => 'Quotation & Billing App Service',
     'badge' => 'BILLING & ERP APP',
     'badge_color' => 'gold',
     'category' => 'web',
     'category_name' => 'Web & Business Apps',
     'icon' => 'fa-file-invoice-dollar',
-    'meta_description' => 'Custom quotation, billing, and GST invoice web & mobile software for businesses in Odisha. One-click quote-to-invoice, inventory & WhatsApp PDF sharing.',
-    'hero_headline' => 'Custom Quotation, Billing & <span class="gold-gradient-text">GST Invoice Software</span> for Your Business',
-    'hero_lead' => 'Generate branded estimates in seconds, convert approved quotations into GST-compliant invoices with one click, track inventory and customer dues, and share PDFs instantly on WhatsApp.',
+    'meta_description' => 'We provide custom quotation, billing, and GST invoice application development services tailored to your business workflow in Odisha. Call +91 7735973818.',
+    'hero_headline' => 'Custom Quotation, Billing &amp; <span class="gold-gradient-text">GST Invoice Application Service</span>',
+    'hero_lead' => 'We provide end-to-end custom application development services to build your company\'s own quotation, billing, and GST invoicing system—tailored to your exact pricing rules, tax slabs, and workflow.',
     'overview' => 'Preparing quotations in Word or Excel takes too much time, leads to calculation errors, and makes it difficult to track pending payments or GST filings. Worse yet, generic off-the-shelf billing software rarely fits the specific pricing formulas, square-foot calculations, service tiers, or multi-branch approvals your business actually uses. Web Optimizer develops custom Quotation, Billing, and GST Invoicing applications (Web + Mobile PWA) tailored to your exact business rules—giving you full data ownership, multi-user staff permissions, and automated payment reminders.',
     'deliverables' => 
     array (
@@ -12353,7 +12356,7 @@ $services_catalog = array (
         'a' => 'Yes. Every project at Web Optimizer is led and reviewed directly by Founder & Senior Developer Hrushikesh Swain alongside dedicated specialists, ensuring clear communication, fast turnaround, and high technical quality.',
       ),
     ),
-    'seo_title' => 'Custom Quotation & GST Billing Software | Web Optimizer',
+    'seo_title' => 'Quotation & GST Billing App Service | Web Optimizer',
     'primary_keyword' => 'custom quotation and GST billing software',
     'secondary_keywords' => 
     array (
@@ -12488,6 +12491,810 @@ $services_catalog = array (
         'name' => 'Education, Coaching & Professional Firms',
         'desc' => 'Boost student admissions and corporate client consultations with authoritative digital presence.',
       ),
+    ),
+  ),
+  'hospital-doctor-appointment-booking' => 
+  array (
+    'slug' => 'hospital-doctor-appointment-booking',
+    'title' => 'Hospital & Doctor Appointment Booking System with Payment Service',
+    'short_title' => 'Doctor Appointment Booking',
+    'seo_title' => 'Hospital & Doctor Appointment Booking Service | Web Optimizer',
+    'parent_slug' => 'web-development',
+    'parent_name' => 'Website & UI/UX Engineering',
+    'badge' => 'HEALTHCARE TECH',
+    'badge_color' => 'green',
+    'category' => 'web',
+    'category_name' => 'Healthcare Web & Booking Services',
+    'icon' => 'fa-solid fa-user-doctor',
+    'meta_description' => 'Custom hospital and doctor appointment booking system development service with online UPI/card payment, time-slot scheduling & WhatsApp alerts.',
+    'primary_keyword' => 'doctor appointment booking system development service',
+    'secondary_keywords' => 
+    array (
+      0 => 'hospital appointment website Bhubaneswar',
+      1 => 'online consultation payment integration',
+      2 => 'clinic booking portal development Odisha',
+      3 => 'healthcare web development service',
+    ),
+    'search_intent' => 'Transactional',
+    'hero_headline' => 'Hospital &amp; Doctor Appointment Booking <span class="gold-gradient-text">With Online Payment Service</span>',
+    'hero_lead' => 'We design, develop, and maintain custom patient appointment booking portals for hospitals, multi-specialty clinics, diagnostic centers, and individual doctors—complete with live time-slot selection, online UPI/card consultation fee payment, and automated WhatsApp confirmations.',
+    'overview' => 'Patients today expect to book doctor consultations and diagnostic tests online without waiting on busy reception phone lines. We provide a complete custom development service to build your hospital or clinic\'s own online appointment & payment system integrated directly into your website. Patients can browse doctors by department, choose available OPD or video-consultation time slots, pay consultation fees securely via UPI (PhonePe, GPay, Paytm) or cards, and receive instant appointment slips and reminders on WhatsApp and SMS—while your reception desk manages every booking from an easy dashboard.',
+    'metrics' => 
+    array (
+      0 => 
+      array (
+        'num' => '24/7',
+        'label' => 'Online Patient Booking',
+      ),
+      1 => 
+      array (
+        'num' => '100%',
+        'label' => 'Automated UPI/Card Fee Collection',
+      ),
+      2 => 
+      array (
+        'num' => 'Zero',
+        'label' => 'Per-Booking Commission Fees',
+      ),
+    ),
+    'problems_solved' => 
+    array (
+      0 => 
+      array (
+        'title' => 'Overloaded Reception Phones & Missed Patient Calls',
+        'desc' => 'Receptionists spend hours answering routine slot inquiries while patients get busy signals and book with another hospital instead.',
+      ),
+      1 => 
+      array (
+        'title' => 'High Patient No-Show Rates Without Advance Payment',
+        'desc' => 'Unpaid phone bookings often result in last-minute no-shows; collecting consultation fees online via UPI secures committed appointments.',
+      ),
+      2 => 
+      array (
+        'title' => 'Confusion Over Doctor Schedules & Leave Days',
+        'desc' => 'Manual registers lead to double-booking or scheduling patients when a specialist doctor is in surgery or on leave.',
+      ),
+      3 => 
+      array (
+        'title' => 'Heavy Commissions Charged by Third-Party Aggregator Apps',
+        'desc' => 'Relying only on third-party listing portals drains commission fees and diverts your patients to competing doctors listed on the same page.',
+      ),
+    ),
+    'deliverables' => 
+    array (
+      0 => 
+      array (
+        'title' => 'Department & Doctor Profile Directory',
+        'desc' => 'Clean, searchable profiles for every specialist doctor showing qualifications, OPD timings, consultation fees, and available slots.',
+      ),
+      1 => 
+      array (
+        'title' => 'Real-Time Slot Calendar & Token Generation',
+        'desc' => 'Dynamic morning/evening time-slot engine that prevents double booking and automatically assigns OPD token numbers.',
+      ),
+      2 => 
+      array (
+        'title' => 'Online UPI, Card & NetBanking Payment Gateway',
+        'desc' => 'Seamless Razorpay/PhonePe/PayU integration allowing patients to pay consultation or diagnostic registration fees online with automated receipts.',
+      ),
+      3 => 
+      array (
+        'title' => 'Automated WhatsApp & SMS Appointment Alerts',
+        'desc' => 'Instant booking confirmation, digital receipt PDF, clinic Google Map directions, and pre-visit reminders sent to the patient\'s WhatsApp.',
+      ),
+      4 => 
+      array (
+        'title' => 'Reception Desk & Doctor Admin Dashboard',
+        'desc' => 'Easy-to-use control panel for reception staff to add walk-in patients, reschedule slots, block emergency leave hours, and export daily OPD reports.',
+      ),
+      5 => 
+      array (
+        'title' => 'Lab Report Download & Follow-Up Integration',
+        'desc' => 'Optional secure patient portal where patients can download PDF diagnostic reports or prescriptions using their registered mobile number.',
+      ),
+    ),
+    'benefits' => 
+    array (
+      0 => 
+      array (
+        'icon' => 'fa-calendar-check',
+        'title' => 'More Daily OPD Consultations',
+        'text' => 'Allow patients across Odisha to book appointments 24/7 from their smartphones in under 60 seconds.',
+      ),
+      1 => 
+      array (
+        'icon' => 'fa-indian-rupee-sign',
+        'title' => 'Instant Consultation Fee Settlement',
+        'text' => 'Receive online consultation payments directly into your hospital or clinic bank account with zero per-patient commission.',
+      ),
+      2 => 
+      array (
+        'icon' => 'fa-bell',
+        'title' => 'Drastically Lower No-Shows',
+        'text' => 'Advance online payment combined with automated WhatsApp reminders ensures patients arrive on time.',
+      ),
+      3 => 
+      array (
+        'icon' => 'fa-user-shield',
+        'title' => 'Full Patient Data Ownership',
+        'text' => 'Your hospital retains 100% ownership of patient records, contact history, and booking data on secure servers.',
+      ),
+    ),
+    'tech_stack' => 
+    array (
+      0 => 'Custom PHP 8.3',
+      1 => 'WordPress / Custom Portal',
+      2 => 'Razorpay / PhonePe UPI',
+      3 => 'WhatsApp Business API',
+      4 => 'MySQL Encrypted DB',
+      5 => 'Mobile Responsive UI',
+    ),
+    'process_steps' => 
+    array (
+      0 => 
+      array (
+        'step' => '01',
+        'title' => 'OPD Workflow & Department Mapping',
+        'desc' => 'We review your hospital departments, doctor rosters, slot durations, and fee structures to design a custom booking flow.',
+      ),
+      1 => 
+      array (
+        'step' => '02',
+        'title' => 'Patient-Friendly Mobile UI Design',
+        'desc' => 'We design a simple, accessible interface so patients of all age groups can select a doctor and time slot effortlessly.',
+      ),
+      2 => 
+      array (
+        'step' => '03',
+        'title' => 'Booking Engine & Payment Integration',
+        'desc' => 'Our developers build the scheduling system, connect your bank\'s UPI/payment gateway, and configure WhatsApp alerts.',
+      ),
+      3 => 
+      array (
+        'step' => '04',
+        'title' => 'Reception Testing & Security Audit',
+        'desc' => 'We test walk-in overrides, slot blocking, refund handling, and payment reconciliation across mobile and desktop devices.',
+      ),
+      4 => 
+      array (
+        'step' => '05',
+        'title' => 'Go-Live & Reception Staff Training',
+        'desc' => 'We launch the system on your domain and train your front-desk team and administrators for smooth daily operation.',
+      ),
+    ),
+    'why_choose' => 
+    array (
+      0 => 
+      array (
+        'title' => 'Built Specifically for Healthcare Workflows',
+        'desc' => 'Designed around real Indian OPD schedules, token systems, emergency doctor leave overrides, and walk-in synchronization.',
+      ),
+      1 => 
+      array (
+        'title' => 'Custom Service — Zero Per-Booking Cut',
+        'desc' => 'We build and maintain the system as a dedicated service for your hospital so you never pay per-appointment commissions.',
+      ),
+      2 => 
+      array (
+        'title' => 'Direct Senior Developer Support',
+        'desc' => 'Direct technical support from Founder Hrushikesh Swain and our Bhubaneswar engineering team whenever you add new doctors or departments.',
+      ),
+      3 => 
+      array (
+        'title' => 'Integrated Local SEO for Doctors',
+        'desc' => 'Each doctor and department page is structured with MedicalClinic schema to rank on Google when patients search for specialists.',
+      ),
+    ),
+    'industries' => 
+    array (
+      0 => 
+      array (
+        'icon' => 'fa-hospital',
+        'name' => 'Multi-Specialty Hospitals',
+        'desc' => 'Multi-department OPD scheduling, specialist rosters, and centralized reception management.',
+      ),
+      1 => 
+      array (
+        'icon' => 'fa-stethoscope',
+        'name' => 'Individual Specialist Clinics',
+        'desc' => 'Dedicated appointment booking and tele-consultation fee collection for independent doctors.',
+      ),
+      2 => 
+      array (
+        'icon' => 'fa-tooth',
+        'name' => 'Dental, Eye & Skin Clinics',
+        'desc' => 'Procedure-based slot booking, treatment inquiry capture, and automated follow-up reminders.',
+      ),
+      3 => 
+      array (
+        'icon' => 'fa-microscope',
+        'name' => 'Diagnostic & Pathology Labs',
+        'desc' => 'Home sample collection booking, MRI/CT scan slot reservation, and online PDF report delivery.',
+      ),
+      4 => 
+      array (
+        'icon' => 'fa-Video',
+        'name' => 'Telemedicine & Video Consults',
+        'desc' => 'Pre-paid online video consultation scheduling for out-of-station patients across Odisha.',
+      ),
+      5 => 
+      array (
+        'icon' => 'fa-heart-pulse',
+        'name' => 'Physiotherapy & Wellness Centers',
+        'desc' => 'Multi-session therapy scheduling, package payments, and automated session reminders.',
+      ),
+    ),
+    'faqs' => 
+    array (
+      0 => 
+      array (
+        'q' => 'Can patients pay consultation fees via UPI (GPay, PhonePe, Paytm) when booking?',
+        'a' => 'Yes. We integrate RBI-approved payment gateways like Razorpay, PhonePe, or PayU directly into your booking flow so patients can pay via UPI, debit/credit cards, or net banking and receive an instant digital receipt.',
+      ),
+      1 => 
+      array (
+        'q' => 'Can our reception staff also add walk-in or phone appointments into the same calendar?',
+        'a' => 'Absolutely. Your front-desk team gets a dedicated reception dashboard where they can book walk-in patients, reschedule appointments, or block slots if a doctor is called into emergency surgery.',
+      ),
+      2 => 
+      array (
+        'q' => 'Do you charge any commission per patient appointment?',
+        'a' => 'No. We provide this as a custom development and maintenance service for your hospital or clinic. The booking system runs on your own website, and 100% of the consultation fees go directly to your bank account.',
+      ),
+      3 => 
+      array (
+        'q' => 'Will both the doctor and patient receive WhatsApp confirmations?',
+        'a' => 'Yes. As soon as an appointment is booked and paid, automated WhatsApp/SMS notifications with the date, time slot, token number, and clinic location are sent to the patient and reception desk.',
+      ),
+      4 => 
+      array (
+        'q' => 'Can you integrate this booking system into our existing hospital website?',
+        'a' => 'Yes. We can either build a brand-new hospital website with integrated appointment booking or add the custom booking and payment module seamlessly to your existing website.',
+      ),
+    ),
+    'cta_text' => 'Request a Healthcare Booking System Quote',
+    'related_services' => 
+    array (
+      0 => 'website-development',
+      1 => 'whatsapp-automation',
+      2 => 'local-seo',
+      3 => 'custom-web-application',
+    ),
+  ),
+  'school-website-maintenance' => 
+  array (
+    'slug' => 'school-website-maintenance',
+    'title' => 'School & College Website Design & Maintenance Service',
+    'short_title' => 'School Website & Maintenance',
+    'seo_title' => 'School Website Design & Maintenance Service | Web Optimizer',
+    'parent_slug' => 'web-development',
+    'parent_name' => 'Website & UI/UX Engineering',
+    'badge' => 'EDUCATION CARE',
+    'badge_color' => 'blue',
+    'category' => 'web',
+    'category_name' => 'Education Web & AMC Services',
+    'icon' => 'fa-solid fa-graduation-cap',
+    'meta_description' => 'Dedicated school, college, and coaching institute website design and year-round maintenance service. Notice boards, admission forms & CBSE/ICSE compliance.',
+    'primary_keyword' => 'school website design and maintenance service',
+    'secondary_keywords' => 
+    array (
+      0 => 'CBSE mandatory disclosure website Odisha',
+      1 => 'college website AMC Bhubaneswar',
+      2 => 'online school admission portal service',
+      3 => 'educational institute web maintenance',
+    ),
+    'search_intent' => 'Transactional',
+    'hero_headline' => 'School &amp; Educational Website Design <span class="gold-gradient-text">&amp; Year-Round Maintenance Service</span>',
+    'hero_lead' => 'We design, update, and maintain fast, mobile-friendly websites for schools, colleges, universities, and coaching institutes—handling daily notice board updates, CBSE/ICSE mandatory disclosures, photo galleries, online admission forms, and security year-round.',
+    'overview' => 'Parents and students judge an educational institution by how active, informative, and easy-to-use its website is. However, school principals and teachers rarely have the technical time to upload exam circulars, update mandatory board disclosures, compress event photos, or fix broken pages. Web Optimizer provides a complete School Website Design & Annual Maintenance Service (AMC). We build a modern, fast-loading institutional portal and act as your dedicated year-round technical team—publishing notices, updating academic calendars, managing online admission inquiries, and keeping your website 100% secure.',
+    'metrics' => 
+    array (
+      0 => 
+      array (
+        'num' => 'Same-Day',
+        'label' => 'Notice & Circular Uploads',
+      ),
+      1 => 
+      array (
+        'num' => '100%',
+        'label' => 'CBSE / ICSE / NAAC Compliance',
+      ),
+      2 => 
+      array (
+        'num' => '99.9%',
+        'label' => 'Uptime During Admissions & Results',
+      ),
+    ),
+    'problems_solved' => 
+    array (
+      0 => 
+      array (
+        'title' => 'Outdated Notice Boards & Old Event Galleries',
+        'desc' => 'Many school websites still show notices from two years ago because staff lack a dedicated technical partner to publish updates promptly.',
+      ),
+      1 => 
+      array (
+        'title' => 'Non-Compliance With CBSE / ICSE / NAAC Norms',
+        'desc' => 'Missing or broken Mandatory Public Disclosure documents and infrastructure pages create compliance issues during board inspections.',
+      ),
+      2 => 
+      array (
+        'title' => 'Website Crashes During Admission & Result Seasons',
+        'desc' => 'When hundreds of parents check admission forms or exam results simultaneously, poorly maintained school websites crash or freeze.',
+      ),
+      3 => 
+      array (
+        'title' => 'Lost Admission Inquiries From Parents on Mobile',
+        'desc' => 'Confusing menus and non-responsive forms prevent parents browsing on smartphones from submitting admission inquiries easily.',
+      ),
+    ),
+    'deliverables' => 
+    array (
+      0 => 
+      array (
+        'title' => 'Modern, Mobile-Responsive School / College Portal',
+        'desc' => 'Clean institutional design showcasing academics, faculty, campus infrastructure, achievements, and transport facilities.',
+      ),
+      1 => 
+      array (
+        'title' => 'CBSE / ICSE / State Board Mandatory Disclosure Hub',
+        'desc' => 'Dedicated, well-organized public disclosure section with downloadable PDF certificates, affiliation letters, and fee structures.',
+      ),
+      2 => 
+      array (
+        'title' => 'Priority Notice Board, Circular & Gallery Updates',
+        'desc' => 'Simply send us circulars, exam schedules, or event photos on WhatsApp/Email and our team publishes them cleanly the same day.',
+      ),
+      3 => 
+      array (
+        'title' => 'Online Admission Inquiry & Prospectus System',
+        'desc' => 'Digital admission inquiry and registration forms with brochure download and instant WhatsApp notification to the admission counselor.',
+      ),
+      4 => 
+      array (
+        'title' => 'Online Fee Payment & TC/Result Verification Links',
+        'desc' => 'Seamless integration with your school ERP, online fee payment gateway, and Transfer Certificate (TC) verification repository.',
+      ),
+      5 => 
+      array (
+        'title' => 'Daily Backups, SSL Security & Malware Protection',
+        'desc' => 'Continuous security monitoring, daily cloud backups, domain/SSL renewal tracking, and high-speed hosting care.',
+      ),
+    ),
+    'benefits' => 
+    array (
+      0 => 
+      array (
+        'icon' => 'fa-award',
+        'title' => 'Stronger Parent Trust & Admissions',
+        'text' => 'An updated, vibrant website showcasing student achievements and campus life directly boosts new admission inquiries.',
+      ),
+      1 => 
+      array (
+        'icon' => 'fa-clock',
+        'title' => 'Zero Technical Burden on Teachers',
+        'text' => 'Your principal and staff never have to struggle with website code—our maintenance team handles every update for you.',
+      ),
+      2 => 
+      array (
+        'icon' => 'fa-file-shield',
+        'title' => 'Always Ready for Board Inspections',
+        'text' => 'Keep all CBSE OASIS, ICSE, UGC, or NAAC mandatory documents organized, accessible, and up to date at all times.',
+      ),
+      3 => 
+      array (
+        'icon' => 'fa-bolt',
+        'title' => 'Fast Loading on Every Parent\'s Phone',
+        'text' => 'Optimized PDFs and compressed event photo galleries ensure instant loading on mobile networks.',
+      ),
+    ),
+    'tech_stack' => 
+    array (
+      0 => 'Custom WordPress / PHP',
+      1 => 'CBSE Disclosure Schema',
+      2 => 'Cloudflare CDN',
+      3 => 'WhatsApp Admission Alerts',
+      4 => 'Automated Daily Backups',
+      5 => 'Online Fee Gateway Link',
+    ),
+    'process_steps' => 
+    array (
+      0 => 
+      array (
+        'step' => '01',
+        'title' => 'Institutional Audit & Compliance Check',
+        'desc' => 'We review your current school website, board disclosure requirements, admission workflow, and update frequency.',
+      ),
+      1 => 
+      array (
+        'step' => '02',
+        'title' => 'Website Redesign or Speed Upgrade',
+        'desc' => 'We build a fresh mobile-first school website or optimize and repair your existing portal without losing past records.',
+      ),
+      2 => 
+      array (
+        'step' => '03',
+        'title' => 'Notice Board, TC & Admission Setup',
+        'desc' => 'We organize your digital notice board, Transfer Certificate (TC) lookup, photo galleries, and admission inquiry forms.',
+      ),
+      3 => 
+      array (
+        'step' => '04',
+        'title' => 'Dedicated WhatsApp/Email Update Desk',
+        'desc' => 'Your school office gets a direct support line to send notices, circulars, and event photos for rapid same-day publishing.',
+      ),
+      4 => 
+      array (
+        'step' => '05',
+        'title' => 'Monthly Health Audits & Security Care',
+        'desc' => 'We run automated daily backups, security patches, and speed checks every month to ensure uninterrupted availability.',
+      ),
+    ),
+    'why_choose' => 
+    array (
+      0 => 
+      array (
+        'title' => 'Same-Day Updates via Simple WhatsApp/Email',
+        'desc' => 'No complicated ticketing portals—your school coordinator can message us a PDF circular or event photos and we publish it promptly.',
+      ),
+      1 => 
+      array (
+        'title' => 'Complete CBSE, ICSE & NAAC Familiarity',
+        'desc' => 'We structure mandatory public disclosure tables and document links according to exact education board guidelines.',
+      ),
+      2 => 
+      array (
+        'title' => 'Affordable Annual Maintenance Service Plans',
+        'desc' => 'Predictable annual service packages designed specifically for schools, colleges, and coaching institutes in Odisha.',
+      ),
+      3 => 
+      array (
+        'title' => 'Built-In Admission Season Support',
+        'desc' => 'We help your institution create admission landing pages and local search visibility right before the academic enrollment window.',
+      ),
+    ),
+    'industries' => 
+    array (
+      0 => 
+      array (
+        'icon' => 'fa-school',
+        'name' => 'CBSE, ICSE & Odia Medium Schools',
+        'desc' => 'Mandatory public disclosures, TC uploads, notice boards, and parent communication portals.',
+      ),
+      1 => 
+      array (
+        'icon' => 'fa-building-columns',
+        'name' => 'Degree, Engineering & Medical Colleges',
+        'desc' => 'Department pages, NAAC/NIRF documentation, placement records, and faculty directories.',
+      ),
+      2 => 
+      array (
+        'icon' => 'fa-chalkboard-user',
+        'name' => 'IIT-JEE, NEET & Banking Coaching Institutes',
+        'desc' => 'Batch schedules, scholarship test registration, topper galleries, and student lead generation.',
+      ),
+      3 => 
+      array (
+        'icon' => 'fa-children',
+        'name' => 'Preschools, Play Schools & Daycares',
+        'desc' => 'Parent-friendly activity galleries, curriculum highlights, and campus visit booking forms.',
+      ),
+      4 => 
+      array (
+        'icon' => 'fa-laptop-file',
+        'name' => 'Skill Development & ITI Institutes',
+        'desc' => 'Trade course catalogs, certification verification, and student enrollment portals.',
+      ),
+      5 => 
+      array (
+        'icon' => 'fa-book-open-reader',
+        'name' => 'Residential & International Schools',
+        'desc' => 'Virtual campus tours, hostel facility showcases, and online admission application workflows.',
+      ),
+    ),
+    'faqs' => 
+    array (
+      0 => 
+      array (
+        'q' => 'How quickly do you upload new school notices, circulars, or event photos?',
+        'a' => 'Under our School Website Maintenance Service, routine notices, holiday circulars, exam timetables, and Transfer Certificates (TCs) sent by your school office are published the same working day—usually within 2 to 4 hours.',
+      ),
+      1 => 
+      array (
+        'q' => 'Does your school website service include the CBSE Mandatory Public Disclosure section?',
+        'a' => 'Yes. We create and maintain the exact Appendix-IX Mandatory Public Disclosure table along with properly formatted PDF links for affiliation, trust/society registration, building safety, fire safety, water/sanitation certificates, and fee structure.',
+      ),
+      2 => 
+      array (
+        'q' => 'Can you maintain an existing school website that was built by another developer?',
+        'a' => 'Yes. We first perform a technical and security audit of your existing school website, fix any broken links or speed issues, and take over year-round maintenance, backups, and content updates.',
+      ),
+      3 => 
+      array (
+        'q' => 'Can parents submit admission inquiries and download the school prospectus online?',
+        'a' => 'Absolutely. We set up a mobile-friendly Online Admission Inquiry form that lets parents download your prospectus and instantly notifies your admission office via WhatsApp and email.',
+      ),
+      4 => 
+      array (
+        'q' => 'Can you also link our existing school ERP or online fee payment portal?',
+        'a' => 'Yes. We integrate clean, prominent buttons and login gateways for your existing school ERP, parent app, or bank fee payment portal so parents can access everything from your main website.',
+      ),
+    ),
+    'cta_text' => 'Request a School Website & AMC Proposal',
+    'related_services' => 
+    array (
+      0 => 'website-maintenance',
+      1 => 'website-development',
+      2 => 'wordpress-development',
+      3 => 'local-seo',
+    ),
+  ),
+  'mobile-application-development' => 
+  array (
+    'slug' => 'mobile-application-development',
+    'title' => 'Custom Mobile Application Development Service (Android & iOS)',
+    'short_title' => 'Mobile App Development',
+    'seo_title' => 'Mobile App Development Service | Web Optimizer',
+    'parent_slug' => 'web-development',
+    'parent_name' => 'Website & UI/UX Engineering',
+    'badge' => 'ANDROID & iOS',
+    'badge_color' => 'purple',
+    'category' => 'web',
+    'category_name' => 'Mobile & Web Application Services',
+    'icon' => 'fa-solid fa-mobile-screen-button',
+    'meta_description' => 'Custom Android, iOS, and cross-platform mobile application development service for businesses in Odisha. E-commerce, booking, billing & field-staff apps.',
+    'primary_keyword' => 'mobile application development service',
+    'secondary_keywords' => 
+    array (
+      0 => 'Android and iOS app developer Bhubaneswar',
+      1 => 'custom business mobile app Odisha',
+      2 => 'Flutter React Native app development',
+      3 => 'e-commerce and booking mobile app service',
+    ),
+    'search_intent' => 'Transactional',
+    'hero_headline' => 'Custom Android &amp; iOS <span class="gold-gradient-text">Mobile Application Development Service</span>',
+    'hero_lead' => 'We design, build, deploy, and maintain custom mobile applications for Android and iOS—helping your business engage customers, accept mobile orders and bookings, and empower field staff from anywhere.',
+    'overview' => 'Whether you want a customer-facing shopping or service booking app on the Google Play Store and Apple App Store, or an internal mobile app for your sales executives, delivery fleet, or billing staff, we provide end-to-end custom mobile application development services. Using modern cross-platform (Flutter / React Native), Progressive Web App (PWA), and native architectures backed by secure PHP/Node cloud APIs, we build fast, intuitive mobile apps tailored to your exact business requirements—complete with UPI payments, push notifications, GPS tracking, and real-time admin dashboards.',
+    'metrics' => 
+    array (
+      0 => 
+      array (
+        'num' => 'Android + iOS',
+        'label' => 'Unified Mobile Deployment',
+      ),
+      1 => 
+      array (
+        'num' => '<1.2s',
+        'label' => 'Fast Screen Response Time',
+      ),
+      2 => 
+      array (
+        'num' => '100%',
+        'label' => 'Source Code & Store Ownership',
+      ),
+    ),
+    'problems_solved' => 
+    array (
+      0 => 
+      array (
+        'title' => 'Low Repeat Customer Retention Without a Mobile App',
+        'desc' => 'Customers who order or book regularly prefer a one-tap icon on their phone screen with push notifications over typing URLs repeatedly.',
+      ),
+      1 => 
+      array (
+        'title' => 'Field Sales & Delivery Teams Working Without Live Sync',
+        'desc' => 'When field staff take orders or report visits on paper or WhatsApp, head-office billing and dispatch get delayed by hours.',
+      ),
+      2 => 
+      array (
+        'title' => 'High Cost of Maintaining Separate Android & iOS Teams',
+        'desc' => 'Our modern cross-platform engineering delivers native-speed Android and iOS apps from a unified codebase, cutting development cost and time.',
+      ),
+      3 => 
+      array (
+        'title' => 'Disconnected Website, Inventory & Mobile App Data',
+        'desc' => 'We connect your mobile app to the same central database as your website and billing system so orders, stock, and customer profiles stay synced in real time.',
+      ),
+    ),
+    'deliverables' => 
+    array (
+      0 => 
+      array (
+        'title' => 'Custom UI/UX Mobile App Prototyping',
+        'desc' => 'Intuitive, thumb-friendly mobile screen designs and interactive prototypes tailored to your customers or staff.',
+      ),
+      1 => 
+      array (
+        'title' => 'Android & iOS App Engineering',
+        'desc' => 'Clean, high-performance mobile app development with OTP mobile login, biometric access, and offline data caching.',
+      ),
+      2 => 
+      array (
+        'title' => 'Secure Cloud Backend API & Admin Panel',
+        'desc' => 'Centralized web-based admin dashboard to manage users, products, bookings, pricing, and live analytics.',
+      ),
+      3 => 
+      array (
+        'title' => 'UPI / Card Payment Gateway & Invoice PDF Generation',
+        'desc' => 'Seamless in-app payments via PhonePe, Google Pay, Paytm, and cards with instant downloadable GST receipts.',
+      ),
+      4 => 
+      array (
+        'title' => 'Push Notifications, GPS & WhatsApp Integration',
+        'desc' => 'Automated promotional push alerts, order status notifications, live delivery/field-staff GPS location, and WhatsApp support links.',
+      ),
+      5 => 
+      array (
+        'title' => 'Google Play Store & Apple App Store Publishing',
+        'desc' => 'Complete assistance with developer account setup, app store compliance, screenshots, release publishing, and ongoing maintenance.',
+      ),
+    ),
+    'benefits' => 
+    array (
+      0 => 
+      array (
+        'icon' => 'fa-mobile-screen',
+        'title' => 'Direct Presence on Customer Phones',
+        'text' => 'Stay one tap away from your customers with branded push notifications for offers, reminders, and reorders.',
+      ),
+      1 => 
+      array (
+        'icon' => 'fa-arrows-rotate',
+        'title' => 'Real-Time Sync With Web & Billing',
+        'text' => 'Every order, booking, or quotation created on the mobile app updates your central dashboard instantly.',
+      ),
+      2 => 
+      array (
+        'icon' => 'fa-shield-halved',
+        'title' => 'Enterprise Security & OTP Access',
+        'text' => 'Encrypted API communication, mobile OTP authentication, and role-based permissions keep your business data safe.',
+      ),
+      3 => 
+      array (
+        'icon' => 'fa-headset',
+        'title' => 'End-to-End Development & AMC Support',
+        'text' => 'From initial wireframe and Play Store launch to OS version upgrades, our team handles the complete lifecycle.',
+      ),
+    ),
+    'tech_stack' => 
+    array (
+      0 => 'Flutter / React Native',
+      1 => 'Android & iOS',
+      2 => 'Progressive Web Apps (PWA)',
+      3 => 'REST / GraphQL APIs',
+      4 => 'Firebase Push Alerts',
+      5 => 'Razorpay / UPI SDK',
+    ),
+    'process_steps' => 
+    array (
+      0 => 
+      array (
+        'step' => '01',
+        'title' => 'App Scope & User Flow Planning',
+        'desc' => 'We map out every user role (customer, staff, driver, admin) and feature requirement for your mobile application.',
+      ),
+      1 => 
+      array (
+        'step' => '02',
+        'title' => 'Interactive Mobile UI/UX Wireframes',
+        'desc' => 'You review and approve clickable screen designs for every step of the mobile app before coding begins.',
+      ),
+      2 => 
+      array (
+        'step' => '03',
+        'title' => 'App & Cloud API Development',
+        'desc' => 'Our engineers build the mobile app alongside the secure cloud database, admin portal, and payment/notification APIs.',
+      ),
+      3 => 
+      array (
+        'step' => '04',
+        'title' => 'Multi-Device QA & Performance Testing',
+        'desc' => 'We test the application across multiple Android phones, iPhones, and network conditions for speed and stability.',
+      ),
+      4 => 
+      array (
+        'step' => '05',
+        'title' => 'Play Store / App Store Launch & Care',
+        'desc' => 'We handle store submission, compliance approval, live deployment, and ongoing maintenance updates.',
+      ),
+    ),
+    'why_choose' => 
+    array (
+      0 => 
+      array (
+        'title' => 'Custom Service Tailored to Your Business',
+        'desc' => 'We do not rent out generic app templates—we engineer a custom mobile application built around your exact business model.',
+      ),
+      1 => 
+      array (
+        'title' => 'Unified Web + Mobile + Billing Ecosystem',
+        'desc' => 'Because we also build websites and custom GST billing software, your mobile app connects seamlessly with your entire operation.',
+      ),
+      2 => 
+      array (
+        'title' => 'Direct Senior Developer Oversight',
+        'desc' => 'Work directly with Founder Hrushikesh Swain and experienced app engineers for clear milestones and dependable delivery.',
+      ),
+      3 => 
+      array (
+        'title' => '100% Code & Store Account Ownership',
+        'desc' => 'The application is published under your company\'s official Google Play and Apple Developer accounts with full ownership.',
+      ),
+    ),
+    'industries' => 
+    array (
+      0 => 
+      array (
+        'icon' => 'fa-cart-shopping',
+        'name' => 'Retail, Grocery & D2C E-Commerce Apps',
+        'desc' => 'Customer ordering apps with catalog browsing, repeat orders, UPI checkout, and delivery tracking.',
+      ),
+      1 => 
+      array (
+        'icon' => 'fa-user-doctor',
+        'name' => 'Healthcare, Doctor & Diagnostic Apps',
+        'desc' => 'Patient appointment booking, video consultation, prescription history, and lab report delivery apps.',
+      ),
+      2 => 
+      array (
+        'icon' => 'fa-file-invoice-dollar',
+        'name' => 'Field Sales, Quotation & Billing Apps',
+        'desc' => 'Mobile apps for sales teams to generate on-site quotations, capture B2B orders, and record payment collections.',
+      ),
+      3 => 
+      array (
+        'icon' => 'fa-graduation-cap',
+        'name' => 'Education, Coaching & E-Learning Apps',
+        'desc' => 'Student course access, recorded/live classes, mock tests, attendance, and parent communication apps.',
+      ),
+      4 => 
+      array (
+        'icon' => 'fa-truck-fast',
+        'name' => 'Hyperlocal Delivery & Service Booking Apps',
+        'desc' => 'Home service booking, technician dispatch, and fleet delivery management applications.',
+      ),
+      5 => 
+      array (
+        'icon' => 'fa-building-user',
+        'name' => 'B2B Dealer & Distributor Ordering Apps',
+        'desc' => 'Wholesale ordering portals for dealers to check live stock, place bulk orders, and view ledger statements.',
+      ),
+    ),
+    'faqs' => 
+    array (
+      0 => 
+      array (
+        'q' => 'Do you build mobile apps for both Android and iOS?',
+        'a' => 'Yes. We develop mobile applications that run smoothly on both Android smartphones (Google Play Store) and Apple iPhones (iOS App Store), as well as fast Progressive Web Apps (PWAs) that work instantly from any mobile browser.',
+      ),
+      1 => 
+      array (
+        'q' => 'Will the mobile app include an Admin Panel so we can manage products, bookings, and users?',
+        'a' => 'Yes. Every custom mobile application service includes a secure, web-based Admin Dashboard so your team can manage users, pricing, catalogs, orders, bookings, and push notifications in real time.',
+      ),
+      2 => 
+      array (
+        'q' => 'Can our mobile app connect with our existing website or custom GST billing software?',
+        'a' => 'Absolutely. We build secure REST APIs so your mobile app, website, and billing/inventory software share the same live database without duplicate data entry.',
+      ),
+      3 => 
+      array (
+        'q' => 'Do you assist with publishing the app on the Google Play Store and Apple App Store?',
+        'a' => 'Yes. Our team handles the complete submission and review process to publish your application under your company\'s official Google Play and Apple App Store developer accounts.',
+      ),
+      4 => 
+      array (
+        'q' => 'How much time does it take to develop a custom business mobile app?',
+        'a' => 'Depending on the features, user roles, and payment/API integrations required, a custom business mobile application typically takes 4 to 7 weeks from UI wireframing to store launch.',
+      ),
+    ),
+    'cta_text' => 'Discuss Your Mobile App Project',
+    'related_services' => 
+    array (
+      0 => 'custom-web-application',
+      1 => 'quotation-billing-invoice-software',
+      2 => 'ecommerce-development',
+      3 => 'api-integrations',
     ),
   ),
 );

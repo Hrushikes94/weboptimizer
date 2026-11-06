@@ -210,10 +210,10 @@ require __DIR__ . '/includes/header.php';
       <div class="row g-4 mb-5">
         <?php 
         $city_featured_services = [
-          'website-development', 'technical-seo', 'performance-marketing',
-          'social-media-marketing', 'branding-design', 'ecommerce-development',
-          'shopify-development', 'seo-audit', 'local-seo', 'whatsapp-automation',
-          'google-ads', 'custom-web-application'
+          'website-development', 'digital-marketing', 'hospital-doctor-appointment-booking',
+          'school-website-maintenance', 'quotation-billing-invoice-software', 'google-ads',
+          'paid-social-media', 'mobile-application-development', 'custom-web-application',
+          'technical-seo', 'local-seo', 'ecommerce-development'
         ];
         foreach ($city_featured_services as $sfKey):
           if (isset($services_catalog[$sfKey])):
