@@ -66,6 +66,8 @@ writeStaticFile('locations/index.html', renderPhpPage('locations.php', [], $base
 writeStaticFile('blog/index.html', renderPhpPage('blog.php', [], $basePath));
 writeStaticFile('contact/index.html', renderPhpPage('contact.php', [], $basePath));
 writeStaticFile('contact-us/index.html', renderPhpPage('contact.php', [], $basePath));
+writeStaticFile('resume/index.html', renderPhpPage('resume.php', [], $basePath));
+writeStaticFile('resume.html', renderPhpPage('resume.php', [], $basePath));
 writeStaticFile('sitemap.xml', renderPhpPage('sitemap.php', [], $basePath));
 writeStaticFile('.nojekyll', '');
 
