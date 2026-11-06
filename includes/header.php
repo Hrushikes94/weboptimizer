@@ -19,9 +19,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && (isset($_POST['lead_submit']) || is
     $message = htmlspecialchars(trim($_POST['lead_message'] ?? $_POST['modal_message'] ?? ''));
 
     if ($name && $phone) {
-        $to = 'info@weboptimizer.in';
+        $to = 'info@weboptimizer.in, weboptimizer.in@gmail.com';
         $subject = "New Service Enquiry: $service - $name ($phone)";
         $headers = "From: Web Optimizer <noreply@weboptimizer.in>\r\n";
+        $headers .= "Cc: weboptimizer.in@gmail.com\r\n";
         if ($email) {
             $headers .= "Reply-To: $email\r\n";
         }
@@ -29,7 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && (isset($_POST['lead_submit']) || is
 
         $body = "Name: $name\nPhone: $phone\nEmail: " . ($email ?: 'Not provided') . "\nService: $service\n\nMessage:\n$message\n\nIP: " . $_SERVER['REMOTE_ADDR'];
 
-        @mail($to, $subject, $body, $headers);
+        @mail('info@weboptimizer.in', $subject, $body, $headers);
+        @mail('weboptimizer.in@gmail.com', $subject, $body, $headers);
         $form_status = 'success';
     } else {
         $form_status = 'error';

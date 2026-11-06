@@ -759,9 +759,9 @@ $base_path = $base_path ?? './';
       const waText = `Hello Web Optimizer (Ref: ${refId}),\n\nName: ${name}\nPhone: ${phone}${email ? '\nEmail: ' + email : ''}\nService: ${service}\n\nRequirement:\n${message || 'Please call or WhatsApp me regarding this service.'}`;
       let waUrl = `https://wa.me/917735973818?text=${encodeURIComponent(waText)}`;
       const mailSubject = `[${refId}] New Service Enquiry - ${service} (${name})`;
-      const mailUrl = `mailto:info@weboptimizer.in?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(waText)}`;
+      const mailUrl = `mailto:info@weboptimizer.in,weboptimizer.in@gmail.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(waText)}`;
 
-      // Channel 1: Try PHP Backend (contact-submit.php)
+      // Channel 1: Try PHP Backend (contact-submit.php -> sends to info@weboptimizer.in & weboptimizer.in@gmail.com)
       try {
         const fd = new FormData();
         fd.append('lead_name', name);
@@ -785,23 +785,28 @@ $base_path = $base_path ?? './';
         // Static host fallback handled below
       }
 
-      // Channel 2: Serverless Cloud Email Relay (FormSubmit AJAX for static hosting)
-      try {
-        fetch('https://formsubmit.co/ajax/info@weboptimizer.in', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({
-            _subject: mailSubject,
-            Reference_ID: refId,
-            Name: name,
-            Email: email,
-            Phone: phone,
-            Service: service,
-            Project_Details: message || 'Requested proposal',
-            Source_URL: window.location.href
-          })
-        }).catch(() => {});
-      } catch (e) {}
+      // Channel 2: Serverless Cloud Email Relay to BOTH info@weboptimizer.in & weboptimizer.in@gmail.com
+      const relayPayload = {
+        _subject: mailSubject,
+        _cc: 'weboptimizer.in@gmail.com,info@weboptimizer.in',
+        _captcha: 'false',
+        Reference_ID: refId,
+        Name: name,
+        Phone: phone,
+        Email: email || 'Not provided',
+        Service: service,
+        Requirement: message || 'Requested callback / consultation',
+        Source_URL: window.location.href
+      };
+      ['https://formsubmit.co/ajax/info@weboptimizer.in', 'https://formsubmit.co/ajax/weboptimizer.in@gmail.com'].forEach(function(endpoint) {
+        try {
+          fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(relayPayload)
+          }).catch(() => {});
+        } catch (e) {}
+      });
 
       if (submitBtn) {
         submitBtn.disabled = false;

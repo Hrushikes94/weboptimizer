@@ -59,9 +59,10 @@ if ($name === '' || $phone === '') {
 
 $ref_id = 'WO-' . date('Ymd') . '-' . strtoupper(substr(md5($name . $phone . microtime()), 0, 5));
 
-$to = 'info@weboptimizer.in';
+$to = 'info@weboptimizer.in, weboptimizer.in@gmail.com';
 $subject = "[$ref_id] New Customer Enquiry: $service - $name ($phone)";
 $headers  = "From: Web Optimizer Portal <noreply@weboptimizer.in>\r\n";
+$headers .= "Cc: weboptimizer.in@gmail.com\r\n";
 if ($email !== 'Not provided') {
     $headers .= "Reply-To: $email\r\n";
 }
@@ -69,7 +70,7 @@ $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
 $body  = "==========================================================\n";
-$body .= "WEB OPTIMIZER - NEW EXECUTIVE INQUIRY ($ref_id)\n";
+$body .= "WEB OPTIMIZER - NEW CUSTOMER ENQUIRY ($ref_id)\n";
 $body .= "==========================================================\n\n";
 $body .= "Reference ID : $ref_id\n";
 $body .= "Client Name  : $name\n";
@@ -81,10 +82,11 @@ $body .= "Timestamp    : " . date('Y-m-d H:i:s P') . "\n";
 $body .= "Client IP    : " . ($_SERVER['REMOTE_ADDR'] ?? 'Unknown') . "\n\n";
 $body .= "Project Details / Scope:\n";
 $body .= "----------------------------------------------------------\n";
-$body .= ($message !== '' ? $message : 'Requested direct architectural consultation.') . "\n";
+$body .= ($message !== '' ? $message : 'Requested direct consultation.') . "\n";
 $body .= "==========================================================\n";
 
-@mail($to, $subject, $body, $headers);
+@mail('info@weboptimizer.in', $subject, $body, $headers);
+@mail('weboptimizer.in@gmail.com', $subject, $body, $headers);
 
 $wa_text = "Hello Web Optimizer (Ref: $ref_id),\n\nName: $name\nEmail: $email\nPhone: $phone\nService: $service\n\nProject Details:\n" . ($message !== '' ? $message : 'Requesting architecture proposal');
 $wa_url = 'https://wa.me/917735973818?text=' . rawurlencode($wa_text);
