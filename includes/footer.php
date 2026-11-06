@@ -623,11 +623,15 @@ $base_path = $base_path ?? './';
             <div class="row g-3">
               <div class="col-12">
                 <label for="modalName" class="form-label mb-1" style="font-size:12px; color:var(--gold-light); font-weight:600;">Your Name *</label>
-                <input type="text" id="modalName" name="modal_name" required maxlength="120" class="luxury-form-input w-100" placeholder="Enter your full name">
+                <input type="text" id="modalName" name="modal_name" autocomplete="name" required maxlength="120" class="luxury-form-input w-100" placeholder="Enter your full name">
               </div>
               <div class="col-12">
                 <label for="modalPhone" class="form-label mb-1" style="font-size:12px; color:var(--gold-light); font-weight:600;">Phone / WhatsApp Number *</label>
-                <input type="tel" id="modalPhone" name="modal_phone" required maxlength="25" class="luxury-form-input w-100" placeholder="Enter your 10-digit mobile number">
+                <input type="tel" id="modalPhone" name="modal_phone" autocomplete="tel" inputmode="tel" required maxlength="25" class="luxury-form-input w-100" placeholder="Enter your 10-digit mobile number">
+              </div>
+              <div class="col-12">
+                <label for="modalEmail" class="form-label mb-1" style="font-size:12px; color:var(--gold-light); font-weight:600;">Email ID *</label>
+                <input type="email" id="modalEmail" name="modal_email" autocomplete="email" inputmode="email" list="woGmailSuggestions" required maxlength="150" class="luxury-form-input w-100 js-smart-gmail-input" placeholder="yourname@gmail.com">
               </div>
               <div class="col-12">
                 <label for="modalService" class="form-label mb-1" style="font-size:12px; color:var(--gold-light); font-weight:600;">Select Service *</label>
@@ -660,6 +664,9 @@ $base_path = $base_path ?? './';
       </div>
     </div>
   </div>
+
+  <!-- SHARED SMART GMAIL AUTO-COMPLETE DATALIST -->
+  <datalist id="woGmailSuggestions"></datalist>
 
   <!-- FLOATING ACTIONS BAR -->
   <aside class="floating-actions-bar" aria-label="Quick Actions">
@@ -725,10 +732,28 @@ $base_path = $base_path ?? './';
       }
     }
 
+    // Smart Gmail Auto-Complete & Auto-Fix Helper (Google Form Style)
+    function woAutoFixGmail(rawVal) {
+      let v = woSanitizeText(rawVal || '').toLowerCase().replace(/\s+/g, '');
+      if (!v) return '';
+      if (v.indexOf('@') === -1) {
+        return v + '@gmail.com';
+      }
+      const parts = v.split('@');
+      const user = parts[0];
+      const domain = parts.slice(1).join('');
+      if (!user) return v;
+      const gmailTypos = ['', 'g', 'gm', 'gma', 'gmai', 'gmail', 'gmail.', 'gmail.c', 'gmail.co', 'gmail.con', 'gamil.com', 'gmai.com', 'gmial.com', 'gmail.comm', 'gmal.com'];
+      if (gmailTypos.indexOf(domain) !== -1) {
+        return user + '@gmail.com';
+      }
+      return user + '@' + domain;
+    }
+
     // Unified Multi-Channel Submission (Works on PHP Servers AND Static GitHub Pages)
     async function woProcessFormSubmission(opts) {
       const name = woSanitizeText(opts.name);
-      const email = woSanitizeText(opts.email);
+      const email = woAutoFixGmail(opts.email);
       const phone = woSanitizeText(opts.phone);
       const service = woSanitizeText(opts.service || 'General Digital Consultation');
       const message = woSanitizeText(opts.message || '');
@@ -739,6 +764,7 @@ $base_path = $base_path ?? './';
 
       if (honeypot !== '') return;
 
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       const phoneClean = phone.replace(/[^\d+]/g, '');
       if (!name || name.length < 2) {
         woRenderFormAlert(feedbackEl, 'error', 'Please enter your name.');
@@ -746,6 +772,10 @@ $base_path = $base_path ?? './';
       }
       if (!phoneClean || phoneClean.length < 8) {
         woRenderFormAlert(feedbackEl, 'error', 'Please enter a valid 10-digit Phone / WhatsApp number.');
+        return;
+      }
+      if (!email || !emailRegex.test(email)) {
+        woRenderFormAlert(feedbackEl, 'error', 'Please enter your Email ID (e.g. yourname@gmail.com).');
         return;
       }
 
@@ -1063,6 +1093,50 @@ $base_path = $base_path ?? './';
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
+
+    // Bind Smart Gmail Auto-Suggestion & Auto-Fix to all Email Inputs
+    document.addEventListener('DOMContentLoaded', function() {
+      const datalist = document.getElementById('woGmailSuggestions');
+      const emailInputs = document.querySelectorAll('.js-smart-gmail-input, #modalEmail, #leadEmail');
+      emailInputs.forEach(function(input) {
+        input.addEventListener('input', function() {
+          const val = (input.value || '').trim().toLowerCase().replace(/\s+/g, '');
+          if (!datalist) return;
+          const atIdx = val.indexOf('@');
+          const prefix = atIdx === -1 ? val : val.substring(0, atIdx);
+          if (prefix.length >= 2) {
+            datalist.innerHTML =
+              '<option value="' + prefix + '@gmail.com"></option>' +
+              '<option value="' + prefix + '@yahoo.com"></option>' +
+              '<option value="' + prefix + '@outlook.com"></option>';
+          } else {
+            datalist.innerHTML = '';
+          }
+        });
+        input.addEventListener('blur', function() {
+          if (input.value && input.value.trim() !== '') {
+            input.value = woAutoFixGmail(input.value);
+          }
+        });
+      });
+
+      // Also auto-suggest Gmail username from Name field if Email is empty when focused
+      function linkNameToEmail(nameId, emailId) {
+        const nameEl = document.getElementById(nameId);
+        const emailEl = document.getElementById(emailId);
+        if (!nameEl || !emailEl || !datalist) return;
+        emailEl.addEventListener('focus', function() {
+          if (!emailEl.value && nameEl.value) {
+            const slug = nameEl.value.trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+            if (slug.length >= 2) {
+              datalist.innerHTML = '<option value="' + slug + '@gmail.com"></option>';
+            }
+          }
+        });
+      }
+      linkNameToEmail('modalName', 'modalEmail');
+      linkNameToEmail('leadName', 'leadEmail');
+    });
 
     // Automatically open the Popup Contact Form 10 seconds after page load
     window.addEventListener('load', function() {

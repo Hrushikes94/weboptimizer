@@ -1689,12 +1689,17 @@ $homepage_faqs = [
 
               <div class="form-field">
                 <label for="leadName">Your Name *</label>
-                <input type="text" id="leadName" name="lead_name" class="form-input" placeholder="Enter your full name" maxlength="120" required>
+                <input type="text" id="leadName" name="lead_name" autocomplete="name" class="form-input" placeholder="Enter your full name" maxlength="120" required>
               </div>
 
               <div class="form-field">
                 <label for="leadPhone">Phone / WhatsApp Number *</label>
-                <input type="tel" id="leadPhone" name="lead_phone" class="form-input" placeholder="Enter your 10-digit mobile number" maxlength="25" required>
+                <input type="tel" id="leadPhone" name="lead_phone" autocomplete="tel" inputmode="tel" class="form-input" placeholder="Enter your 10-digit mobile number" maxlength="25" required>
+              </div>
+
+              <div class="form-field">
+                <label for="leadEmail">Email ID *</label>
+                <input type="email" id="leadEmail" name="lead_email" autocomplete="email" inputmode="email" list="woGmailSuggestions" class="form-input js-smart-gmail-input" placeholder="yourname@gmail.com" maxlength="150" required>
               </div>
 
               <div class="form-field">
