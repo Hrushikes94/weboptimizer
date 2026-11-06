@@ -7,8 +7,8 @@
 require_once __DIR__ . '/includes/services-data.php';
 require_once __DIR__ . '/includes/blogs-data.php';
 
-$page_title = 'Enterprise Digital Engineering & Marketing Services | Web Optimizer';
-$meta_desc = "Explore Web Optimizer's full suite of 47 digital practices: Custom Quotation & GST Billing Software, Custom WordPress, Shopify, AI SEO, Performance Marketing, Branding, and WhatsApp Automation. Call +91 7735973818.";
+$page_title = 'Web Design, Software & Marketing Services | Web Optimizer';
+$meta_desc = "Explore Web Optimizer's 47 services: custom website design, GST billing software, WordPress, Shopify, SEO, Google Ads, and WhatsApp automation.";
 $canonical_url = 'https://www.weboptimizer.in/services';
 $active_nav = 'services';
 $base_path = './';

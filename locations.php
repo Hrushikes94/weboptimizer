@@ -11,8 +11,8 @@ require_once __DIR__ . '/includes/locations-data.php';
 require_once __DIR__ . '/includes/blogs-data.php';
 
 $canonical_url = "https://www.weboptimizer.in/locations";
-$page_title = 'Digital Marketing & Website Design Across 50 Locations in Odisha | Web Optimizer';
-$meta_desc = "Web Optimizer provides premier website development, custom WordPress, AI SEO, and performance marketing across all 50 cities and industrial hubs in Odisha. Call +91 7735973818.";
+$page_title = '50 Odisha Service Locations | Web Optimizer';
+$meta_desc = "Website design, custom GST billing software, local SEO, and digital marketing across all 50 cities and industrial hubs in Odisha. Call +91 7735973818.";
 $active_nav = 'locations';
 
 require __DIR__ . '/includes/header.php';

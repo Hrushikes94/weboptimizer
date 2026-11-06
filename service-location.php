@@ -54,8 +54,14 @@ if (empty($service_guides)) {
     $service_guides = array_slice($blogs_catalog, 0, 3, true);
 }
 
-$page_title = "Best {$service['short_title']} in {$city_name}, Odisha | Web Optimizer";
-$meta_desc = "Top-rated {$service['short_title']} in {$city_name}, Odisha ({$loc['district']} Dist). Handcrafted by Web Optimizer & Founder Hrushikesh Swain. Sub-second speed, 99+ Core Web Vitals, enterprise ROI. Call +91 7735973818.";
+$page_title = "{$service['short_title']} in {$city_name} | Web Optimizer";
+if (strlen($page_title) > 60) {
+    $page_title = substr($service['short_title'], 0, 25) . " in {$city_name} | Web Optimizer";
+}
+$meta_desc = "Professional {$service['short_title']} in {$city_name} ({$loc['district']} Dist), Odisha by Web Optimizer. Fast execution & measurable ROI. Call +91 7735973818.";
+if (strlen($meta_desc) > 158) {
+    $meta_desc = substr($meta_desc, 0, 155) . '...';
+}
 $active_nav = 'locations';
 
 require __DIR__ . '/includes/header.php';
@@ -216,7 +222,7 @@ require __DIR__ . '/includes/header.php';
               </div>
             </div>
             <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-cream); margin-bottom: 14px;">
-              In <strong><?php echo htmlspecialchars($city_name); ?></strong> ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â known as a prominent <strong><?php echo strtolower(htmlspecialchars($loc['tier'])); ?></strong> within <?php echo htmlspecialchars($loc['district']); ?> District ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â businesses face increasing digital competition. Relying on slow, template-driven websites results in lost market share and missed commercial opportunities.
+              In <strong><?php echo htmlspecialchars($city_name); ?></strong>  —  known as a prominent <strong><?php echo strtolower(htmlspecialchars($loc['tier'])); ?></strong> within <?php echo htmlspecialchars($loc['district']); ?> District  —  businesses face increasing digital competition. Relying on slow, template-driven websites results in lost market share and missed commercial opportunities.
             </p>
             <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-cream); margin: 0;">
               <?php echo htmlspecialchars($service['overview']); ?>

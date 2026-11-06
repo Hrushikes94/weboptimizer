@@ -62,6 +62,8 @@ echo "Building core pages (base_path: {$basePath})...\n";
 writeStaticFile('index.html', renderPhpPage('index.php', [], $basePath));
 writeStaticFile('404.html', renderPhpPage('index.php', [], $basePath));
 writeStaticFile('services/index.html', renderPhpPage('services.php', [], $basePath));
+writeStaticFile('about/index.html', renderPhpPage('about.php', [], $basePath));
+writeStaticFile('about-us/index.html', renderPhpPage('about.php', [], $basePath));
 writeStaticFile('locations/index.html', renderPhpPage('locations.php', [], $basePath));
 writeStaticFile('blog/index.html', renderPhpPage('blog.php', [], $basePath));
 writeStaticFile('contact/index.html', renderPhpPage('contact.php', [], $basePath));

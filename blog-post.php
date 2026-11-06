@@ -29,8 +29,8 @@ foreach ($blogs_catalog as $k => $other) {
     }
 }
 
-$page_title = $post['title'] . ' | Web Optimizer';
-$meta_desc = $post['excerpt'];
+$page_title = $post['seo_title'] ?? ($post['title'] . ' | Web Optimizer');
+$meta_desc = $post['meta_description'] ?? $post['excerpt'];
 $active_nav = 'blog';
 $canonical_url = 'https://www.weboptimizer.in/blog/' . $slug;
 
@@ -228,8 +228,50 @@ require __DIR__ . '/includes/header.php';
 
       <!-- Main Body Content -->
       <div class="article-body">
-        <?php echo $post['content']; ?>
+        <?php 
+        $rendered_content = str_replace(
+            ['href="service/', 'href="contact"'],
+            ['href="' . $base_path . 'service/', 'href="' . $base_path . 'contact"'],
+            $post['content']
+        );
+        echo $rendered_content; 
+        ?>
       </div>
+
+      <!-- Article FAQs Section -->
+      <?php if (!empty($post['faqs'])): ?>
+        <div class="mt-5 mb-4">
+          <span class="section-tag"><i class="fa-solid fa-circle-question"></i> Quick Answers</span>
+          <h2 style="font-family: var(--font-display); font-size: 1.55rem; color: #fff; margin: 6px 0 18px 0;">
+            Frequently Asked Questions
+          </h2>
+          <div class="accordion accordion-luxury" id="blogFaqAccordion">
+            <?php foreach ($post['faqs'] as $bfIdx => $bFaq): ?>
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="blogFaqHeading<?php echo $bfIdx; ?>">
+                  <button class="accordion-button <?php echo ($bfIdx === 0) ? '' : 'collapsed'; ?>" 
+                          type="button" 
+                          data-bs-toggle="collapse" 
+                          data-bs-target="#blogFaqCollapse<?php echo $bfIdx; ?>" 
+                          aria-expanded="<?php echo ($bfIdx === 0) ? 'true' : 'false'; ?>" 
+                          aria-controls="blogFaqCollapse<?php echo $bfIdx; ?>">
+                    <i class="fa-solid fa-circle-dot me-2 text-gold" style="font-size:12px;"></i>
+                    <?php echo htmlspecialchars($bFaq['q']); ?>
+                  </button>
+                </h3>
+                <div id="blogFaqCollapse<?php echo $bfIdx; ?>" 
+                     class="accordion-collapse collapse <?php echo ($bfIdx === 0) ? 'show' : ''; ?>" 
+                     aria-labelledby="blogFaqHeading<?php echo $bfIdx; ?>" 
+                     data-bs-parent="#blogFaqAccordion">
+                  <div class="accordion-body">
+                    <?php echo htmlspecialchars($bFaq['a']); ?>
+                  </div>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        </div>
+      <?php endif; ?>
 
       <!-- Author Attribution & Direct Contact Box -->
       <div class="author-card-box">

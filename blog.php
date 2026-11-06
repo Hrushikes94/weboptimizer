@@ -8,8 +8,8 @@
 require_once __DIR__ . '/includes/services-data.php';
 require_once __DIR__ . '/includes/blogs-data.php';
 
-$page_title = 'Digital Marketing & Web Design Guides for Odisha Businesses | Web Optimizer';
-$meta_desc = 'Practical, honest guides for business owners in Odisha. Learn what is actually required to rank on Google, build a fast website, generate real customer inquiries, and automate WhatsApp.';
+$page_title = 'Business Growth, Web & SEO Blog | Web Optimizer';
+$meta_desc = 'Read 125 practical guides on website design, custom GST billing software, local SEO, Google Ads, and business growth for Odisha companies.';
 $active_nav = 'blog';
 $canonical_url = 'https://www.weboptimizer.in/blog';
 

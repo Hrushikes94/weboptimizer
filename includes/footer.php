@@ -255,8 +255,8 @@ $base_path = $base_path ?? './';
             <li><a href="<?php echo $base_path; ?>blog" style="color:var(--gold-light); font-weight:700;"><i class="fa-solid fa-book-open" style="color:var(--gold-primary); font-size:12px;"></i> Business Guides (125)</a></li>
             <li><a href="<?php echo $base_path; ?>contact" style="color:var(--gold-light); font-weight:700;"><i class="fa-solid fa-paper-plane" style="color:var(--gold-primary); font-size:12px;"></i> Contact Us</a></li>
             <li><a href="<?php echo $base_path; ?>#portfolio"><i class="fa-solid fa-chevron-right link-arrow"></i> Client Case Studies</a></li>
-            <li><a href="<?php echo $base_path; ?>#about"><i class="fa-solid fa-chevron-right link-arrow"></i> About Web Optimizer</a></li>
-            <li><a href="<?php echo $base_path; ?>service/faqs"><i class="fa-solid fa-chevron-right link-arrow"></i> Frequently Asked Questions</a></li>
+            <li><a href="<?php echo $base_path; ?>about"><i class="fa-solid fa-chevron-right link-arrow"></i> About Web Optimizer</a></li>
+            <li><a href="<?php echo $base_path; ?>#faqs"><i class="fa-solid fa-chevron-right link-arrow"></i> Frequently Asked Questions</a></li>
           </ul>
         </div>
 

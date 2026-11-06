@@ -25,6 +25,11 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc><?php echo $baseUrl; ?>/about</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc><?php echo $baseUrl; ?>/services</loc>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>

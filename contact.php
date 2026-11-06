@@ -8,8 +8,8 @@ require_once __DIR__ . '/includes/services-data.php';
 require_once __DIR__ . '/includes/locations-data.php';
 require_once __DIR__ . '/includes/blogs-data.php';
 
-$page_title = 'Contact Web Optimizer | Request Website, Billing Software & SEO Proposal in Odisha';
-$meta_desc  = 'Contact Web Optimizer in Bhubaneswar, Odisha for custom website design, Quotation & GST Billing Software, AI SEO, and Google/Meta Ads. Direct consultation with Hrushikesh Swain (+91 7735973818).';
+$page_title = 'Contact Us | Request a Free Quote | Web Optimizer';
+$meta_desc  = 'Contact Web Optimizer in Bhubaneswar, Odisha for custom website design, GST billing software, SEO, and digital marketing. Call or WhatsApp +91 7735973818.';
 $canonical_url = 'https://www.weboptimizer.in/contact';
 $active_nav = 'contact';
 $base_path = './';

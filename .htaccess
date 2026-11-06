@@ -81,13 +81,13 @@ ServerSignature Off
   RewriteCond %{THE_REQUEST} \s/(?:Portfolio/)?index\.php[\s?] [NC]
   RewriteRule ^index\.php$ ./ [R=301,L]
 
-  # Redirect direct master pages (services.php, locations.php, blog.php, contact.php, resume.php) -> clean URLs
-  RewriteCond %{THE_REQUEST} \s/(?:Portfolio/)?(services|locations|blog|contact|resume)\.php[\s?] [NC]
-  RewriteRule ^(services|locations|blog|contact|resume)\.php$ $1? [R=301,L]
+  # Redirect direct master pages (services.php, locations.php, blog.php, contact.php, about.php, resume.php) -> clean URLs
+  RewriteCond %{THE_REQUEST} \s/(?:Portfolio/)?(services|locations|blog|contact|about|resume)\.php[\s?] [NC]
+  RewriteRule ^(services|locations|blog|contact|about|resume)\.php$ $1? [R=301,L]
 
-  # Redirect direct standalone service .php files (except contact-submit.php, resume.php & sitemap.php) -> /service/{slug}
+  # Redirect direct standalone service .php files (except contact-submit.php, about.php, resume.php & sitemap.php) -> /service/{slug}
   RewriteCond %{THE_REQUEST} \s/(?:Portfolio/)?([a-z0-9\-]+)\.php[\s?] [NC]
-  RewriteCond %{REQUEST_URI} !/(index|services|locations|location|service-detail|service-location|blog|blog-post|contact|contact-submit|resume|sitemap|build-static)\.php$ [NC]
+  RewriteCond %{REQUEST_URI} !/(index|services|locations|location|service-detail|service-location|blog|blog-post|contact|contact-submit|about|resume|sitemap|build-static)\.php$ [NC]
   RewriteRule ^([a-z0-9\-]+)\.php$ service/$1? [R=301,L]
 
   # ----------------------------------------------------------------------------
@@ -101,10 +101,12 @@ ServerSignature Off
   RewriteRule ^sitemap\.xml$ sitemap.php [L]
 
   # ----------------------------------------------------------------------------
-  # 3. Clean Master Directories, Contact Us, Unlisted Resume & Blog Knowledge Hub
+  # 3. Clean Master Directories, About Us, Contact Us, Unlisted Resume & Blog Knowledge Hub
   # ----------------------------------------------------------------------------
   RewriteRule ^locations/?$ locations.php [L,QSA]
   RewriteRule ^services/?$ services.php [L,QSA]
+  RewriteRule ^about/?$ about.php [L,QSA]
+  RewriteRule ^about-us/?$ about.php [L,QSA]
   RewriteRule ^contact/?$ contact.php [L,QSA]
   RewriteRule ^contact-us/?$ contact.php [L,QSA]
   RewriteRule ^resume/?$ resume.php [L,QSA]

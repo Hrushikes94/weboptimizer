@@ -34,8 +34,8 @@ if (strpos($req_uri, 'location.php') !== false) {
     exit;
 }
 
-$page_title = "Website Design & Digital Marketing in {$city_name}, Odisha | Web Optimizer";
-$meta_desc = "Premier website design, custom WordPress engineering, AI SEO, and performance marketing in {$city_name}, Odisha ({$loc['district']} Dist). 158+ projects delivered. Call +91 7735973818.";
+$page_title = "Web Design & SEO in {$city_name}, Odisha | Web Optimizer";
+$meta_desc = "Website design, custom GST billing software, local SEO, and digital marketing in {$city_name} ({$loc['district']} Dist), Odisha. Call +91 7735973818.";
 $active_nav = 'locations';
 
 // Get adjacent cities in same region
@@ -96,7 +96,7 @@ require __DIR__ . '/includes/header.php';
           "name": "Why choose Web Optimizer for digital marketing and web design in <?php echo $city_name; ?>?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Web Optimizer combines local Odisha market knowledge with elite enterprise engineeringÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Âdelivering sub-second loading WordPress sites, 99+ Core Web Vitals, and data-backed performance marketing with direct senior developer access."
+            "text": "Web Optimizer combines local Odisha market knowledge with elite enterprise engineering — delivering sub-second loading WordPress sites, 99+ Core Web Vitals, and data-backed performance marketing with direct senior developer access."
           }
         },
         {
