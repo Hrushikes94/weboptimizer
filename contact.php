@@ -236,17 +236,17 @@ require __DIR__ . '/includes/header.php';
           </div>
         </div>
 
-        <!-- Right Column: Responsive Validated Contact Form -->
+        <!-- Right Column: Simple Customer-Friendly Contact Form -->
         <div class="contact-form-wrap">
-          <h3>Request an Executive Proposal</h3>
-          <p style="font-size:13.5px; color:var(--text-muted); margin-bottom:22px;">
-            Fill out the form below. Your inquiry is encrypted and routed directly to our senior engineering desk.
+          <h3>Quick Enquiry / Get a Free Quote</h3>
+          <p style="font-size:13.5px; color:var(--text-muted); margin-bottom:20px;">
+            Share your name and phone number below and our team will call or WhatsApp you shortly.
           </p>
 
           <?php if (!empty($form_status) && $form_status === 'success'): ?>
             <div class="form-alert form-alert-success" style="background:rgba(16,185,129,0.15); border:1px solid #10b981; color:#10b981; padding:14px 20px; border-radius:12px; margin-bottom:20px; display:flex; align-items:center; gap:12px; font-weight:600;">
               <i class="fa-solid fa-circle-check" style="font-size:20px;"></i>
-              <span>Thank you! Your executive inquiry has been transmitted. Senior Developer Hrushikesh Swain will review and contact you within 2 hours.</span>
+              <span>Thank you! Your enquiry has been received. Our team will contact you shortly.</span>
             </div>
           <?php endif; ?>
 
@@ -259,73 +259,41 @@ require __DIR__ . '/includes/header.php';
               <input type="text" id="leadWebsiteHp" name="website_url_hp" tabindex="-1" autocomplete="off">
             </div>
 
-            <div class="row g-3">
-              <div class="col-md-6">
-                <div class="form-field mb-0">
-                  <label for="leadName">Your Name / Organization *</label>
-                  <input type="text" id="leadName" name="lead_name" class="form-input" placeholder="e.g. Rajesh Mohanty / Kalinga Corp" maxlength="120" required>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="form-field mb-0">
-                  <label for="leadEmail">Business Email *</label>
-                  <input type="email" id="leadEmail" name="lead_email" class="form-input" placeholder="name@company.com" maxlength="150" required>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="form-field mb-0">
-                  <label for="leadPhone">Phone / WhatsApp Number *</label>
-                  <input type="tel" id="leadPhone" name="lead_phone" class="form-input" placeholder="+91 77359 73818" maxlength="25" required>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="form-field mb-0">
-                  <label for="leadCity">Your City / Location</label>
-                  <select id="leadCity" name="lead_city" class="form-input" style="background:#080d1a;">
-                    <option value="Bhubaneswar">Bhubaneswar (HQ)</option>
-                    <?php foreach ($odisha_locations as $cSlug => $cInfo): ?>
-                      <?php if ($cSlug !== 'bhubaneswar'): ?>
-                        <option value="<?php echo htmlspecialchars($cInfo['name']); ?>"><?php echo htmlspecialchars($cInfo['name'] . ' (' . $cInfo['district'] . ')'); ?></option>
-                      <?php endif; ?>
-                    <?php endforeach; ?>
-                    <option value="Outside Odisha / Global">Outside Odisha / Global</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="form-field mb-0">
-                  <label for="leadService">Required Service / Practice *</label>
-                  <select id="leadService" name="lead_service" class="form-input" style="background:#080d1a;">
-                    <option value="Custom Quotation, Billing & GST Invoice Software">Custom Quotation, Billing &amp; GST Invoice Software</option>
-                    <?php foreach ($services_catalog as $sKey => $sItem): ?>
-                      <?php if ($sKey !== 'quotation-billing-invoice-software'): ?>
-                        <option value="<?php echo htmlspecialchars($sItem['title']); ?>"><?php echo htmlspecialchars($sItem['title']); ?></option>
-                      <?php endif; ?>
-                    <?php endforeach; ?>
-                  </select>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="form-field mb-0">
-                  <label for="leadMessage">Project Scope, Goals &amp; Current Website URL *</label>
-                  <textarea id="leadMessage" name="lead_message" rows="4" class="form-input" maxlength="2000" placeholder="Share your project requirements, billing/software workflow, target launch timeline, or existing website URL..." required></textarea>
-                </div>
-              </div>
+            <div class="form-field">
+              <label for="leadName">Your Name *</label>
+              <input type="text" id="leadName" name="lead_name" class="form-input" placeholder="Enter your full name" maxlength="120" required>
             </div>
 
-            <div class="d-flex flex-wrap gap-2 mt-4">
-              <button type="submit" id="leadSubmitBtn" name="lead_submit" class="btn-gold" style="flex:1 1 220px; justify-content:center; padding:14px;">
-                <i class="fa-solid fa-paper-plane"></i> Send Inquiry Now
-              </button>
-              <button type="button" onclick="sendLeadViaWhatsApp()" class="btn-luxury-outline" style="flex:1 1 180px; justify-content:center; padding:14px; border-color:#25d366; color:#25d366;">
-                <i class="fa-brands fa-whatsapp"></i> Send on WhatsApp
-              </button>
+            <div class="form-field">
+              <label for="leadPhone">Phone / WhatsApp Number *</label>
+              <input type="tel" id="leadPhone" name="lead_phone" class="form-input" placeholder="Enter your 10-digit mobile number" maxlength="25" required>
             </div>
+
+            <div class="form-field">
+              <label for="leadService">Select Service *</label>
+              <select id="leadService" name="lead_service" class="form-input" style="background:#080d1a;">
+                <option value="Website Design Service">Website Design Service</option>
+                <option value="Digital Marketing Service">Digital Marketing Service</option>
+                <option value="Hospital & Doctor Appointment Booking with Payment">Hospital &amp; Doctor Appointment Booking with Payment</option>
+                <option value="School Website Design & Maintenance">School Website Design &amp; Maintenance</option>
+                <option value="Quotation & Billing Application Service">Quotation &amp; Billing Application Service</option>
+                <option value="Paid Google Ads Service">Paid Google Ads Service</option>
+                <option value="Meta Paid Ads (Facebook & Instagram)">Meta Paid Ads (Facebook &amp; Instagram)</option>
+                <option value="Mobile Application Development Service">Mobile Application Development Service</option>
+                <option value="Web Application Development Service">Web Application Development Service</option>
+                <option value="SEO & Google Maps Ranking Service">SEO &amp; Google Maps Ranking Service</option>
+                <option value="Other Custom Service / Consultation">Other Custom Service / Consultation</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="leadMessage">Your Requirement (Optional)</label>
+              <textarea id="leadMessage" name="lead_message" rows="3" class="form-input" maxlength="1000" placeholder="Briefly tell us how we can help your business..."></textarea>
+            </div>
+
+            <button type="submit" id="leadSubmitBtn" name="lead_submit" class="btn-gold w-100 justify-content-center" style="padding:14px; font-size:14.5px; font-weight:700;">
+              <i class="fa-solid fa-paper-plane me-1"></i> Submit Enquiry
+            </button>
           </form>
         </div>
       </div>

@@ -40,18 +40,19 @@ function wo_clean_input($str, $max_len = 500) {
 }
 
 $name    = wo_clean_input($_POST['lead_name'] ?? $_POST['modal_name'] ?? '', 120);
-$email   = filter_var(trim($_POST['lead_email'] ?? $_POST['modal_email'] ?? ''), FILTER_VALIDATE_EMAIL);
+$raw_email = trim($_POST['lead_email'] ?? $_POST['modal_email'] ?? '');
+$email   = $raw_email !== '' ? (filter_var($raw_email, FILTER_VALIDATE_EMAIL) ?: 'Not provided') : 'Not provided';
 $phone   = wo_clean_input($_POST['lead_phone'] ?? $_POST['modal_phone'] ?? '', 30);
-$service = wo_clean_input($_POST['lead_service'] ?? $_POST['modal_service'] ?? 'General Digital Consultation', 150);
+$service = wo_clean_input($_POST['lead_service'] ?? $_POST['modal_service'] ?? 'General Service Enquiry', 150);
 $message = strip_tags(trim($_POST['lead_message'] ?? $_POST['modal_message'] ?? ''));
 $message = mb_substr($message, 0, 2000, 'UTF-8');
 $page_url = wo_clean_input($_POST['page_url'] ?? '', 250);
 
-if ($name === '' || !$email || $phone === '') {
+if ($name === '' || $phone === '') {
     http_response_code(400);
     echo json_encode([
         'status' => 'error',
-        'message' => 'Please enter a valid Name, Business Email, and Phone/WhatsApp Number.'
+        'message' => 'Please enter your Name and Phone/WhatsApp Number.'
     ]);
     exit;
 }
@@ -59,9 +60,11 @@ if ($name === '' || !$email || $phone === '') {
 $ref_id = 'WO-' . date('Ymd') . '-' . strtoupper(substr(md5($name . $phone . microtime()), 0, 5));
 
 $to = 'info@weboptimizer.in';
-$subject = "[$ref_id] Executive Proposal Inquiry: $service - $name";
+$subject = "[$ref_id] New Customer Enquiry: $service - $name ($phone)";
 $headers  = "From: Web Optimizer Portal <noreply@weboptimizer.in>\r\n";
-$headers .= "Reply-To: $email\r\n";
+if ($email !== 'Not provided') {
+    $headers .= "Reply-To: $email\r\n";
+}
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 

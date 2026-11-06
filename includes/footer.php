@@ -571,28 +571,49 @@ $base_path = $base_path ?? './';
     </div>
   </div>
 
-  <!-- BOOTSTRAP 5 LUXURY PROPOSAL & CONSULTATION MODAL -->
+  <?php
+  // Simple, Non-Confusing Service Options for All Enquiry Forms
+  $simple_enquiry_services = [
+      'Website Design Service',
+      'Digital Marketing Service',
+      'Hospital & Doctor Appointment Booking with Payment',
+      'School Website Design & Maintenance',
+      'Quotation & Billing Application Service',
+      'Paid Google Ads Service',
+      'Meta Paid Ads (Facebook & Instagram)',
+      'Mobile Application Development Service',
+      'Web Application Development Service',
+      'SEO & Google Maps Ranking Service',
+      'Other Custom Service / Consultation'
+  ];
+  $preselected_service = '';
+  if (!empty($service['title'])) {
+      $preselected_service = $service['title'];
+  }
+  ?>
+
+  <!-- SIMPLE CUSTOMER-FRIENDLY POPUP ENQUIRY MODAL (AUTO-OPENS AFTER 10 SECONDS) -->
   <div class="modal fade luxury-modal" id="inquiryModal" tabindex="-1" aria-labelledby="inquiryModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <div class="modal-header border-bottom-0 pb-0">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 500px;">
+      <div class="modal-content" style="border-radius: 18px; border: 1px solid var(--border-gold);">
+        <div class="modal-header border-bottom-0 pb-0 pt-4 px-4">
           <div class="d-flex align-items-center gap-3">
-            <div class="crest-icon" style="width:42px; height:42px; font-size:18px; border-radius:50%; background:rgba(212,175,55,0.15); border:1px solid var(--border-gold); display:flex; align-items:center; justify-content:center;">
-              <i class="fa-solid fa-crown" style="color:var(--gold-primary);"></i>
+            <div class="crest-icon" style="width:42px; height:42px; font-size:18px; border-radius:50%; background:rgba(212,175,55,0.15); border:1px solid var(--border-gold); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <i class="fa-solid fa-headset" style="color:var(--gold-primary);"></i>
             </div>
             <div>
-              <h4 class="modal-title" id="inquiryModalLabel" style="font-family:var(--font-display); font-size:20px; font-weight:700; color:var(--text-white); margin:0;">
-                Bespoke Digital Proposal
+              <h4 class="modal-title" id="inquiryModalLabel" style="font-family:var(--font-display); font-size:19px; font-weight:700; color:var(--text-white); margin:0;">
+                Quick Enquiry &amp; Free Consultation
               </h4>
-              <p style="font-size:12.5px; color:var(--text-muted); margin:0;">
-                Direct review with Senior Web Developer Hrushikesh Swain. Response within 2 hours.
+              <p style="font-size:12.5px; color:var(--text-muted); margin:2px 0 0 0;">
+                Share your details below and we will call or WhatsApp you shortly.
               </p>
             </div>
           </div>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body pt-3">
-          <div id="modalFormFeedback" style="display:none; margin-bottom:16px;"></div>
+        <div class="modal-body pt-3 pb-4 px-4">
+          <div id="modalFormFeedback" style="display:none; margin-bottom:14px;"></div>
           <form id="modalInquiryForm" onsubmit="handleModalSubmit(event)" novalidate>
             <!-- Anti-Bot Honeypot Field -->
             <div style="position:absolute; left:-9999px; top:-9999px; opacity:0; pointer-events:none;" aria-hidden="true">
@@ -600,44 +621,38 @@ $base_path = $base_path ?? './';
               <input type="text" id="modalWebsiteHp" name="website_url_hp" tabindex="-1" autocomplete="off">
             </div>
             <div class="row g-3">
-              <div class="col-md-6">
-                <label class="form-label" style="font-size:11.5px; color:var(--gold-primary); text-transform:uppercase; letter-spacing:0.8px; font-weight:600;">Your Name *</label>
-                <input type="text" id="modalName" name="modal_name" required maxlength="120" class="luxury-form-input w-100" placeholder="e.g. Rahul Sharma">
+              <div class="col-12">
+                <label for="modalName" class="form-label mb-1" style="font-size:12px; color:var(--gold-light); font-weight:600;">Your Name *</label>
+                <input type="text" id="modalName" name="modal_name" required maxlength="120" class="luxury-form-input w-100" placeholder="Enter your full name">
               </div>
-              <div class="col-md-6">
-                <label class="form-label" style="font-size:11.5px; color:var(--gold-primary); text-transform:uppercase; letter-spacing:0.8px; font-weight:600;">Business Email *</label>
-                <input type="email" id="modalEmail" name="modal_email" required maxlength="150" class="luxury-form-input w-100" placeholder="e.g. rahul@company.com">
+              <div class="col-12">
+                <label for="modalPhone" class="form-label mb-1" style="font-size:12px; color:var(--gold-light); font-weight:600;">Phone / WhatsApp Number *</label>
+                <input type="tel" id="modalPhone" name="modal_phone" required maxlength="25" class="luxury-form-input w-100" placeholder="Enter your 10-digit mobile number">
               </div>
-              <div class="col-md-6">
-                <label class="form-label" style="font-size:11.5px; color:var(--gold-primary); text-transform:uppercase; letter-spacing:0.8px; font-weight:600;">Phone / WhatsApp *</label>
-                <input type="tel" id="modalPhone" name="modal_phone" required maxlength="25" class="luxury-form-input w-100" placeholder="+91 77359 73818">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label" style="font-size:11.5px; color:var(--gold-primary); text-transform:uppercase; letter-spacing:0.8px; font-weight:600;">Primary Practice / Service *</label>
+              <div class="col-12">
+                <label for="modalService" class="form-label mb-1" style="font-size:12px; color:var(--gold-light); font-weight:600;">Select Service *</label>
                 <select id="modalService" name="modal_service" class="luxury-form-input w-100">
-                  <?php foreach ($services_catalog as $s): ?>
-                    <option value="<?php echo htmlspecialchars($s['title']); ?>" <?php echo (isset($service_slug) && $service_slug === $s['slug']) ? 'selected' : ''; ?>>
-                      <?php echo htmlspecialchars($s['title']); ?>
+                  <?php if ($preselected_service !== '' && !in_array($preselected_service, $simple_enquiry_services, true)): ?>
+                    <option value="<?php echo htmlspecialchars($preselected_service); ?>" selected><?php echo htmlspecialchars($preselected_service); ?></option>
+                  <?php endif; ?>
+                  <?php foreach ($simple_enquiry_services as $ses): ?>
+                    <option value="<?php echo htmlspecialchars($ses); ?>" <?php echo ($preselected_service === $ses) ? 'selected' : ''; ?>>
+                      <?php echo htmlspecialchars($ses); ?>
                     </option>
                   <?php endforeach; ?>
                 </select>
               </div>
               <div class="col-12">
-                <label class="form-label" style="font-size:11.5px; color:var(--gold-primary); text-transform:uppercase; letter-spacing:0.8px; font-weight:600;">Project Scope & Current URL (Optional)</label>
-                <textarea id="modalMessage" name="modal_message" rows="3" maxlength="2000" class="luxury-form-input w-100" placeholder="Share your existing URL, project goals, timeline, or key technical challenges..."></textarea>
+                <label for="modalMessage" class="form-label mb-1" style="font-size:12px; color:var(--gold-light); font-weight:600;">Your Requirement (Optional)</label>
+                <textarea id="modalMessage" name="modal_message" rows="2" maxlength="1000" class="luxury-form-input w-100" placeholder="Briefly tell us how we can help your business..."></textarea>
               </div>
             </div>
-            <div class="d-flex flex-wrap gap-3 align-items-center justify-content-between mt-4 pt-3 border-top border-secondary border-opacity-25">
-              <div style="font-size:12px; color:var(--text-dim);">
-                <i class="fa-solid fa-shield-halved" style="color:var(--gold-primary);"></i> WAF Protected &bull; Confidential &amp; NDA Secured
-              </div>
-              <div class="d-flex gap-2">
-                <button type="button" onclick="sendModalViaWhatsApp()" class="btn-luxury-outline" style="border-color:#25d366; color:#25d366; padding:10px 18px; font-size:13px;">
-                  <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
-                </button>
-                <button type="submit" id="modalSubmitBtn" class="btn-gold" style="padding:10px 22px; font-size:13px;">
-                  <i class="fa-solid fa-paper-plane"></i> Send Proposal
-                </button>
+            <div class="mt-3 pt-2">
+              <button type="submit" id="modalSubmitBtn" class="btn-gold w-100 justify-content-center" style="padding:12px 22px; font-size:14px; font-weight:700;">
+                <i class="fa-solid fa-paper-plane me-1"></i> Submit Enquiry
+              </button>
+              <div class="text-center mt-2" style="font-size:12px; color:var(--text-muted);">
+                Or call / WhatsApp directly: <a href="tel:+917735973818" style="color:var(--gold-light); font-weight:700; text-decoration:none;">+91 77359 73818</a>
               </div>
             </div>
           </form>
@@ -724,14 +739,9 @@ $base_path = $base_path ?? './';
 
       if (honeypot !== '') return;
 
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       const phoneClean = phone.replace(/[^\d+]/g, '');
       if (!name || name.length < 2) {
-        woRenderFormAlert(feedbackEl, 'error', 'Please enter your full name or organization name.');
-        return;
-      }
-      if (!email || !emailRegex.test(email)) {
-        woRenderFormAlert(feedbackEl, 'error', 'Please enter a valid business email address.');
+        woRenderFormAlert(feedbackEl, 'error', 'Please enter your name.');
         return;
       }
       if (!phoneClean || phoneClean.length < 8) {
@@ -742,13 +752,13 @@ $base_path = $base_path ?? './';
       const origBtnHtml = submitBtn ? submitBtn.innerHTML : '';
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Encrypting & Sending...';
+        submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Sending Enquiry...';
       }
 
       let refId = woGenerateRefId();
-      const waText = `Hello Web Optimizer (Ref: ${refId}),\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${service}\n\nProject Details:\n${message || 'Requesting architecture proposal & consultation'}`;
+      const waText = `Hello Web Optimizer (Ref: ${refId}),\n\nName: ${name}\nPhone: ${phone}${email ? '\nEmail: ' + email : ''}\nService: ${service}\n\nRequirement:\n${message || 'Please call or WhatsApp me regarding this service.'}`;
       let waUrl = `https://wa.me/917735973818?text=${encodeURIComponent(waText)}`;
-      const mailSubject = `[${refId}] Executive Project Inquiry - ${service} (${name})`;
+      const mailSubject = `[${refId}] New Service Enquiry - ${service} (${name})`;
       const mailUrl = `mailto:info@weboptimizer.in?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(waText)}`;
 
       // Channel 1: Try PHP Backend (contact-submit.php)
@@ -795,28 +805,25 @@ $base_path = $base_path ?? './';
 
       if (submitBtn) {
         submitBtn.disabled = false;
-        submitBtn.innerHTML = '<i class="fa-solid fa-check-double"></i> Inquiry Registered';
+        submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> Enquiry Sent!';
         setTimeout(() => { submitBtn.innerHTML = origBtnHtml; }, 5000);
       }
+
+      try { sessionStorage.setItem('wo_enquiry_submitted', '1'); } catch (e) {}
 
       woRenderFormAlert(feedbackEl, 'success', `
         <div class="d-flex align-items-start gap-3">
           <i class="fa-solid fa-circle-check" style="color:#10b981; font-size:22px; margin-top:3px;"></i>
           <div class="w-100">
             <div style="font-weight:700; font-size:14.5px; color:#fff; margin-bottom:4px;">
-              Executive Inquiry Registered! <span style="color:var(--gold-light); font-family:var(--font-mono); font-size:12px;">[${refId}]</span>
+              Thank You, ${name}! Your Enquiry Has Been Sent.
             </div>
-            <p style="color:#d1fae5; font-size:13px; margin-bottom:12px;">
-              Thank you, <strong>${name}</strong>. Your requirement for <strong>${service}</strong> has been logged for Senior Developer Hrushikesh Swain. For instant priority response, click below to connect on WhatsApp or Email:
+            <p style="color:#d1fae5; font-size:13px; margin-bottom:10px;">
+              Our team will call or WhatsApp you shortly regarding <strong>${service}</strong>. You can also connect with us right now on WhatsApp:
             </p>
-            <div class="d-flex flex-wrap gap-2">
-              <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn-gold" style="padding:8px 16px; font-size:12.5px; background:#25d366; color:#04070e; border:none;">
-                <i class="fa-brands fa-whatsapp"></i> Instant WhatsApp Priority (+91 7735973818)
-              </a>
-              <a href="${mailUrl}" class="btn-luxury-outline" style="padding:8px 14px; font-size:12px;">
-                <i class="fa-solid fa-envelope"></i> Open in Email App
-              </a>
-            </div>
+            <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn-gold" style="padding:8px 16px; font-size:12.5px; background:#25d366; color:#04070e; border:none;">
+              <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp Now (+91 7735973818)
+            </a>
           </div>
         </div>
       `);
@@ -1051,6 +1058,21 @@ $base_path = $base_path ?? './';
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
+
+    // Automatically open the Popup Contact Form 10 seconds after page load
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        try {
+          if (sessionStorage.getItem('wo_enquiry_submitted') === '1') return;
+        } catch (e) {}
+        const modalEl = document.getElementById('inquiryModal');
+        if (!modalEl || modalEl.classList.contains('show')) return;
+        if (typeof bootstrap !== 'undefined' && bootstrap.Modal) {
+          const popupInstance = bootstrap.Modal.getOrCreateInstance(modalEl);
+          popupInstance.show();
+        }
+      }, 10000);
+    });
   </script>
 
   <!-- Bootstrap 5.3.3 Bundle JS -->

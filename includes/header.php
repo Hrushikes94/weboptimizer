@@ -18,14 +18,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && (isset($_POST['lead_submit']) || is
     $service = htmlspecialchars(trim($_POST['lead_service'] ?? $_POST['modal_service'] ?? ''));
     $message = htmlspecialchars(trim($_POST['lead_message'] ?? $_POST['modal_message'] ?? ''));
 
-    if ($name && $email && $phone) {
+    if ($name && $phone) {
         $to = 'info@weboptimizer.in';
-        $subject = "Executive Inquiry: $service - $name";
+        $subject = "New Service Enquiry: $service - $name ($phone)";
         $headers = "From: Web Optimizer <noreply@weboptimizer.in>\r\n";
-        $headers .= "Reply-To: $email\r\n";
+        if ($email) {
+            $headers .= "Reply-To: $email\r\n";
+        }
         $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
-        $body = "Name: $name\nEmail: $email\nPhone: $phone\nService: $service\n\nMessage:\n$message\n\nIP: " . $_SERVER['REMOTE_ADDR'];
+        $body = "Name: $name\nPhone: $phone\nEmail: " . ($email ?: 'Not provided') . "\nService: $service\n\nMessage:\n$message\n\nIP: " . $_SERVER['REMOTE_ADDR'];
 
         @mail($to, $subject, $body, $headers);
         $form_status = 'success';

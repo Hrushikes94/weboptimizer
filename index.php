@@ -1661,20 +1661,20 @@ $homepage_faqs = [
 
           <!-- Contact Form Right -->
           <div class="contact-form-wrap">
-            <h3>Request a Quote</h3>
-            <p style="font-size:13.5px; color:var(--text-muted); margin-bottom:22px;">
-              Fill in your details below and we will contact you promptly with a tailored project plan.
+            <h3>Quick Enquiry / Get a Free Quote</h3>
+            <p style="font-size:13.5px; color:var(--text-muted); margin-bottom:20px;">
+              Share your name and phone number below and our team will call or WhatsApp you shortly.
             </p>
 
             <?php if ($form_status === 'success'): ?>
               <div class="form-alert form-alert-success" style="background:rgba(16,185,129,0.15); border:1px solid #10b981; color:#10b981; padding:14px 20px; border-radius:12px; margin-bottom:20px; display:flex; align-items:center; gap:12px; font-weight:600;">
                 <i class="fa-solid fa-circle-check" style="font-size:20px;"></i>
-                <span>Thank you! Your enquiry has been received. Senior Developer Hrushikesh Swain will review your requirements and contact you shortly.</span>
+                <span>Thank you! Your enquiry has been received. Our team will contact you shortly.</span>
               </div>
             <?php elseif ($form_status === 'error'): ?>
               <div class="form-alert form-alert-error" style="background:rgba(244,63,94,0.15); border:1px solid #f43f5e; color:#f43f5e; padding:14px 20px; border-radius:12px; margin-bottom:20px; display:flex; align-items:center; gap:12px; font-weight:600;">
                 <i class="fa-solid fa-circle-exclamation" style="font-size:20px;"></i>
-                <span>Please fill in all required fields (Name, Email, Phone) and try again.</span>
+                <span>Please enter your Name and Phone / WhatsApp Number.</span>
               </div>
             <?php endif; ?>
 
@@ -1688,46 +1688,40 @@ $homepage_faqs = [
               </div>
 
               <div class="form-field">
-                <label for="leadName">Your Name / Company Name *</label>
-                <input type="text" id="leadName" name="lead_name" class="form-input" placeholder="e.g. Rajesh Sharma / Acme Enterprises" maxlength="120" required>
-              </div>
-
-              <div class="form-field">
-                <label for="leadEmail">Business Email *</label>
-                <input type="email" id="leadEmail" name="lead_email" class="form-input" placeholder="name@company.com" maxlength="150" required>
+                <label for="leadName">Your Name *</label>
+                <input type="text" id="leadName" name="lead_name" class="form-input" placeholder="Enter your full name" maxlength="120" required>
               </div>
 
               <div class="form-field">
                 <label for="leadPhone">Phone / WhatsApp Number *</label>
-                <input type="tel" id="leadPhone" name="lead_phone" class="form-input" placeholder="+91 77359 73818" maxlength="25" required>
+                <input type="tel" id="leadPhone" name="lead_phone" class="form-input" placeholder="Enter your 10-digit mobile number" maxlength="25" required>
               </div>
 
               <div class="form-field">
-                <label for="leadService">Service You Need *</label>
+                <label for="leadService">Select Service *</label>
                 <select id="leadService" name="lead_service" class="form-input" style="background:#080d1a;">
-                  <option value="Custom Business Website Design & Development">Custom Business Website Design &amp; Development</option>
-                  <option value="Custom Quotation, Billing & GST Invoice Software">Custom Quotation, Billing &amp; GST Invoice Software</option>
-                  <?php foreach ($services_catalog as $sKey => $sItem): ?>
-                    <?php if ($sKey !== 'quotation-billing-invoice-software' && $sKey !== 'website-development'): ?>
-                      <option value="<?php echo htmlspecialchars($sItem['title']); ?>"><?php echo htmlspecialchars($sItem['title']); ?></option>
-                    <?php endif; ?>
-                  <?php endforeach; ?>
+                  <option value="Website Design Service">Website Design Service</option>
+                  <option value="Digital Marketing Service">Digital Marketing Service</option>
+                  <option value="Hospital & Doctor Appointment Booking with Payment">Hospital &amp; Doctor Appointment Booking with Payment</option>
+                  <option value="School Website Design & Maintenance">School Website Design &amp; Maintenance</option>
+                  <option value="Quotation & Billing Application Service">Quotation &amp; Billing Application Service</option>
+                  <option value="Paid Google Ads Service">Paid Google Ads Service</option>
+                  <option value="Meta Paid Ads (Facebook & Instagram)">Meta Paid Ads (Facebook &amp; Instagram)</option>
+                  <option value="Mobile Application Development Service">Mobile Application Development Service</option>
+                  <option value="Web Application Development Service">Web Application Development Service</option>
+                  <option value="SEO & Google Maps Ranking Service">SEO &amp; Google Maps Ranking Service</option>
+                  <option value="Other Custom Service / Consultation">Other Custom Service / Consultation</option>
                 </select>
               </div>
 
               <div class="form-field">
-                <label for="leadMessage">Project Details / Requirements</label>
-                <textarea id="leadMessage" name="lead_message" class="form-input" maxlength="2000" placeholder="Briefly describe your business, what you want to build or promote, or share your existing website URL..." required></textarea>
+                <label for="leadMessage">Your Requirement (Optional)</label>
+                <textarea id="leadMessage" name="lead_message" rows="3" class="form-input" maxlength="1000" placeholder="Briefly tell us how we can help your business..."></textarea>
               </div>
 
-              <div class="d-flex flex-wrap gap-2">
-                <button type="submit" id="leadSubmitBtn" name="lead_submit" class="btn-gold" style="flex:1 1 220px; justify-content:center; padding:14px;">
-                  <i class="fa-solid fa-paper-plane"></i> Request a Free Quote
-                </button>
-                <button type="button" onclick="sendLeadViaWhatsApp()" class="btn-luxury-outline" style="flex:1 1 180px; justify-content:center; padding:14px; border-color:#25d366; color:#25d366;">
-                  <i class="fa-brands fa-whatsapp"></i> Discuss on WhatsApp
-                </button>
-              </div>
+              <button type="submit" id="leadSubmitBtn" name="lead_submit" class="btn-gold w-100 justify-content-center" style="padding:14px; font-size:14.5px; font-weight:700;">
+                <i class="fa-solid fa-paper-plane me-1"></i> Submit Enquiry
+              </button>
             </form>
           </div>
         </div>
