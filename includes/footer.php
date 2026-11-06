@@ -626,8 +626,22 @@ $base_path = $base_path ?? './';
                 <input type="text" id="modalName" name="modal_name" autocomplete="name" required maxlength="120" class="luxury-form-input w-100" placeholder="Enter your full name">
               </div>
               <div class="col-12">
-                <label for="modalPhone" class="form-label mb-1" style="font-size:12px; color:var(--gold-light); font-weight:600;">Phone / WhatsApp Number *</label>
-                <input type="tel" id="modalPhone" name="modal_phone" autocomplete="tel" inputmode="tel" required maxlength="25" class="luxury-form-input w-100" placeholder="Enter your 10-digit mobile number">
+                <label for="modalPhone" class="form-label mb-1" style="font-size:12px; color:var(--gold-light); font-weight:600;">Phone / WhatsApp Number (10 Digits) *</label>
+                <div class="d-flex gap-2">
+                  <select id="modalPhoneCode" name="modal_phone_code" aria-label="Country Code" class="luxury-form-input" style="width:115px; flex-shrink:0; padding-left:10px; padding-right:8px; font-weight:600;">
+                    <option value="+91" selected>🇮🇳 +91</option>
+                    <option value="+1">🇺🇸 +1</option>
+                    <option value="+44">🇬🇧 +44</option>
+                    <option value="+971">🇦🇪 +971</option>
+                    <option value="+61">🇦🇺 +61</option>
+                    <option value="+65">🇸🇬 +65</option>
+                    <option value="+966">🇸🇦 +966</option>
+                    <option value="+974">🇶🇦 +974</option>
+                    <option value="+49">🇩🇪 +49</option>
+                    <option value="+33">🇫🇷 +33</option>
+                  </select>
+                  <input type="tel" id="modalPhone" name="modal_phone" autocomplete="tel-national" inputmode="numeric" pattern="[0-9]{10}" minlength="10" maxlength="10" required class="luxury-form-input w-100 js-phone-10digit" placeholder="10-digit mobile number">
+                </div>
               </div>
               <div class="col-12">
                 <label for="modalEmail" class="form-label mb-1" style="font-size:12px; color:var(--gold-light); font-weight:600;">Email ID *</label>
@@ -750,11 +764,26 @@ $base_path = $base_path ?? './';
       return user + '@' + domain;
     }
 
+    // Smart 10-Digit Phone Auto-Fix Helper (Strips +91/0 prefix on paste/autofill & enforces 10 digits)
+    function woExtractTenDigitPhone(rawVal) {
+      let digits = String(rawVal || '').replace(/\D+/g, '');
+      if (digits.length === 12 && digits.indexOf('91') === 0) {
+        digits = digits.substring(2);
+      } else if (digits.length === 11 && digits.indexOf('0') === 0) {
+        digits = digits.substring(1);
+      } else if (digits.length > 10) {
+        digits = digits.slice(-10);
+      }
+      return digits.substring(0, 10);
+    }
+
     // Unified Multi-Channel Submission (Works on PHP Servers AND Static GitHub Pages)
     async function woProcessFormSubmission(opts) {
       const name = woSanitizeText(opts.name);
       const email = woAutoFixGmail(opts.email);
-      const phone = woSanitizeText(opts.phone);
+      const phoneCode = woSanitizeText(opts.phoneCode || '+91');
+      const phone10 = woExtractTenDigitPhone(opts.phone);
+      const phone = phone10 ? (phoneCode + ' ' + phone10) : '';
       const service = woSanitizeText(opts.service || 'General Digital Consultation');
       const message = woSanitizeText(opts.message || '');
       const honeypot = opts.honeypot || '';
@@ -765,12 +794,11 @@ $base_path = $base_path ?? './';
       if (honeypot !== '') return;
 
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      const phoneClean = phone.replace(/[^\d+]/g, '');
       if (!name || name.length < 2) {
         woRenderFormAlert(feedbackEl, 'error', 'Please enter your name.');
         return;
       }
-      if (!phoneClean || phoneClean.length < 8) {
+      if (!phone10 || phone10.length !== 10 || (phoneCode === '+91' && !/^[6-9][0-9]{9}$/.test(phone10))) {
         woRenderFormAlert(feedbackEl, 'error', 'Please enter a valid 10-digit Phone / WhatsApp number.');
         return;
       }
@@ -872,6 +900,7 @@ $base_path = $base_path ?? './';
       woProcessFormSubmission({
         name: (document.getElementById('leadName') || {}).value || '',
         email: (document.getElementById('leadEmail') || {}).value || '',
+        phoneCode: (document.getElementById('leadPhoneCode') || {}).value || '+91',
         phone: (document.getElementById('leadPhone') || {}).value || '',
         service: (document.getElementById('leadService') || {}).value || '',
         message: (document.getElementById('leadMessage') || {}).value || '',
@@ -886,7 +915,8 @@ $base_path = $base_path ?? './';
     function sendLeadViaWhatsApp() {
       const name = woSanitizeText((document.getElementById('leadName') || {}).value) || 'Client';
       const email = woSanitizeText((document.getElementById('leadEmail') || {}).value) || 'Not specified';
-      const phone = woSanitizeText((document.getElementById('leadPhone') || {}).value) || '';
+      const phoneCode = woSanitizeText((document.getElementById('leadPhoneCode') || {}).value || '+91');
+      const phone = phoneCode + ' ' + woExtractTenDigitPhone((document.getElementById('leadPhone') || {}).value || '');
       const service = woSanitizeText((document.getElementById('leadService') || {}).value) || 'Digital Engineering';
       const message = woSanitizeText((document.getElementById('leadMessage') || {}).value);
 
@@ -900,6 +930,7 @@ $base_path = $base_path ?? './';
       woProcessFormSubmission({
         name: (document.getElementById('modalName') || {}).value || '',
         email: (document.getElementById('modalEmail') || {}).value || '',
+        phoneCode: (document.getElementById('modalPhoneCode') || {}).value || '+91',
         phone: (document.getElementById('modalPhone') || {}).value || '',
         service: (document.getElementById('modalService') || {}).value || '',
         message: (document.getElementById('modalMessage') || {}).value || '',
@@ -914,7 +945,8 @@ $base_path = $base_path ?? './';
     function sendModalViaWhatsApp() {
       const name = woSanitizeText((document.getElementById('modalName') || {}).value) || 'Client';
       const email = woSanitizeText((document.getElementById('modalEmail') || {}).value) || 'Not specified';
-      const phone = woSanitizeText((document.getElementById('modalPhone') || {}).value) || '';
+      const phoneCode = woSanitizeText((document.getElementById('modalPhoneCode') || {}).value || '+91');
+      const phone = phoneCode + ' ' + woExtractTenDigitPhone((document.getElementById('modalPhone') || {}).value || '');
       const service = woSanitizeText((document.getElementById('modalService') || {}).value) || 'Digital Proposal';
       const message = woSanitizeText((document.getElementById('modalMessage') || {}).value);
 
@@ -1136,6 +1168,20 @@ $base_path = $base_path ?? './';
       }
       linkNameToEmail('modalName', 'modalEmail');
       linkNameToEmail('leadName', 'leadEmail');
+
+      // Bind Strict 10-Digit Phone Auto-Fix & Country-Code Stripper to all Phone Inputs
+      const phoneInputs = document.querySelectorAll('.js-phone-10digit, #modalPhone, #leadPhone');
+      phoneInputs.forEach(function(pInput) {
+        pInput.addEventListener('input', function() {
+          const cleaned = woExtractTenDigitPhone(pInput.value);
+          if (pInput.value !== cleaned) {
+            pInput.value = cleaned;
+          }
+        });
+        pInput.addEventListener('blur', function() {
+          pInput.value = woExtractTenDigitPhone(pInput.value);
+        });
+      });
     });
 
     // Automatically open the Popup Contact Form 10 seconds after page load

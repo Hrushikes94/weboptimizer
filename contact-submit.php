@@ -42,7 +42,17 @@ function wo_clean_input($str, $max_len = 500) {
 $name    = wo_clean_input($_POST['lead_name'] ?? $_POST['modal_name'] ?? '', 120);
 $raw_email = trim($_POST['lead_email'] ?? $_POST['modal_email'] ?? '');
 $email   = $raw_email !== '' ? (filter_var($raw_email, FILTER_VALIDATE_EMAIL) ?: 'Not provided') : 'Not provided';
-$phone   = wo_clean_input($_POST['lead_phone'] ?? $_POST['modal_phone'] ?? '', 30);
+$raw_phone = wo_clean_input($_POST['lead_phone'] ?? $_POST['modal_phone'] ?? '', 30);
+$phone_code = wo_clean_input($_POST['lead_phone_code'] ?? $_POST['modal_phone_code'] ?? '+91', 10);
+$phone_digits = preg_replace('/\D+/', '', $raw_phone);
+if (strlen($phone_digits) === 12 && strpos($phone_digits, '91') === 0) {
+    $phone_digits = substr($phone_digits, 2);
+} elseif (strlen($phone_digits) === 11 && strpos($phone_digits, '0') === 0) {
+    $phone_digits = substr($phone_digits, 1);
+} elseif (strlen($phone_digits) > 10) {
+    $phone_digits = substr($phone_digits, -10);
+}
+$phone   = (strlen($phone_digits) === 10) ? ($phone_code . ' ' . $phone_digits) : '';
 $service = wo_clean_input($_POST['lead_service'] ?? $_POST['modal_service'] ?? 'General Service Enquiry', 150);
 $message = strip_tags(trim($_POST['lead_message'] ?? $_POST['modal_message'] ?? ''));
 $message = mb_substr($message, 0, 2000, 'UTF-8');
@@ -52,7 +62,7 @@ if ($name === '' || $phone === '') {
     http_response_code(400);
     echo json_encode([
         'status' => 'error',
-        'message' => 'Please enter your Name and Phone/WhatsApp Number.'
+        'message' => 'Please enter your Name and a valid 10-digit Phone/WhatsApp Number.'
     ]);
     exit;
 }

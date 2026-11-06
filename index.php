@@ -1693,8 +1693,22 @@ $homepage_faqs = [
               </div>
 
               <div class="form-field">
-                <label for="leadPhone">Phone / WhatsApp Number *</label>
-                <input type="tel" id="leadPhone" name="lead_phone" autocomplete="tel" inputmode="tel" class="form-input" placeholder="Enter your 10-digit mobile number" maxlength="25" required>
+                <label for="leadPhone">Phone / WhatsApp Number (10 Digits) *</label>
+                <div class="d-flex gap-2">
+                  <select id="leadPhoneCode" name="lead_phone_code" aria-label="Country Code" class="form-input" style="width:120px; flex-shrink:0; background:#080d1a; padding-left:10px; padding-right:8px; font-weight:600;">
+                    <option value="+91" selected>🇮🇳 +91</option>
+                    <option value="+1">🇺🇸 +1</option>
+                    <option value="+44">🇬🇧 +44</option>
+                    <option value="+971">🇦🇪 +971</option>
+                    <option value="+61">🇦🇺 +61</option>
+                    <option value="+65">🇸🇬 +65</option>
+                    <option value="+966">🇸🇦 +966</option>
+                    <option value="+974">🇶🇦 +974</option>
+                    <option value="+49">🇩🇪 +49</option>
+                    <option value="+33">🇫🇷 +33</option>
+                  </select>
+                  <input type="tel" id="leadPhone" name="lead_phone" autocomplete="tel-national" inputmode="numeric" pattern="[0-9]{10}" minlength="10" maxlength="10" class="form-input w-100 js-phone-10digit" placeholder="Enter 10-digit mobile number" required>
+                </div>
               </div>
 
               <div class="form-field">

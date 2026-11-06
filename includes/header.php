@@ -14,7 +14,17 @@ $form_status = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && (isset($_POST['lead_submit']) || isset($_POST['modal_submit']))) {
     $name    = htmlspecialchars(trim($_POST['lead_name'] ?? $_POST['modal_name'] ?? ''));
     $email   = filter_var(trim($_POST['lead_email'] ?? $_POST['modal_email'] ?? ''), FILTER_SANITIZE_EMAIL);
-    $phone   = htmlspecialchars(trim($_POST['lead_phone'] ?? $_POST['modal_phone'] ?? ''));
+    $raw_phone = trim($_POST['lead_phone'] ?? $_POST['modal_phone'] ?? '');
+    $phone_code = htmlspecialchars(trim($_POST['lead_phone_code'] ?? $_POST['modal_phone_code'] ?? '+91'));
+    $phone_digits = preg_replace('/\D+/', '', $raw_phone);
+    if (strlen($phone_digits) === 12 && strpos($phone_digits, '91') === 0) {
+        $phone_digits = substr($phone_digits, 2);
+    } elseif (strlen($phone_digits) === 11 && strpos($phone_digits, '0') === 0) {
+        $phone_digits = substr($phone_digits, 1);
+    } elseif (strlen($phone_digits) > 10) {
+        $phone_digits = substr($phone_digits, -10);
+    }
+    $phone   = (strlen($phone_digits) === 10) ? ($phone_code . ' ' . $phone_digits) : '';
     $service = htmlspecialchars(trim($_POST['lead_service'] ?? $_POST['modal_service'] ?? ''));
     $message = htmlspecialchars(trim($_POST['lead_message'] ?? $_POST['modal_message'] ?? ''));
 
