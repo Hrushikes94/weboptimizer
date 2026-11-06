@@ -947,10 +947,10 @@ $homepage_faqs = [
     <!-- 4. WHY CHOOSE WEB OPTIMIZER & OUR WORKING PROCESS -->
     <section class="section-wrap section-about-luminous" id="about">
       <div class="container">
-        <div class="text-center mb-5" style="max-width: 840px; margin-left: auto; margin-right: auto;">
+        <div class="section-header text-start mb-5">
           <span class="about-luminous-tag"><i class="fa-solid fa-award"></i> Why Choose Web Optimizer</span>
-          <h2 class="about-luminous-title">Built on Clean Engineering, Honest Advice &amp; Measurable Business Results</h2>
-          <p class="about-luminous-desc">
+          <h2 class="about-luminous-title" style="text-align: left !important;">Built on Clean Engineering, Honest Advice &amp; Measurable Business Results</h2>
+          <p class="about-luminous-desc" style="text-align: left !important; margin-left: 0 !important; max-width: 860px;">
             Since 2017, <strong>Web Optimizer</strong> has helped over 448 businesses replace slow, ineffective templates with custom-engineered websites, automated billing software, and transparent digital marketing campaigns.
           </p>
         </div>

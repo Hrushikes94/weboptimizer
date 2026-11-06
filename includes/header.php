@@ -863,16 +863,32 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
     }
 
     /* ==========================================================================
-       SECTION HEADERS
+       SECTION HEADERS & DISTINCT SECTION SPACING (FLUSH-LEFT & CLEAR TOP GAP)
        ========================================================================== */
     .section-wrap {
-      padding: 95px 0;
+      padding: 80px 0 !important;
       position: relative;
+      border-top: 1px solid rgba(212, 175, 55, 0.15);
     }
-    .section-header {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 55px auto;
+    .section-header,
+    .section-header.text-start,
+    .section-header.text-center {
+      text-align: left !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      margin-top: 0 !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      margin-bottom: 28px !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    .container > .section-header:not(:first-child),
+    .section-wrap .container > .section-header.mt-5,
+    .section-wrap .container > .section-header.mt-4 {
+      margin-top: 72px !important;
+      padding-top: 56px !important;
+      border-top: 1px solid rgba(212, 175, 55, 0.18) !important;
     }
     .section-tag {
       font-family: var(--font-mono);
@@ -894,13 +910,20 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
       font-weight: 800;
       color: #fff;
       letter-spacing: -0.5px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       line-height: 1.2;
+      text-align: left !important;
     }
-    .section-desc {
+    .section-desc,
+    .section-header .section-desc,
+    .section-header .section-desc.mx-auto {
       font-size: 15.5px;
       color: var(--text-muted);
       line-height: 1.7;
+      text-align: left !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      max-width: 880px !important;
     }
 
     /* ==========================================================================
@@ -2343,7 +2366,8 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 24px;
-      margin-top: 36px;
+      margin-top: 0 !important;
+      margin-bottom: 16px;
     }
     .deliverable-card {
       background: var(--bg-surface);
@@ -2377,7 +2401,7 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 24px;
-      margin: 40px 0;
+      margin: 0 0 24px 0 !important;
     }
     .benefit-card {
       background: var(--bg-surface);
@@ -2415,7 +2439,7 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
-      margin: 40px 0;
+      margin: 0 0 24px 0 !important;
     }
     .process-step-card {
       background: var(--bg-surface);
@@ -3485,7 +3509,11 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
         white-space: normal;
       }
       .section-wrap {
-        padding: 48px 0 !important;
+        padding: 52px 0 !important;
+      }
+      .container > .section-header:not(:first-child) {
+        margin-top: 48px !important;
+        padding-top: 40px !important;
       }
       .contact-info-card, .contact-form-wrap {
         padding: 24px 18px !important;
