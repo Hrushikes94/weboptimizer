@@ -100,7 +100,7 @@ require __DIR__ . '/includes/header.php';
         <div class="col-lg-10 mx-auto text-center">
           <!-- Multi-Tier Breadcrumb -->
           <nav class="banner-breadcrumb justify-content-center" aria-label="breadcrumb">
-            <a href="<?php echo $base_path; ?>index.php"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="<?php echo $base_path; ?>"><i class="fa-solid fa-house"></i> Home</a>
             <span class="sep">/</span>
             <a href="<?php echo $base_path; ?>services">Services</a>
             <?php if (!$is_parent && $parent_info): ?>
@@ -228,7 +228,7 @@ require __DIR__ . '/includes/header.php';
                   </p>
                 </div>
                 <div class="pt-3 border-top border-secondary border-opacity-25">
-                  <a href="<?php echo htmlspecialchars($sub['slug']); ?>.php" class="btn-luxury-outline w-100 text-center" style="padding:9px 14px; font-size:12.5px;">
+                  <a href="<?php echo $base_path; ?>service/<?php echo htmlspecialchars($sub['slug']); ?>" class="btn-luxury-outline w-100 text-center" style="padding:9px 14px; font-size:12.5px;">
                     Explore Sub-Service <i class="fa-solid fa-arrow-right" style="margin-left:5px;"></i>
                   </a>
                 </div>
@@ -511,7 +511,7 @@ require __DIR__ . '/includes/header.php';
                   </p>
                 </div>
                 <div>
-                  <a href="<?php echo htmlspecialchars($sib['slug']); ?>.php" class="btn-luxury-outline w-100 text-center" style="padding:8px 14px; font-size:12.5px;">
+                  <a href="<?php echo $base_path; ?>service/<?php echo htmlspecialchars($sib['slug']); ?>" class="btn-luxury-outline w-100 text-center" style="padding:8px 14px; font-size:12.5px;">
                     View Sub-Service <i class="fa-solid fa-arrow-right" style="margin-left:4px;"></i>
                   </a>
                 </div>

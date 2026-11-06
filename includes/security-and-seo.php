@@ -162,6 +162,8 @@ if (!defined('WEBOPTIMIZER_SECURITY_SEO_LOADED')) {
             $og_image = 'https://www.weboptimizer.in/assets/images/banners/banner-locations.webp';
         } elseif ($active_nav === 'blog') {
             $og_image = 'https://www.weboptimizer.in/assets/images/banners/banner-blog.webp';
+        } elseif ($active_nav === 'contact') {
+            $og_image = 'https://www.weboptimizer.in/assets/images/banners/banner-contact.webp';
         }
 
         // Dynamic SEO + GEO Keywords
@@ -211,6 +213,8 @@ if (!defined('WEBOPTIMIZER_SECURITY_SEO_LOADED')) {
             $breadcrumbs[] = ['@type' => 'ListItem', 'position' => 2, 'name' => 'All 50 Odisha Service Locations', 'item' => $canonical_url];
         } elseif ($active_nav === 'blog') {
             $breadcrumbs[] = ['@type' => 'ListItem', 'position' => 2, 'name' => '125 Odisha Business Guides', 'item' => $canonical_url];
+        } elseif ($active_nav === 'contact') {
+            $breadcrumbs[] = ['@type' => 'ListItem', 'position' => 2, 'name' => 'Contact Us', 'item' => $canonical_url];
         }
 
         // Build AEO FAQPage Entities for Every Page
@@ -562,6 +566,18 @@ if (!defined('WEBOPTIMIZER_SECURITY_SEO_LOADED')) {
 
             return $tag;
         }, $html);
+
+        // Enforce 100% Clean Extensionless URLs across all internal href attributes
+        $html = preg_replace('/href="([^"]*?)service-location\.php\?service=([a-z0-9\-]+)&(?:amp;)?city=([a-z0-9\-]+)"/i', 'href="$1service/$2/$3"', $html);
+        $html = preg_replace('/href="([^"]*?)location\.php\?city=([a-z0-9\-]+)"/i', 'href="$1location/$2"', $html);
+        $html = preg_replace('/href="([^"]*?)service-detail\.php\?slug=([a-z0-9\-]+)"/i', 'href="$1service/$2"', $html);
+        $html = preg_replace('/href="([^"]*?)blog-post\.php\?slug=([a-z0-9\-]+)"/i', 'href="$1blog/$2"', $html);
+        $html = preg_replace('/href="([^"]*?)index\.php#contact"/i', 'href="$1contact"', $html);
+        $html = preg_replace('/href="([^"]*?)index\.php(#[^"]*)?"/i', 'href="$1$2"', $html);
+        $html = preg_replace('/href="([^"]*?)(services|locations|blog|contact)\.php(#[^"]*)?"/i', 'href="$1$2$3"', $html);
+        $html = preg_replace('/href="([^"]*?)([a-z0-9\-]+)\.php(#[^"]*)?"/i', 'href="$1service/$2$3"', $html);
+
+        return $html;
     }
 
     // Start Output Buffering on web requests so every page's HTML goes through the ALT/TITLE/DRM enforcer

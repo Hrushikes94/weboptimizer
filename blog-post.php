@@ -158,7 +158,7 @@ require __DIR__ . '/includes/header.php';
       <div class="row justify-content-center">
         <div class="col-lg-10 mx-auto text-center">
           <nav class="banner-breadcrumb justify-content-center" aria-label="breadcrumb">
-            <a href="<?php echo $base_path; ?>index.php"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="<?php echo $base_path; ?>"><i class="fa-solid fa-house"></i> Home</a>
             <span class="sep">/</span>
             <a href="<?php echo $base_path; ?>blog">Business Guides</a>
             <span class="sep">/</span>

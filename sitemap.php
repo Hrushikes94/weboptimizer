@@ -39,6 +39,11 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
+  <url>
+    <loc><?php echo $baseUrl; ?>/contact</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
   <!-- All Services & Practice Area Clean URLs -->
   <?php foreach ($services_catalog as $s): ?>
@@ -61,7 +66,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
   <!-- Top Hyper-Local Service + Location Clean Programmatic Landing Pages -->
   <?php 
   $priority_services = [
-    'website-development', 'technical-seo', 'performance-marketing', 
+    'website-development', 'quotation-billing-invoice-software', 'technical-seo', 'performance-marketing', 
     'social-media-marketing', 'ecommerce-development', 'shopify-development', 
     'seo-audit', 'local-seo', 'google-ads', 'whatsapp-automation'
   ];

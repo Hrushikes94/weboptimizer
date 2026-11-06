@@ -36,9 +36,10 @@ function renderPhpPage(string $scriptFile, array $getParams = [], string $basePa
     $html = ob_get_clean();
 
     // Rewrite internal .php links to clean static URLs for GitHub Pages
-    $html = preg_replace('/href="([^"]*?)index\.php"/i', 'href="$1"', $html);
-    $html = preg_replace('/href="([^"]*?)(services|locations|blog)\.php"/i', 'href="$1$2"', $html);
-    $html = preg_replace('/href="([^"]*?)([a-z0-9\-]+)\.php"/i', 'href="$1service/$2"', $html);
+    $html = preg_replace('/href="([^"]*?)index\.php#contact"/i', 'href="$1contact"', $html);
+    $html = preg_replace('/href="([^"]*?)index\.php(#[^"]*)?"/i', 'href="$1$2"', $html);
+    $html = preg_replace('/href="([^"]*?)(services|locations|blog|contact)\.php(#[^"]*)?"/i', 'href="$1$2$3"', $html);
+    $html = preg_replace('/href="([^"]*?)([a-z0-9\-]+)\.php(#[^"]*)?"/i', 'href="$1service/$2$3"', $html);
 
     if (function_exists('weboptimizer_enforce_img_attributes') && $scriptFile !== 'sitemap.php') {
         $html = weboptimizer_enforce_img_attributes($html);
@@ -63,6 +64,8 @@ writeStaticFile('404.html', renderPhpPage('index.php', [], $basePath));
 writeStaticFile('services/index.html', renderPhpPage('services.php', [], $basePath));
 writeStaticFile('locations/index.html', renderPhpPage('locations.php', [], $basePath));
 writeStaticFile('blog/index.html', renderPhpPage('blog.php', [], $basePath));
+writeStaticFile('contact/index.html', renderPhpPage('contact.php', [], $basePath));
+writeStaticFile('contact-us/index.html', renderPhpPage('contact.php', [], $basePath));
 writeStaticFile('sitemap.xml', renderPhpPage('sitemap.php', [], $basePath));
 writeStaticFile('.nojekyll', '');
 

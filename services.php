@@ -23,7 +23,7 @@ require __DIR__ . '/includes/header.php';
       <div class="row justify-content-center">
         <div class="col-lg-10 mx-auto text-center">
           <nav class="banner-breadcrumb justify-content-center" aria-label="breadcrumb">
-            <a href="index.php"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="<?php echo $base_path; ?>"><i class="fa-solid fa-house"></i> Home</a>
             <span class="sep">/</span>
             <span class="current">Full Services Directory</span>
           </nav>
@@ -123,7 +123,7 @@ require __DIR__ . '/includes/header.php';
                 </div>
               </div>
               <div class="pt-3 border-top border-secondary border-opacity-25">
-                <a href="<?php echo htmlspecialchars($p['slug']); ?>.php" class="btn-gold w-100 text-center" style="padding: 10px 18px; font-size: 13px; text-decoration: none;">
+                <a href="<?php echo $base_path; ?>service/<?php echo htmlspecialchars($p['slug']); ?>" class="btn-gold w-100 text-center" style="padding: 10px 18px; font-size: 13px; text-decoration: none;">
                   Explore Practice Hub <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i>
                 </a>
               </div>
@@ -215,7 +215,7 @@ require __DIR__ . '/includes/header.php';
 
               <!-- Action Buttons -->
               <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 pt-3 border-top border-secondary border-opacity-25">
-                <a href="<?php echo htmlspecialchars($s['slug']); ?>.php" class="btn-gold" style="padding: 10px 20px; font-size: 13px; text-decoration: none;">
+                <a href="<?php echo $base_path; ?>service/<?php echo htmlspecialchars($s['slug']); ?>" class="btn-gold" style="padding: 10px 20px; font-size: 13px; text-decoration: none;">
                   View Dedicated Page <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>
                 </a>
                 <button type="button" class="btn-luxury-outline" data-bs-toggle="modal" data-bs-target="#inquiryModal" style="padding: 9px 18px; font-size: 12.5px;">

@@ -389,14 +389,20 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
     .nav-menu {
       display: flex;
       align-items: center;
-      gap: clamp(14px, 1.8vw, 24px);
+      gap: clamp(16px, 2vw, 28px);
       list-style: none;
       margin: 0;
       padding: 0;
       white-space: nowrap;
       flex-shrink: 1;
     }
-    .nav-menu a {
+    .nav-menu > li {
+      position: relative;
+      padding: 14px 0;
+      display: flex;
+      align-items: center;
+    }
+    .nav-menu > li > a {
       text-decoration: none;
       color: var(--text-muted);
       font-size: 13px;
@@ -407,11 +413,14 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
       position: relative;
       white-space: nowrap;
       padding: 4px 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
     }
-    .nav-menu a:hover, .nav-menu a.active {
+    .nav-menu > li > a:hover, .nav-menu > li > a.active, .nav-menu > li:hover > a, .nav-menu > li.is-open > a {
       color: var(--gold-light);
     }
-    .nav-menu a::after {
+    .nav-menu > li > a::after {
       content: '';
       position: absolute;
       bottom: -4px;
@@ -421,7 +430,7 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
       background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));
       transition: var(--transition-luxury);
     }
-    .nav-menu a:hover::after, .nav-menu a.active::after {
+    .nav-menu > li > a:hover::after, .nav-menu > li > a.active::after, .nav-menu > li:hover > a::after, .nav-menu > li.is-open > a::after {
       width: 100%;
     }
 
@@ -2468,47 +2477,92 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
       top: 100%;
       left: 50%;
       transform: translateX(-50%) translateY(10px);
-      width: min(96vw, 1280px);
+      width: min(96vw, 1320px);
+      max-height: calc(100vh - 86px);
+      overflow-y: auto;
       background: rgba(6, 10, 22, 0.98);
       backdrop-filter: blur(28px);
       -webkit-backdrop-filter: blur(28px);
       border: 1px solid var(--border-gold);
       border-radius: var(--radius-md);
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 0 0 40px rgba(212, 175, 55, 0.12);
-      padding: 28px 30px;
-      display: none;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95), 0 0 40px rgba(212, 175, 55, 0.16);
+      padding: 24px 28px;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      z-index: 1100;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s ease;
+      z-index: 1200;
+      white-space: normal;
     }
-    .nav-mega-item:hover .mega-menu-full {
-      display: block;
+    /* Invisible hover bridge so moving mouse down from nav link never drops hover */
+    .mega-menu-full::before {
+      content: '';
+      position: absolute;
+      top: -24px;
+      left: 0;
+      right: 0;
+      height: 26px;
+      background: transparent;
+    }
+    .nav-mega-item:hover .mega-menu-full,
+    .nav-mega-item:focus-within .mega-menu-full,
+    .nav-mega-item.is-open .mega-menu-full {
       opacity: 1;
       visibility: visible;
+      pointer-events: auto;
       transform: translateX(-50%) translateY(0);
     }
     .mega-grid-6 {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 22px;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 18px;
+      align-items: start;
+    }
+    @media (max-width: 1360px) {
+      .mega-grid-6 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+    }
+    .mega-col-box {
+      background: rgba(15, 22, 41, 0.55);
+      border: 1px solid rgba(212, 175, 55, 0.14);
+      border-radius: 12px;
+      padding: 14px;
+      height: 100%;
+      transition: var(--transition-luxury);
+    }
+    .mega-col-box:hover {
+      border-color: rgba(212, 175, 55, 0.38);
+      background: rgba(18, 27, 49, 0.8);
     }
     .mega-col-title {
       font-size: 11.5px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.8px;
+      letter-spacing: 0.7px;
       color: var(--gold-primary);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 7px;
       padding-bottom: 8px;
-      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.22);
+      white-space: normal;
+      line-height: 1.3;
     }
     .mega-col-title a {
       color: var(--gold-light) !important;
       text-decoration: none !important;
+      font-size: 11.5px !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.6px !important;
+      white-space: normal !important;
+      padding: 0 !important;
+    }
+    .mega-col-title a::after {
+      display: none !important;
     }
     .mega-col-title a:hover {
       color: #fff !important;
@@ -2519,67 +2573,95 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
       margin: 0;
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 4px;
     }
     .mega-sub-link {
-      color: #cbd5e1;
-      font-size: 11.5px;
-      line-height: 1.35;
+      color: #cbd5e1 !important;
+      font-size: 12px !important;
+      font-weight: 500 !important;
+      text-transform: none !important;
+      letter-spacing: 0.1px !important;
+      line-height: 1.4 !important;
+      white-space: normal !important;
       text-decoration: none !important;
-      display: block;
-      padding: 4px 6px;
-      border-radius: 5px;
+      display: flex !important;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 7px !important;
+      border-radius: 6px;
       transition: var(--transition-luxury);
     }
+    .mega-sub-link::after {
+      display: none !important;
+    }
     .mega-sub-link:hover {
-      color: #fff;
-      background: rgba(212, 175, 55, 0.1);
+      color: #fff !important;
+      background: rgba(212, 175, 55, 0.14);
       transform: translateX(3px);
     }
 
     /* Standard Dropdown */
     .nav-dropdown {
-      position: relative;
+      position: relative !important;
     }
     .nav-dropdown-menu-standard {
       position: absolute;
       top: 100%;
       left: 0;
       transform: translateY(10px);
-      min-width: 290px;
+      min-width: 295px;
       background: rgba(6, 10, 22, 0.98);
       backdrop-filter: blur(28px);
       -webkit-backdrop-filter: blur(28px);
       border: 1px solid var(--border-gold);
       border-radius: var(--radius-md);
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 30px rgba(212, 175, 55, 0.12);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(212, 175, 55, 0.15);
       padding: 12px;
-      display: none;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      z-index: 1090;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s ease;
+      z-index: 1190;
+      white-space: normal;
     }
-    .nav-dropdown:hover .nav-dropdown-menu-standard {
-      display: block;
+    .nav-dropdown-menu-standard::before {
+      content: '';
+      position: absolute;
+      top: -22px;
+      left: 0;
+      right: 0;
+      height: 24px;
+      background: transparent;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu-standard,
+    .nav-dropdown:focus-within .nav-dropdown-menu-standard,
+    .nav-dropdown.is-open .nav-dropdown-menu-standard {
       opacity: 1;
       visibility: visible;
+      pointer-events: auto;
       transform: translateY(0);
     }
     .standard-drop-item {
-      display: flex;
+      display: flex !important;
       align-items: center;
       gap: 10px;
-      padding: 7px 9px;
-      border-radius: 6px;
-      color: #cbd5e1;
-      font-size: 12.5px;
+      padding: 8px 10px !important;
+      border-radius: 7px;
+      color: #cbd5e1 !important;
+      font-size: 12.5px !important;
+      font-weight: 500 !important;
+      text-transform: none !important;
+      letter-spacing: 0.1px !important;
+      white-space: normal !important;
       text-decoration: none !important;
       transition: var(--transition-luxury);
     }
+    .standard-drop-item::after {
+      display: none !important;
+    }
     .standard-drop-item:hover {
-      color: #fff;
-      background: rgba(212, 175, 55, 0.1);
+      color: #fff !important;
+      background: rgba(212, 175, 55, 0.14);
       transform: translateX(4px);
     }
     .standard-drop-item i {
@@ -2587,6 +2669,7 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
       width: 16px;
       text-align: center;
       font-size: 12px;
+      flex-shrink: 0;
     }
 
     /* Offcanvas Accordion Styles */
@@ -3257,6 +3340,194 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
     }
 
+    /* ==========================================================================
+       COMPLETE MULTI-DEVICE RESPONSIVE OPTIMIZATION (DESKTOP, LAPTOP, TABLET, MOBILE)
+       ========================================================================== */
+    html, body {
+      max-width: 100vw;
+      overflow-x: clip;
+    }
+    img, svg, video, canvas, iframe {
+      max-width: 100%;
+    }
+
+    /* Laptop & Compact Desktop (992px - 1279px) */
+    @media (max-width: 1279px) {
+      .nav-menu {
+        gap: 14px;
+      }
+      .nav-menu > li > a {
+        font-size: 12px;
+        letter-spacing: 0.4px;
+      }
+      .btn-proposal-nav, .btn-call-nav {
+        padding: 7px 12px;
+        font-size: 12px;
+      }
+    }
+
+    /* Tablet & Mobile Navigation Breakpoint (<= 1080px) */
+    @media (max-width: 1080px) {
+      .nav-menu {
+        display: none !important;
+      }
+      .mobile-nav-toggle {
+        display: inline-flex !important;
+      }
+      .navbar {
+        padding: 10px 0;
+      }
+    }
+
+    /* Tablet Portrait & Mobile Landscape (<= 991px) */
+    @media (max-width: 991px) {
+      .container {
+        padding: 0 20px;
+      }
+      .top-bar-inner {
+        justify-content: center;
+      }
+      .top-bar-right {
+        display: none !important;
+      }
+      .hero {
+        padding: 55px 0 40px 0 !important;
+      }
+      .page-banner-section {
+        padding: 50px 0 35px 0 !important;
+      }
+      .hero-title, .banner-title {
+        font-size: clamp(1.85rem, 5vw, 2.75rem) !important;
+        line-height: 1.22 !important;
+      }
+      .section-title-lg {
+        font-size: clamp(1.6rem, 4.2vw, 2.3rem) !important;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+      }
+      .hero-stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 14px !important;
+      }
+    }
+
+    /* Mobile Phones - Android & iOS (<= 767px) */
+    @media (max-width: 767px) {
+      .container {
+        padding: 0 16px;
+      }
+      .top-bar {
+        font-size: 11px;
+        padding: 6px 0;
+      }
+      .top-bar-left {
+        gap: 12px;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+      }
+      .top-bar-left span {
+        display: none;
+      }
+      .brand-logo-img {
+        height: 34px;
+      }
+      .btn-proposal-nav {
+        display: none !important;
+      }
+      .btn-call-nav {
+        padding: 7px 12px;
+        font-size: 11.5px;
+      }
+      .btn-call-nav .call-label {
+        display: none;
+      }
+      .hero {
+        padding: 40px 0 30px 0 !important;
+      }
+      .page-banner-section {
+        padding: 38px 0 28px 0 !important;
+      }
+      .hero-title, .banner-title {
+        font-size: clamp(1.55rem, 6.5vw, 2.15rem) !important;
+        line-height: 1.25 !important;
+        word-break: break-word;
+      }
+      .hero-lead, .banner-lead {
+        font-size: 14px !important;
+        line-height: 1.65 !important;
+      }
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+      }
+      .hero-actions .btn-gold,
+      .hero-actions .btn-luxury-outline {
+        width: 100%;
+        justify-content: center;
+      }
+      .full-banner-showcase-section {
+        padding: 0 0 32px 0 !important;
+      }
+      .banner-visual-frame {
+        border-radius: 14px !important;
+      }
+      .banner-floating-badge {
+        position: static !important;
+        margin: 10px 12px 12px 12px;
+        justify-content: center;
+        text-align: center;
+        font-size: 10.5px;
+        padding: 6px 12px;
+        white-space: normal;
+      }
+      .section-wrap {
+        padding: 48px 0 !important;
+      }
+      .contact-info-card, .contact-form-wrap {
+        padding: 24px 18px !important;
+      }
+      .service-overview-box {
+        padding: 22px 18px !important;
+      }
+      .portfolio-filter-nav, .skills-filter-bar {
+        gap: 6px !important;
+        justify-content: flex-start !important;
+        overflow-x: auto;
+        flex-wrap: nowrap !important;
+        padding-bottom: 6px;
+        -webkit-overflow-scrolling: touch;
+      }
+      .port-filter-btn, .skills-filter-btn {
+        flex-shrink: 0;
+        font-size: 11.5px !important;
+        padding: 6px 13px !important;
+      }
+      .floating-actions-bar {
+        right: 14px !important;
+        bottom: 16px !important;
+      }
+    }
+
+    /* Compact Mobile Phones (<= 420px) */
+    @media (max-width: 420px) {
+      .hero-stats-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .brand-logo-img {
+        height: 30px;
+      }
+      .banner-pill-badge, .hero-badge-gold {
+        font-size: 10px !important;
+        padding: 5px 12px !important;
+        white-space: normal !important;
+        text-align: center;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -3277,7 +3548,7 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
         <span><i class="fa-solid fa-location-dot" style="color:var(--gold-primary);"></i> Bhubaneswar, Odisha, India</span>
       </div>
       <div class="top-bar-right">
-        <span class="top-bar-badge"><i class="fa-solid fa-crown"></i> High Performance Web Engineering & Growth</span>
+        <span class="top-bar-badge"><i class="fa-solid fa-crown"></i> High Performance Web Engineering &amp; Growth</span>
       </div>
     </div>
   </aside>
@@ -3285,7 +3556,7 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
   <!-- Luxury Navigation Bar with Mega Menu & Multi-Level Dropdowns -->
   <header class="navbar" id="navbar">
     <div class="container-fluid px-xl-5 px-lg-4 px-3 nav-container position-relative">
-      <a href="<?php echo $base_path; ?>index.php" class="brand-logo-wrap" title="Web Optimizer - Premier Website Design, Custom Billing Software & Digital Marketing Agency">
+      <a href="<?php echo $base_path; ?>" class="brand-logo-wrap" title="Web Optimizer - Premier Website Design, Custom Billing Software & Digital Marketing Agency">
         <img src="<?php echo $base_path; ?>assets/images/weboptimizer-logo.webp" 
              alt="Web Optimizer - Premier Website Design, Custom Billing Software & Digital Marketing Agency in Odisha" 
              title="Web Optimizer | Official Brand Logo"
@@ -3299,107 +3570,125 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
       </a>
 
       <ul class="nav-menu" id="navMenu">
-        <li><a href="<?php echo $base_path; ?>index.php" class="<?php echo ($active_nav === 'home') ? 'active' : ''; ?>">Home</a></li>
+        <li><a href="<?php echo $base_path; ?>" class="<?php echo ($active_nav === 'home') ? 'active' : ''; ?>">Home</a></li>
         
-        <!-- 1. DIGITAL MARKETING MEGA MENU (Modeled After dcstudio.in) -->
+        <!-- 1. DIGITAL MARKETING MEGA MENU (6-Column Complete Ecosystem) -->
         <li class="nav-mega-item">
-          <a href="<?php echo $base_path; ?>digital-marketing.php" class="<?php echo ($active_nav === 'services') ? 'active' : ''; ?>">
+          <a href="<?php echo $base_path; ?>service/digital-marketing" class="js-dropdown-trigger <?php echo ($active_nav === 'services') ? 'active' : ''; ?>" aria-haspopup="true" aria-expanded="false">
             Digital Marketing <i class="fa-solid fa-chevron-down" style="font-size:10px; margin-left:3px;"></i>
           </a>
-          <div class="mega-menu-full">
-            <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom border-secondary border-opacity-25">
+          <div class="mega-menu-full" role="menu">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3 pb-2 border-bottom border-secondary border-opacity-25">
               <div class="d-flex align-items-center gap-2">
                 <i class="fa-solid fa-crown text-gold" style="color:var(--gold-primary);"></i>
-                <span style="font-size:12px; text-transform:uppercase; letter-spacing:1px; color:var(--gold-primary); font-weight:700;">Full-Service Agency Capabilities</span>
+                <span style="font-size:12px; text-transform:uppercase; letter-spacing:1px; color:var(--gold-primary); font-weight:700;">Full-Service Digital Marketing &amp; Engineering Ecosystem (47 Capabilities)</span>
               </div>
-              <a href="<?php echo $base_path; ?>services.php" style="font-size:12.5px; color:var(--gold-light); font-weight:600; text-decoration:none;">
-                View All Services <i class="fa-solid fa-arrow-right" style="margin-left:4px;"></i></a>
-              <a href="<?php echo $base_path; ?>locations.php" style="font-size:12.5px; color:var(--gold-primary); font-weight:600; text-decoration:none; margin-left:14px;"><i class="fa-solid fa-map-location-dot" style="margin-right:4px;"></i> Odisha (50 Locations) <i class="fa-solid fa-arrow-right" style="margin-left:4px;"></i>
-              </a>
+              <div class="d-flex align-items-center gap-3">
+                <a href="<?php echo $base_path; ?>service/digital-marketing" style="font-size:12px; color:#cbd5e1; font-weight:600; text-decoration:none;">
+                  Digital Marketing Overview <i class="fa-solid fa-arrow-right" style="margin-left:3px;"></i>
+                </a>
+                <a href="<?php echo $base_path; ?>services" style="font-size:12.5px; color:var(--gold-light); font-weight:700; text-decoration:none;">
+                  Explore All 47 Services <i class="fa-solid fa-arrow-right" style="margin-left:4px;"></i>
+                </a>
+              </div>
             </div>
 
             <div class="mega-grid-6">
               <!-- Col 1: Social Media Marketing -->
-              <div>
+              <div class="mega-col-box">
                 <div class="mega-col-title">
                   <i class="fa-solid fa-share-nodes"></i>
-                  <a href="<?php echo $base_path; ?>social-media-marketing.php">Social Media (SMM)</a>
+                  <a href="<?php echo $base_path; ?>service/social-media-marketing">Social Media (SMM)</a>
                 </div>
                 <ul class="mega-sub-list">
-                  <li><a href="<?php echo $base_path; ?>facebook-marketing.php" class="mega-sub-link">Facebook Marketing & Ads</a></li>
-                  <li><a href="<?php echo $base_path; ?>instagram-marketing.php" class="mega-sub-link">Instagram Marketing & Reels</a></li>
-                  <li><a href="<?php echo $base_path; ?>linkedin-marketing.php" class="mega-sub-link">LinkedIn B2B Marketing</a></li>
-                  <li><a href="<?php echo $base_path; ?>youtube-marketing.php" class="mega-sub-link">YouTube Video Marketing</a></li>
-                  <li><a href="<?php echo $base_path; ?>influencer-marketing.php" class="mega-sub-link">Influencer Marketing & UGC</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/facebook-marketing" class="mega-sub-link"><i class="fa-brands fa-facebook" style="color:var(--gold-primary); width:14px;"></i> Facebook Marketing &amp; Ads</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/instagram-marketing" class="mega-sub-link"><i class="fa-brands fa-instagram" style="color:var(--gold-primary); width:14px;"></i> Instagram Marketing &amp; Reels</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/linkedin-marketing" class="mega-sub-link"><i class="fa-brands fa-linkedin" style="color:var(--gold-primary); width:14px;"></i> LinkedIn B2B Marketing</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/youtube-marketing" class="mega-sub-link"><i class="fa-brands fa-youtube" style="color:var(--gold-primary); width:14px;"></i> YouTube Video Marketing</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/influencer-marketing" class="mega-sub-link"><i class="fa-solid fa-users-rays" style="color:var(--gold-primary); width:14px;"></i> Influencer Marketing &amp; UGC</a></li>
                 </ul>
               </div>
 
-              <!-- Col 2: AI SEO -->
-              <div>
+              <!-- Col 2: AI SEO & Growth -->
+              <div class="mega-col-box">
                 <div class="mega-col-title">
                   <i class="fa-solid fa-chart-line"></i>
-                  <a href="<?php echo $base_path; ?>ai-seo.php">AI SEO & Growth</a>
+                  <a href="<?php echo $base_path; ?>service/ai-seo">AI SEO &amp; Growth</a>
                 </div>
                 <ul class="mega-sub-list">
-                  <li><a href="<?php echo $base_path; ?>seo-audit.php" class="mega-sub-link">SEO Audit Services</a></li>
-                  <li><a href="<?php echo $base_path; ?>local-seo.php" class="mega-sub-link">Local SEO & Google Maps</a></li>
-                  <li><a href="<?php echo $base_path; ?>link-building.php" class="mega-sub-link">Link Building Services</a></li>
-                  <li><a href="<?php echo $base_path; ?>on-page-seo.php" class="mega-sub-link">On-Page SEO Optimization</a></li>
-                  <li><a href="<?php echo $base_path; ?>off-page-seo.php" class="mega-sub-link">Off-Page SEO Outreach</a></li>
-                  <li><a href="<?php echo $base_path; ?>technical-seo.php" class="mega-sub-link">Key Technical SEO</a></li>
-                  <li><a href="<?php echo $base_path; ?>content-writing.php" class="mega-sub-link">Content Writing Agency</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/seo-audit" class="mega-sub-link"><i class="fa-solid fa-magnifying-glass-chart" style="color:var(--gold-primary); width:14px;"></i> SEO Audit Services</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/local-seo" class="mega-sub-link"><i class="fa-solid fa-location-dot" style="color:var(--gold-primary); width:14px;"></i> Local SEO &amp; Google Maps</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/technical-seo" class="mega-sub-link"><i class="fa-solid fa-microchip" style="color:var(--gold-primary); width:14px;"></i> Key Technical SEO</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/on-page-seo" class="mega-sub-link"><i class="fa-solid fa-file-code" style="color:var(--gold-primary); width:14px;"></i> On-Page SEO Optimization</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/off-page-seo" class="mega-sub-link"><i class="fa-solid fa-globe" style="color:var(--gold-primary); width:14px;"></i> Off-Page SEO Outreach</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/link-building" class="mega-sub-link"><i class="fa-solid fa-link" style="color:var(--gold-primary); width:14px;"></i> Link Building Services</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/content-writing" class="mega-sub-link"><i class="fa-solid fa-pen-nib" style="color:var(--gold-primary); width:14px;"></i> Content Writing Agency</a></li>
                 </ul>
               </div>
 
               <!-- Col 3: Performance Marketing -->
-              <div>
+              <div class="mega-col-box">
                 <div class="mega-col-title">
                   <i class="fa-solid fa-bullseye"></i>
-                  <a href="<?php echo $base_path; ?>performance-marketing.php">Performance Marketing</a>
+                  <a href="<?php echo $base_path; ?>service/performance-marketing">Performance Ads</a>
                 </div>
                 <ul class="mega-sub-list">
-                  <li><a href="<?php echo $base_path; ?>paid-social-media.php" class="mega-sub-link">Paid Social Media Ads</a></li>
-                  <li><a href="<?php echo $base_path; ?>google-ads.php" class="mega-sub-link">Google Ads ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ PPC & PMax</a></li>
-                  <li><a href="<?php echo $base_path; ?>lead-generation.php" class="mega-sub-link">High-Intent Lead Gen</a></li>
-                  <li><a href="<?php echo $base_path; ?>search-engine-marketing.php" class="mega-sub-link">Search Engine Marketing</a></li>
-                  <li><a href="<?php echo $base_path; ?>content-marketing.php" class="mega-sub-link">Content Marketing</a></li>
-                  <li><a href="<?php echo $base_path; ?>affiliate-marketing.php" class="mega-sub-link">Affiliate Marketing</a></li>
-                  <li><a href="<?php echo $base_path; ?>email-marketing.php" class="mega-sub-link">Lifecycle Email Marketing</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/google-ads" class="mega-sub-link"><i class="fa-brands fa-google" style="color:var(--gold-primary); width:14px;"></i> Google Ads &ndash; PPC &amp; PMax</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/paid-social-media" class="mega-sub-link"><i class="fa-solid fa-rectangle-ad" style="color:var(--gold-primary); width:14px;"></i> Paid Social Media Ads</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/lead-generation" class="mega-sub-link"><i class="fa-solid fa-filter-circle-dollar" style="color:var(--gold-primary); width:14px;"></i> High-Intent Lead Gen</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/search-engine-marketing" class="mega-sub-link"><i class="fa-solid fa-bolt" style="color:var(--gold-primary); width:14px;"></i> Search Engine Marketing</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/content-marketing" class="mega-sub-link"><i class="fa-solid fa-newspaper" style="color:var(--gold-primary); width:14px;"></i> Content Marketing</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/email-marketing" class="mega-sub-link"><i class="fa-solid fa-envelope-open-text" style="color:var(--gold-primary); width:14px;"></i> Lifecycle Email Marketing</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/affiliate-marketing" class="mega-sub-link"><i class="fa-solid fa-handshake" style="color:var(--gold-primary); width:14px;"></i> Affiliate Marketing</a></li>
                 </ul>
               </div>
 
-              <!-- Col 4: Website - UI/UX -->
-              <div>
+              <!-- Col 4: Website & Billing Apps -->
+              <div class="mega-col-box">
                 <div class="mega-col-title">
                   <i class="fa-solid fa-laptop-code"></i>
-                  <a href="<?php echo $base_path; ?>web-development.php">Website & UI/UX</a>
+                  <a href="<?php echo $base_path; ?>service/web-development">Website &amp; Billing Apps</a>
                 </div>
                 <ul class="mega-sub-list">
-                  <li><a href="<?php echo $base_path; ?>website-development.php" class="mega-sub-link">UI-UX Website Design</a></li>
-                  <li><a href="<?php echo $base_path; ?>wordpress-development.php" class="mega-sub-link">WordPress Development</a></li>
-                  <li><a href="<?php echo $base_path; ?>ecommerce-development.php" class="mega-sub-link">E-Commerce & WooCommerce</a></li>
-                  <li><a href="<?php echo $base_path; ?>shopify-development.php" class="mega-sub-link">Shopify Development</a></li>
-                  <li><a href="<?php echo $base_path; ?>api-integrations.php" class="mega-sub-link">API & Webhook Integrations</a></li>
-                  <li><a href="<?php echo $base_path; ?>website-maintenance.php" class="mega-sub-link">Website Maintenance AMC</a></li>
-                  <li><a href="<?php echo $base_path; ?>custom-web-application.php" class="mega-sub-link">Custom Web Applications</a></li>
-                  <li><a href="<?php echo $base_path; ?>quotation-billing-invoice-software.php" class="mega-sub-link" style="color:var(--gold-light); font-weight:600;">Quotation, Billing &amp; Invoice App</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/quotation-billing-invoice-software" class="mega-sub-link" style="color:var(--gold-light) !important; font-weight:700 !important;"><i class="fa-solid fa-file-invoice-dollar" style="color:var(--gold-primary); width:14px;"></i> Quotation, Billing &amp; GST App</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/website-development" class="mega-sub-link"><i class="fa-solid fa-desktop" style="color:var(--gold-primary); width:14px;"></i> UI-UX Website Design</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/wordpress-development" class="mega-sub-link"><i class="fa-brands fa-wordpress" style="color:var(--gold-primary); width:14px;"></i> WordPress Development</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/ecommerce-development" class="mega-sub-link"><i class="fa-solid fa-cart-shopping" style="color:var(--gold-primary); width:14px;"></i> E-Commerce &amp; WooCommerce</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/shopify-development" class="mega-sub-link"><i class="fa-brands fa-shopify" style="color:var(--gold-primary); width:14px;"></i> Shopify Development</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/custom-web-application" class="mega-sub-link"><i class="fa-solid fa-cubes" style="color:var(--gold-primary); width:14px;"></i> Custom Web Applications</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/api-integrations" class="mega-sub-link"><i class="fa-solid fa-plug" style="color:var(--gold-primary); width:14px;"></i> API &amp; Webhook Integrations</a></li>
                 </ul>
               </div>
 
-
-
-              <!-- Col 5: Allied Services -->
-              <div>
+              <!-- Col 5: Branding & Creative -->
+              <div class="mega-col-box">
                 <div class="mega-col-title">
-                  <i class="fa-solid fa-gears"></i>
-                  <a href="<?php echo $base_path; ?>allied-services.php">Allied Services</a>
+                  <i class="fa-solid fa-bezier-curve"></i>
+                  <a href="<?php echo $base_path; ?>service/branding-design">Branding &amp; Design</a>
                 </div>
                 <ul class="mega-sub-list">
-                  <li><a href="<?php echo $base_path; ?>google-my-business.php" class="mega-sub-link">Google My Business (GMB)</a></li>
-                  <li><a href="<?php echo $base_path; ?>whatsapp-automation.php" class="mega-sub-link">WhatsApp Automation</a></li>
-                  <li><a href="<?php echo $base_path; ?>analytics-reporting.php" class="mega-sub-link">Analytics & Reporting</a></li>
-                  <li><a href="<?php echo $base_path; ?>online-reputation.php" class="mega-sub-link">Reputation Management</a></li>
-                  <li><a href="<?php echo $base_path; ?>strategy-consulting.php" class="mega-sub-link">Strategy & Consulting</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/brand-identity-logo" class="mega-sub-link"><i class="fa-solid fa-shield-halved" style="color:var(--gold-primary); width:14px;"></i> Brand Identity &amp; Logo</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/brand-strategy" class="mega-sub-link"><i class="fa-solid fa-chess" style="color:var(--gold-primary); width:14px;"></i> Brand Strategy</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/corporate-branding" class="mega-sub-link"><i class="fa-solid fa-building" style="color:var(--gold-primary); width:14px;"></i> Corporate Branding</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/marketing-collaterals" class="mega-sub-link"><i class="fa-solid fa-folder-open" style="color:var(--gold-primary); width:14px;"></i> Marketing Collaterals</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/creative-advertising" class="mega-sub-link"><i class="fa-solid fa-lightbulb" style="color:var(--gold-primary); width:14px;"></i> Creative Advertising</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/brand-consulting" class="mega-sub-link"><i class="fa-solid fa-comments" style="color:var(--gold-primary); width:14px;"></i> Brand Consulting</a></li>
+                </ul>
+              </div>
+
+              <!-- Col 6: Allied Services & Automation -->
+              <div class="mega-col-box">
+                <div class="mega-col-title">
+                  <i class="fa-solid fa-gears"></i>
+                  <a href="<?php echo $base_path; ?>service/allied-services">Allied &amp; Automation</a>
+                </div>
+                <ul class="mega-sub-list">
+                  <li><a href="<?php echo $base_path; ?>service/whatsapp-automation" class="mega-sub-link"><i class="fa-brands fa-whatsapp" style="color:#25d366; width:14px;"></i> WhatsApp Automation</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/google-my-business" class="mega-sub-link"><i class="fa-solid fa-store" style="color:var(--gold-primary); width:14px;"></i> Google My Business (GMB)</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/analytics-reporting" class="mega-sub-link"><i class="fa-solid fa-chart-pie" style="color:var(--gold-primary); width:14px;"></i> Analytics &amp; Reporting</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/online-reputation" class="mega-sub-link"><i class="fa-solid fa-star" style="color:var(--gold-primary); width:14px;"></i> Reputation Management</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/strategy-consulting" class="mega-sub-link"><i class="fa-solid fa-compass" style="color:var(--gold-primary); width:14px;"></i> Strategy &amp; Consulting</a></li>
+                  <li><a href="<?php echo $base_path; ?>service/website-maintenance" class="mega-sub-link"><i class="fa-solid fa-screwdriver-wrench" style="color:var(--gold-primary); width:14px;"></i> Website Maintenance AMC</a></li>
                 </ul>
               </div>
             </div>
@@ -3408,41 +3697,69 @@ $canonical_url = $canonical_url ?? 'https://www.weboptimizer.in/';
 
         <!-- 2. WEBSITE & UI/UX DROPDOWN -->
         <li class="nav-dropdown">
-          <a href="<?php echo $base_path; ?>web-development.php">
-            Web & UI/UX <i class="fa-solid fa-chevron-down" style="font-size:9px; margin-left:2px;"></i>
+          <a href="<?php echo $base_path; ?>service/web-development" class="js-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+            Web &amp; UI/UX <i class="fa-solid fa-chevron-down" style="font-size:9px; margin-left:2px;"></i>
           </a>
-          <div class="nav-dropdown-menu-standard">
-            <a href="<?php echo $base_path; ?>website-development.php" class="standard-drop-item"><i class="fa-solid fa-laptop-code"></i> UI-UX Website Design</a>
-            <a href="<?php echo $base_path; ?>wordpress-development.php" class="standard-drop-item"><i class="fa-brands fa-wordpress"></i> WordPress Development</a>
-            <a href="<?php echo $base_path; ?>ecommerce-development.php" class="standard-drop-item"><i class="fa-solid fa-bag-shopping"></i> WooCommerce E-Commerce</a>
-            <a href="<?php echo $base_path; ?>shopify-development.php" class="standard-drop-item"><i class="fa-brands fa-shopify"></i> Shopify Development</a>
-            <a href="<?php echo $base_path; ?>custom-web-application.php" class="standard-drop-item"><i class="fa-solid fa-server"></i> Custom Web Applications</a>
-            <a href="<?php echo $base_path; ?>quotation-billing-invoice-software.php" class="standard-drop-item"><i class="fa-solid fa-file-invoice-dollar"></i> Quotation, Billing &amp; Invoice App</a>
-            <a href="<?php echo $base_path; ?>api-integrations.php" class="standard-drop-item"><i class="fa-solid fa-network-wired"></i> API Integrations</a>
-            <a href="<?php echo $base_path; ?>website-maintenance.php" class="standard-drop-item"><i class="fa-solid fa-screwdriver-wrench"></i> Website Maintenance AMC</a>
-            <a href="<?php echo $base_path; ?>plugin-development.php" class="standard-drop-item"><i class="fa-solid fa-puzzle-piece"></i> Plugin Development</a>
-            <a href="<?php echo $base_path; ?>theme-development.php" class="standard-drop-item"><i class="fa-solid fa-palette"></i> Theme Development</a>
+          <div class="nav-dropdown-menu-standard" role="menu">
+            <a href="<?php echo $base_path; ?>service/quotation-billing-invoice-software" class="standard-drop-item" style="color:var(--gold-light) !important; font-weight:700 !important;"><i class="fa-solid fa-file-invoice-dollar"></i> Quotation, Billing &amp; Invoice App</a>
+            <a href="<?php echo $base_path; ?>service/website-development" class="standard-drop-item"><i class="fa-solid fa-laptop-code"></i> UI-UX Website Design</a>
+            <a href="<?php echo $base_path; ?>service/wordpress-development" class="standard-drop-item"><i class="fa-brands fa-wordpress"></i> WordPress Development</a>
+            <a href="<?php echo $base_path; ?>service/ecommerce-development" class="standard-drop-item"><i class="fa-solid fa-bag-shopping"></i> WooCommerce E-Commerce</a>
+            <a href="<?php echo $base_path; ?>service/shopify-development" class="standard-drop-item"><i class="fa-brands fa-shopify"></i> Shopify Development</a>
+            <a href="<?php echo $base_path; ?>service/custom-web-application" class="standard-drop-item"><i class="fa-solid fa-server"></i> Custom Web Applications</a>
+            <a href="<?php echo $base_path; ?>service/api-integrations" class="standard-drop-item"><i class="fa-solid fa-network-wired"></i> API Integrations</a>
+            <a href="<?php echo $base_path; ?>service/website-maintenance" class="standard-drop-item"><i class="fa-solid fa-screwdriver-wrench"></i> Website Maintenance AMC</a>
+            <a href="<?php echo $base_path; ?>service/plugin-development" class="standard-drop-item"><i class="fa-solid fa-puzzle-piece"></i> Plugin Development</a>
+            <a href="<?php echo $base_path; ?>service/theme-development" class="standard-drop-item"><i class="fa-solid fa-palette"></i> Theme Development</a>
           </div>
         </li>
 
-        <!-- 3. BRANDING & DESIGN DROPDOWN -->
+        <!-- 3. AI SEO DROPDOWN -->
         <li class="nav-dropdown">
-          <a href="<?php echo $base_path; ?>branding-design.php">
+          <a href="<?php echo $base_path; ?>service/ai-seo" class="js-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+            AI SEO <i class="fa-solid fa-chevron-down" style="font-size:9px; margin-left:2px;"></i>
+          </a>
+          <div class="nav-dropdown-menu-standard" role="menu">
+            <a href="<?php echo $base_path; ?>service/ai-seo" class="standard-drop-item"><i class="fa-solid fa-brain"></i> AI SEO &amp; Search Overview</a>
+            <a href="<?php echo $base_path; ?>service/local-seo" class="standard-drop-item"><i class="fa-solid fa-map-location-dot"></i> Local SEO &amp; Google Maps</a>
+            <a href="<?php echo $base_path; ?>service/technical-seo" class="standard-drop-item"><i class="fa-solid fa-microchip"></i> Technical SEO &amp; CWV Speed</a>
+            <a href="<?php echo $base_path; ?>service/seo-audit" class="standard-drop-item"><i class="fa-solid fa-magnifying-glass-chart"></i> Comprehensive SEO Audit</a>
+            <a href="<?php echo $base_path; ?>service/on-page-seo" class="standard-drop-item"><i class="fa-solid fa-file-code"></i> On-Page SEO Optimization</a>
+            <a href="<?php echo $base_path; ?>service/off-page-seo" class="standard-drop-item"><i class="fa-solid fa-globe"></i> Off-Page SEO &amp; PR</a>
+            <a href="<?php echo $base_path; ?>service/link-building" class="standard-drop-item"><i class="fa-solid fa-link"></i> High-Authority Link Building</a>
+            <a href="<?php echo $base_path; ?>service/content-writing" class="standard-drop-item"><i class="fa-solid fa-pen-nib"></i> SEO Content Writing</a>
+          </div>
+        </li>
+
+        <!-- 4. PERFORMANCE ADS DROPDOWN -->
+        <li class="nav-dropdown">
+          <a href="<?php echo $base_path; ?>service/performance-marketing" class="js-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+            Performance Ads <i class="fa-solid fa-chevron-down" style="font-size:9px; margin-left:2px;"></i>
+          </a>
+          <div class="nav-dropdown-menu-standard" role="menu">
+            <a href="<?php echo $base_path; ?>service/google-ads" class="standard-drop-item"><i class="fa-brands fa-google"></i> Google Ads &ndash; PPC &amp; PMax</a>
+            <a href="<?php echo $base_path; ?>service/paid-social-media" class="standard-drop-item"><i class="fa-brands fa-meta"></i> Meta (FB &amp; Instagram) Ads</a>
+            <a href="<?php echo $base_path; ?>service/lead-generation" class="standard-drop-item"><i class="fa-solid fa-filter-circle-dollar"></i> B2B &amp; B2C Lead Generation</a>
+            <a href="<?php echo $base_path; ?>service/search-engine-marketing" class="standard-drop-item"><i class="fa-solid fa-bullseye"></i> Search Engine Marketing</a>
+            <a href="<?php echo $base_path; ?>service/whatsapp-automation" class="standard-drop-item"><i class="fa-brands fa-whatsapp"></i> WhatsApp API &amp; Chatbots</a>
+            <a href="<?php echo $base_path; ?>service/email-marketing" class="standard-drop-item"><i class="fa-solid fa-envelope-open-text"></i> Email Marketing Automation</a>
+          </div>
+        </li>
+
+        <!-- 5. BRANDING & DESIGN DROPDOWN -->
+        <li class="nav-dropdown">
+          <a href="<?php echo $base_path; ?>service/branding-design" class="js-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
             Branding <i class="fa-solid fa-chevron-down" style="font-size:9px; margin-left:2px;"></i>
           </a>
-          <div class="nav-dropdown-menu-standard">
-            <a href="<?php echo $base_path; ?>brand-identity-logo.php" class="standard-drop-item"><i class="fa-solid fa-shield-halved"></i> Brand Identity & Logo Design</a>
-            <a href="<?php echo $base_path; ?>brand-strategy.php" class="standard-drop-item"><i class="fa-solid fa-chess"></i> Brand Strategy & Positioning</a>
-            <a href="<?php echo $base_path; ?>corporate-branding.php" class="standard-drop-item"><i class="fa-solid fa-building"></i> Corporate Branding Systems</a>
-            <a href="<?php echo $base_path; ?>marketing-collaterals.php" class="standard-drop-item"><i class="fa-solid fa-folder-open"></i> Marketing Collaterals Design</a>
-            <a href="<?php echo $base_path; ?>creative-advertising.php" class="standard-drop-item"><i class="fa-solid fa-lightbulb"></i> Creative Advertising</a>
-            <a href="<?php echo $base_path; ?>brand-consulting.php" class="standard-drop-item"><i class="fa-solid fa-comments"></i> Brand Consulting</a>
+          <div class="nav-dropdown-menu-standard" role="menu">
+            <a href="<?php echo $base_path; ?>service/brand-identity-logo" class="standard-drop-item"><i class="fa-solid fa-shield-halved"></i> Brand Identity &amp; Logo Design</a>
+            <a href="<?php echo $base_path; ?>service/brand-strategy" class="standard-drop-item"><i class="fa-solid fa-chess"></i> Brand Strategy &amp; Positioning</a>
+            <a href="<?php echo $base_path; ?>service/corporate-branding" class="standard-drop-item"><i class="fa-solid fa-building"></i> Corporate Branding Systems</a>
+            <a href="<?php echo $base_path; ?>service/marketing-collaterals" class="standard-drop-item"><i class="fa-solid fa-folder-open"></i> Marketing Collaterals Design</a>
+            <a href="<?php echo $base_path; ?>service/creative-advertising" class="standard-drop-item"><i class="fa-solid fa-lightbulb"></i> Creative Advertising</a>
+            <a href="<?php echo $base_path; ?>service/brand-consulting" class="standard-drop-item"><i class="fa-solid fa-comments"></i> Brand Consulting</a>
           </div>
         </li>
-
-        <li><a href="<?php echo $base_path; ?>locations" class="<?php echo ($active_nav === 'locations') ? 'active' : ''; ?>">Locations</a></li>
-        <li><a href="<?php echo $base_path; ?>blog" class="<?php echo ($active_nav === 'blog') ? 'active' : ''; ?>">Guides</a></li>
-        <li><a href="<?php echo $base_path; ?>index.php#contact">Contact</a></li>
       </ul>
 
       <div class="nav-actions">

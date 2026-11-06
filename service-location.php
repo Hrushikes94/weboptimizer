@@ -132,7 +132,7 @@ require __DIR__ . '/includes/header.php';
         <div class="col-lg-10 mx-auto text-center">
           <!-- Multi-Tier Breadcrumbs -->
           <nav class="banner-breadcrumb justify-content-center" aria-label="breadcrumb">
-            <a href="<?php echo $base_path; ?>index.php"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="<?php echo $base_path; ?>"><i class="fa-solid fa-house"></i> Home</a>
             <span class="sep">/</span>
             <a href="<?php echo $base_path; ?>services">Services</a>
             <span class="sep">/</span>

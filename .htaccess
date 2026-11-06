@@ -77,6 +77,19 @@ ServerSignature Off
   RewriteCond %{THE_REQUEST} \s/(?:Portfolio/)?service-detail\.php\?slug=([a-z0-9\-]+)\s [NC]
   RewriteRule ^ service/%1? [R=301,L]
 
+  # Redirect direct index.php -> /
+  RewriteCond %{THE_REQUEST} \s/(?:Portfolio/)?index\.php[\s?] [NC]
+  RewriteRule ^index\.php$ ./ [R=301,L]
+
+  # Redirect direct master pages (services.php, locations.php, blog.php, contact.php) -> clean URLs
+  RewriteCond %{THE_REQUEST} \s/(?:Portfolio/)?(services|locations|blog|contact)\.php[\s?] [NC]
+  RewriteRule ^(services|locations|blog|contact)\.php$ $1? [R=301,L]
+
+  # Redirect direct standalone service .php files (except contact-submit.php & sitemap.php) -> /service/{slug}
+  RewriteCond %{THE_REQUEST} \s/(?:Portfolio/)?([a-z0-9\-]+)\.php[\s?] [NC]
+  RewriteCond %{REQUEST_URI} !/(index|services|locations|location|service-detail|service-location|blog|blog-post|contact|contact-submit|sitemap|build-static)\.php$ [NC]
+  RewriteRule ^([a-z0-9\-]+)\.php$ service/$1? [R=301,L]
+
   # ----------------------------------------------------------------------------
   # Retired Services 301 Permanent Redirects
   # ----------------------------------------------------------------------------
@@ -88,10 +101,12 @@ ServerSignature Off
   RewriteRule ^sitemap\.xml$ sitemap.php [L]
 
   # ----------------------------------------------------------------------------
-  # 3. Clean Master Directories & Blog Knowledge Hub
+  # 3. Clean Master Directories, Contact Us & Blog Knowledge Hub
   # ----------------------------------------------------------------------------
   RewriteRule ^locations/?$ locations.php [L,QSA]
   RewriteRule ^services/?$ services.php [L,QSA]
+  RewriteRule ^contact/?$ contact.php [L,QSA]
+  RewriteRule ^contact-us/?$ contact.php [L,QSA]
   RewriteRule ^blog/?$ blog.php [L,QSA]
   RewriteRule ^blogs/?$ blog.php [L,QSA]
   RewriteRule ^blog/([a-z0-9\-]+)/?$ blog-post.php?slug=$1 [L,QSA]
