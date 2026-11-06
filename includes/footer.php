@@ -351,6 +351,7 @@ $base_path = $base_path ?? './';
           <a href="<?php echo $base_path; ?>blog">Guides (128)</a>
           <a href="<?php echo $base_path; ?>contact">Contact Us</a>
           <a href="<?php echo $base_path; ?>sitemap.xml">XML Sitemap</a>
+          <a href="<?php echo $base_path; ?>llms.txt" title="AI & LLM Context Index (llms.txt)">LLMs.txt</a>
           <a href="#navbar" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;" style="color:var(--gold-primary); font-weight:700;">
             <i class="fa-solid fa-arrow-up"></i> Back to Top
           </a>

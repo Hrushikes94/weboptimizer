@@ -41,7 +41,7 @@ function renderPhpPage(string $scriptFile, array $getParams = [], string $basePa
     $html = preg_replace('/href="([^"]*?)(services|locations|blog|contact)\.php(#[^"]*)?"/i', 'href="$1$2$3"', $html);
     $html = preg_replace('/href="([^"]*?)([a-z0-9\-]+)\.php(#[^"]*)?"/i', 'href="$1service/$2$3"', $html);
 
-    if (function_exists('weboptimizer_enforce_img_attributes') && $scriptFile !== 'sitemap.php') {
+    if (function_exists('weboptimizer_enforce_img_attributes') && !in_array($scriptFile, ['sitemap.php', 'llms.php'], true)) {
         $html = weboptimizer_enforce_img_attributes($html);
     }
 
@@ -71,6 +71,11 @@ writeStaticFile('contact-us/index.html', renderPhpPage('contact.php', [], $baseP
 writeStaticFile('resume/index.html', renderPhpPage('resume.php', [], $basePath));
 writeStaticFile('resume.html', renderPhpPage('resume.php', [], $basePath));
 writeStaticFile('sitemap.xml', renderPhpPage('sitemap.php', [], $basePath));
+writeStaticFile('llms.txt', renderPhpPage('llms.php', ['mode' => 'concise'], $basePath));
+writeStaticFile('llms-full.txt', renderPhpPage('llms.php', ['mode' => 'full'], $basePath));
+if (file_exists(__DIR__ . '/robots.txt')) {
+    writeStaticFile('robots.txt', file_get_contents(__DIR__ . '/robots.txt'));
+}
 writeStaticFile('.nojekyll', '');
 
 echo "Building " . count($services_catalog) . " service pages...\n";

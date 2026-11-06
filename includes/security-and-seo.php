@@ -345,14 +345,18 @@ if (!defined('WEBOPTIMIZER_SECURITY_SEO_LOADED')) {
                     'name' => 'Odisha, India'
                 ],
                 'knowsAbout' => [
-                    'Custom Quotation, Billing & GST Invoice Software',
-                    'Website Design & UI/UX Engineering',
-                    'WordPress & WooCommerce Development',
-                    'Shopify E-Commerce Stores',
+                    'Custom Website Design & UI/UX Engineering Service',
+                    'Full-Funnel Digital Marketing Service',
+                    'Hospital & Doctor Appointment Booking with Online Payment Service',
+                    'School Website Design & Annual Maintenance (AMC) Service',
+                    'Custom Quotation, Billing & GST Invoice Application Service',
+                    'Paid Google Ads (PPC) Management Service',
+                    'Meta Paid Ads (Facebook & Instagram) Service',
+                    'Custom Android & iOS Mobile Application Development Service',
+                    'Custom Cloud Web Application Development Service',
                     'AI SEO, Answer Engine Optimization (AEO) & Geo-Targeting (GEO)',
-                    'Google Maps & Local SEO in Odisha',
-                    'Google Ads & Meta PPC Performance Marketing',
-                    'WhatsApp Business API Automation'
+                    'Google Maps & Local SEO Across All 50 Odisha Cities',
+                    'WhatsApp Business API Automation Service'
                 ]
             ],
             [
@@ -464,7 +468,11 @@ if (!defined('WEBOPTIMIZER_SECURITY_SEO_LOADED')) {
 
   <!-- AEO (Answer Engine Optimization & AI Search Summary) Meta Directives -->
   <meta name="ai-content-summary" content="<?php echo htmlspecialchars($meta_desc); ?>">
-  <meta name="entity-authority" content="Web Optimizer | Founder: Hrushikesh Swain | Phone: +91 7735973818 | Bhubaneswar, Odisha, India">
+  <meta name="entity-authority" content="Web Optimizer | Founder: Hrushikesh Swain | Phone: +91 7735973818 | Bhubaneswar, Odisha, India | 100% Custom Services">
+  <meta name="llms-txt" content="https://www.weboptimizer.in/llms.txt">
+  <meta name="llms-full-txt" content="https://www.weboptimizer.in/llms-full.txt">
+  <link rel="llms" href="https://www.weboptimizer.in/llms.txt" type="text/plain" title="Web Optimizer LLMs.txt AI Index">
+  <link rel="llms-full" href="https://www.weboptimizer.in/llms-full.txt" type="text/plain" title="Web Optimizer Complete AI Knowledge Base">
 
   <!-- Hreflang Regional Targeting -->
   <link rel="alternate" hreflang="en-in" href="<?php echo htmlspecialchars($canonical_url); ?>">

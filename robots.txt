@@ -1,0 +1,119 @@
+# ==============================================================================
+# Web Optimizer (https://www.weboptimizer.in) — Official robots.txt & AI SEO Policy
+# Founder & Senior Web Developer: Hrushikesh Swain (+91 7735973818 | info@weboptimizer.in)
+# Headquarters: Bhubaneswar, Odisha, India
+# ==============================================================================
+# AI & LLM Knowledge Base Files:
+# - Concise Index: https://www.weboptimizer.in/llms.txt
+# - Complete Knowledge Base: https://www.weboptimizer.in/llms-full.txt
+# ==============================================================================
+
+# 1. All Standard Search Engine Crawlers (Google, Bing, DuckDuckGo, Yahoo, Apple)
+User-agent: *
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /sitemap.xml
+Disallow: /resume
+Disallow: /resume/
+Disallow: /resume.html
+Disallow: /resume.php
+Disallow: /includes/
+Disallow: /build-static.php
+
+# 2. OpenAI / ChatGPT Search & GPT Crawlers
+User-agent: OAI-SearchBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /resume
+Disallow: /resume/
+Disallow: /resume.html
+
+User-agent: ChatGPT-User
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /resume
+Disallow: /resume/
+Disallow: /resume.html
+
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /resume
+Disallow: /resume/
+Disallow: /resume.html
+
+# 3. Perplexity AI Answer Engine
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /resume
+Disallow: /resume/
+Disallow: /resume.html
+
+# 4. Anthropic / Claude AI
+User-agent: ClaudeBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /resume
+Disallow: /resume/
+Disallow: /resume.html
+
+User-agent: anthropic-ai
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /resume
+Disallow: /resume/
+Disallow: /resume.html
+
+# 5. Google Gemini / AI Overviews / Google-Extended
+User-agent: Google-Extended
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /resume
+Disallow: /resume/
+Disallow: /resume.html
+
+# 6. Apple Intelligence / Applebot-Extended
+User-agent: Applebot-Extended
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /resume
+Disallow: /resume/
+Disallow: /resume.html
+
+# 7. Meta AI / Cohere / You.com
+User-agent: Meta-ExternalAgent
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /resume
+Disallow: /resume/
+Disallow: /resume.html
+
+User-agent: cohere-ai
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /resume
+Disallow: /resume/
+Disallow: /resume.html
+
+User-agent: YouBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /resume
+Disallow: /resume/
+Disallow: /resume.html
+
+# Canonical XML Sitemap
+Sitemap: https://www.weboptimizer.in/sitemap.xml
